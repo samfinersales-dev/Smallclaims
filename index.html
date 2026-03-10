@@ -112,11 +112,12 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 </header>
 
 
+<div id="screen-landing" class="screen active">
   <div class="hero">
     <div class="badge">All 50 States · AI-Generated · Ready to File</div>
     <h1>Sue them.<br>Without a <em>lawyer.</em></h1>
     <p class="sub">Answer 10 plain-English questions. Get your completed small claims court filing plus a script of exactly what to say to the judge.</p>
-    <button class="cta" onclick="showScreen('disclaimer')">Generate My Documents — $19</button>
+    <button class="cta" onclick="showScreen('questions')">Generate My Documents — $19</button>
     <div class="note">Pay only after you see your completed documents</div>
   </div>
   <div class="tbar">
@@ -131,12 +132,12 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
       <h2>What are you trying to recover?</h2>
       <p class="lead">Small claims court handles disputes up to $5,000–$25,000 depending on your state. No lawyer required.</p>
       <div class="cgrid">
-        <div class="cc" onclick="showScreen('disclaimer')"><div class="ci">🏠</div><div class="ct">Security Deposit</div><div class="cd">Landlord kept your deposit unfairly</div></div>
-        <div class="cc" onclick="showScreen('disclaimer')"><div class="ci">🔨</div><div class="ct">Bad Contractor</div><div class="cd">Work not done or done poorly</div></div>
-        <div class="cc" onclick="showScreen('disclaimer')"><div class="ci">🚗</div><div class="ct">Car Accident</div><div class="cd">Unpaid damages or repairs</div></div>
-        <div class="cc" onclick="showScreen('disclaimer')"><div class="ci">📦</div><div class="ct">Seller Scam</div><div class="cd">Online marketplace fraud</div></div>
-        <div class="cc" onclick="showScreen('disclaimer')"><div class="ci">💼</div><div class="ct">Unpaid Wages</div><div class="cd">Employer owes you money</div></div>
-        <div class="cc" onclick="showScreen('disclaimer')"><div class="ci">📄</div><div class="ct">Broken Contract</div><div class="cd">Someone didn't hold up their end</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">🏠</div><div class="ct">Security Deposit</div><div class="cd">Landlord kept your deposit unfairly</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">🔨</div><div class="ct">Bad Contractor</div><div class="cd">Work not done or done poorly</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">🚗</div><div class="ct">Car Accident</div><div class="cd">Unpaid damages or repairs</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">📦</div><div class="ct">Seller Scam</div><div class="cd">Online marketplace fraud</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">💼</div><div class="ct">Unpaid Wages</div><div class="cd">Employer owes you money</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">📄</div><div class="ct">Broken Contract</div><div class="cd">Someone didn't hold up their end</div></div>
       </div>
     </div>
     <div style="text-align:center;margin-bottom:56px">
@@ -152,9 +153,10 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
       <div class="sl" style="color:#d4a017">Why Not Just Google It?</div>
       <h2 style="color:white;margin-bottom:14px">Government websites are designed by lawyers, for lawyers.</h2>
       <p style="color:rgba(255,255,255,.55);font-size:15px;line-height:1.7;max-width:460px;margin:0 auto 28px">Wrong form, wrong county, wrong deadline — any one gets your case thrown out. We handle all of it.</p>
-      <button class="cta" onclick="showScreen('disclaimer')">Start My Filing — $19</button>
+      <button class="cta" onclick="showScreen('questions')">Start My Filing — $19</button>
     </div>
   </div>
+</div>
 </div>
 
 
@@ -168,7 +170,7 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
       <p style="font-size:15px;color:#1a1a2e;line-height:1.7;margin-bottom:12px">Small claims court procedures and required forms <strong>vary by state and county.</strong> Always verify the correct forms and filing requirements with your local courthouse before submitting any documents.</p>
       <p style="font-size:15px;color:#1a1a2e;line-height:1.7">For complex legal matters, consult a <strong>licensed attorney</strong> in your state.</p>
     </div>
-    <button class="cta" onclick="showScreen('questions')" style="width:100%;padding:18px;font-size:16px">I Understand — Continue</button>
+    <button class="cta" onclick="genDocs()" style="width:100%;padding:18px;font-size:16px">I Understand — Continue</button>
     <div style="margin-top:14px;font-size:12px;color:#a0a0bc">By continuing you agree these documents are for informational purposes only</div>
   </div>
 </div>
@@ -306,7 +308,7 @@ function nextQ(){
   var q=QS[cq];
   if(q.type!=='opts'){var v=document.getElementById('qi');if(v&&v.value.trim())A[q.id]=v.value.trim()}
   if(!A[q.id])return;
-  if(cq<QS.length-1){cq++;renderQ()}else{genDocs()}
+  if(cq<QS.length-1){cq++;renderQ()}else{showScreen('disclaimer')}
 }
 
 function prevQ(){if(cq>0){cq--;renderQ()}}
@@ -347,7 +349,7 @@ function showResults(){
   showScreen('results');
 }
 
-function resetApp(){A={};cq=0;docs=null;showScreen('questions')}
+function resetApp(){A={};cq=0;docs=null;showScreen('landing')}
 </script>
 
 <!-- SEO Content Block - Visible to Google, below the fold -->
