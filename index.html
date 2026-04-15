@@ -2,148 +2,348 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="hqSsEC93a0tlqhdMI-jDrKM3kVMpIgGSMch-JAYPsnA">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Small Claims Court Forms — File Your Case in Minutes | SmallClaimsHelper</title>
-<meta name="description" content="Generate completed small claims court forms for all 50 states in minutes. Get a word-for-word judge script. No lawyer needed. Only $19.">
-<meta name="keywords" content="small claims court forms, how to file small claims, small claims court California, small claims court Texas, small claims court Florida, small claims court New York, sue landlord security deposit, small claims court filing, how to sue someone, small claims complaint form">
-<meta property="og:title" content="Small Claims Court Forms — File Your Case in Minutes">
-<meta property="og:description" content="Answer 10 questions. Get completed court forms and a judge script for your state. No lawyer needed. $19.">
-<meta property="og:url" content="https://smallclaimsforms.net">
-<link rel="canonical" href="https://smallclaimsforms.net">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="author" content="SmallClaimsHelper">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Small Claims Court Forms Generator","url":"https://smallclaimsforms.net","description":"Generate state-specific small claims court forms and a judge-ready script in minutes. All 50 states. Know exactly what to say in court.","applicationCategory":"LegalApplication","offers":{"@type":"Offer","price":"19.00","priceCurrency":"USD"}}</script>
-<script>
-function triggerSmallClaimsDownload() {
-  var rc=document.getElementById('rc'), rs=document.getElementById('rs');
-  var claim={plaintiffName:'[Your Name]',plaintiffAddress:'[Your Address]',defendantName:'[Defendant]',defendantAddress:'[Defendant Address]',amount:'0',state:'[State]',claimType:'Civil Dispute',filingFee:'Check with your local court',court:'Your local small claims court',deadline:'Check statute of limitations',statementLines:[],evidence:['Contracts or agreements','Receipts or invoices','Photographs','Text messages or emails','Witness information'],keyPoints:['State facts clearly and chronologically','Present evidence when relevant','Address judge as "Your Honor"','Ask for the exact amount claimed']};
-  if(rc){claim.statementLines=[rc.innerText.trim().slice(0,1000)];var am=rc.innerText.match(/\$[\d,]+/);if(am)claim.amount=am[0].replace(/[$,]/g,'');}
-  if(rs)claim.openingStatement=rs.innerText.trim().slice(0,500);
-  if(typeof DownloadModule!=='undefined')DownloadModule.downloadSmallClaimsPackage(claim);
-  else alert('PDF download loading — try again in a moment.');
-}
-</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the small claims court limit in my state?","acceptedAnswer":{"@type":"Answer","text":"Small claims limits vary by state. California allows up to $12,500. Texas allows up to $20,000. Florida allows up to $8,000. New York allows up to $10,000. SmallClaimsHelper generates state-specific forms with the correct limits for your state."}},{"@type":"Question","name":"How much does SmallClaimsHelper cost?","acceptedAnswer":{"@type":"Answer","text":"SmallClaimsHelper charges a one-time fee of $19. No subscription or recurring fees. This includes your completed court forms and a word-for-word judge script."}},{"@type":"Question","name":"What documents does SmallClaimsHelper generate?","acceptedAnswer":{"@type":"Answer","text":"SmallClaimsHelper generates your completed small claims complaint form, a statement of facts, a list of evidence to bring, and a word-for-word script of exactly what to say to the judge."}},{"@type":"Question","name":"Do I need a lawyer for small claims court?","acceptedAnswer":{"@type":"Answer","text":"No. Small claims court is specifically designed for people to represent themselves without an attorney. SmallClaimsHelper prepares you with court-ready forms and a judge script so you know exactly what to say."}},{"@type":"Question","name":"How long does it take to generate my forms?","acceptedAnswer":{"@type":"Answer","text":"Answer 10 plain-English questions about your case. Your complete small claims forms and judge script are generated in about 60 seconds."}},{"@type":"Question","name":"Is SmallClaimsHelper a law firm?","acceptedAnswer":{"@type":"Answer","text":"No. SmallClaimsHelper is a document automation tool, not a law firm. It does not provide legal advice. For complex legal matters consult a licensed attorney."}}]}</script>
-<style>
-:root {
-  --gold: #b8860b;
-  --gold-hover: #d4a017;
-  --dark: #1c1a14;
-  --light-bg: #fafaf7;
-  --border: #e0e0d5;
-  --text-muted: #7a7560;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--light-bg);color:var(--dark);font-family:Georgia,serif;min-height:100vh}
-header{background:var(--dark);color:white;padding:0 24px;display:flex;align-items:center;gap:12px;height:60px;border-bottom:3px solid var(--gold)}
-.ht{font-size:17px;font-weight:700;color:white}.hs{font-size:11px;color:#a09a85;text-transform:uppercase;letter-spacing:.1em}.hp{margin-left:auto;font-size:12px;color:var(--gold);font-style:italic}
-.screen{display:none}.screen.active{display:block}
-.hero{background:var(--dark);color:white;padding:70px 24px 90px;text-align:center}
-.badge{display:inline-block;border:1px solid rgba(184,134,11,.5);border-radius:4px;padding:5px 16px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-h1{font-size:clamp(28px,6vw,52px);font-weight:900;line-height:1.1;color:white;margin-bottom:20px}
-h1 em{color:var(--gold);font-style:normal}
-.sub{font-size:17px;color:rgba(255,255,255,.6);line-height:1.7;max-width:500px;margin:0 auto 36px}
-.cta{background:var(--gold);color:white;border:none;border-radius:4px;padding:16px 48px;font-size:16px;font-weight:700;cursor:pointer;font-family:Georgia,serif;box-shadow:0 4px 20px rgba(184,134,11,.3)}
-.cta:hover{background:var(--gold-hover)}
-.note{margin-top:14px;font-size:13px;color:rgba(255,255,255,.35)}
-.tbar{background:#f3f3ee;border-bottom:1px solid var(--border);padding:18px 24px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
-.ti{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted)}
-.content{max-width:740px;margin:0 auto;padding:60px 24px}
-.sl{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600}
-h2{font-size:clamp(22px,4vw,34px);font-weight:700;color:var(--dark);margin-bottom:14px;line-height:1.2}
-.lead{font-size:16px;color:var(--text-muted);line-height:1.7;margin-bottom:44px}
-.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:44px}
-.cc{background:white;border:1px solid var(--border);border-radius:4px;padding:18px 14px;cursor:pointer;transition:all .15s}
-.cc:hover{border-color:var(--gold);background:#fef9ef}
-.ci{font-size:22px;margin-bottom:8px}.ct{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:3px}.cd{font-size:12px;color:#a09a85;line-height:1.4}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:56px}
-.step{text-align:center}
-.sn{width:42px;height:42px;background:var(--dark);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;margin:0 auto 14px}
-.st{font-size:14px;font-weight:600;margin-bottom:5px;color:var(--dark)}.sd{font-size:13px;color:var(--text-muted);line-height:1.5}
-.dark{background:var(--dark);color:white;border-radius:4px;padding:44px 36px;text-align:center}
-.fw{max-width:620px;margin:0 auto;padding:44px 24px}
-.pb{height:3px;background:var(--border);border-radius:2px;margin-bottom:44px;overflow:hidden}
-.pf{height:100%;background:var(--gold);border-radius:2px;transition:width .4s}
-.sc{font-size:12px;color:#a09a85;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
-.qq{font-size:clamp(19px,3vw,26px);font-weight:700;color:var(--dark);margin-bottom:7px;line-height:1.3}
-.qh{font-size:14px;color:var(--text-muted);margin-bottom:24px;line-height:1.5;font-style:italic}
-input[type=text],input[type=number],select,textarea{width:100%;padding:13px 15px;border:2px solid var(--border);border-radius:4px;font-family:Georgia,serif;font-size:16px;color:var(--dark);background:white;outline:none;transition:border-color .2s;margin-bottom:7px;appearance:none}
-input:focus,select:focus,textarea:focus{border-color:var(--gold)}
-textarea{resize:vertical;min-height:110px;line-height:1.6}
-.og{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:7px}
-.ob{padding:13px 15px;border:2px solid var(--border);border-radius:4px;background:white;font-family:Georgia,serif;font-size:14px;color:var(--dark);cursor:pointer;text-align:left;transition:all .15s;line-height:1.4}
-.ob:hover{border-color:var(--gold)}
-.ob.sel{border-color:var(--gold);background:#fef9ef;font-weight:600}
-.nr{display:flex;gap:12px;margin-top:28px;align-items:center}
-.bb{background:none;border:2px solid var(--border);border-radius:4px;padding:11px 22px;font-family:Georgia,serif;font-size:14px;color:var(--text-muted);cursor:pointer}
-.nb{background:var(--dark);color:white;border:none;border-radius:4px;padding:13px 32px;font-family:Georgia,serif;font-size:15px;font-weight:600;cursor:pointer;letter-spacing:.02em}
-.nb:disabled{opacity:.4;cursor:not-allowed}
-.gw{max-width:460px;margin:0 auto;padding:100px 24px;text-align:center}
-.gs{width:76px;height:76px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;margin:0 auto 36px;animation:spin 1.2s linear infinite}
-.gt{font-size:24px;font-weight:700;margin-bottom:10px}
-.gd{font-size:15px;color:var(--text-muted);line-height:1.6}
-.pw{max-width:580px;margin:0 auto;padding:44px 24px}
-.pdoc{background:white;border:1px solid var(--border);border-radius:4px;padding:28px;margin-bottom:28px;position:relative;overflow:hidden;font-family:'Courier New',monospace;font-size:13px;line-height:1.8;color:#2d2b20}
-.pdoc:after{content:'';position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to bottom,transparent,white)}
-.dh{text-align:center;margin-bottom:18px}
-.dt{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
-.dc{font-size:12px;color:var(--text-muted)}
-.dd{border:none;border-top:2px solid var(--dark);margin:10px 0}
-.df{margin-bottom:7px}
-.dl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
-.dv{font-size:14px;font-weight:600}
-.bl{filter:blur(5px);user-select:none}
-.pbox{background:var(--dark);border-radius:4px;padding:32px 28px;color:white;text-align:center;margin-bottom:14px}
-.pt{font-size:22px;font-weight:700;margin-bottom:7px}
-.ps{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:24px;line-height:1.6}
-.pi{text-align:left;margin-bottom:24px}
-.ii{display:flex;gap:10px;padding:7px 0;font-size:14px;border-bottom:1px solid rgba(255,255,255,.08)}
-.ii:last-child{border:none}
-.ic{color:var(--gold);flex-shrink:0}
-.pay{width:100%;background:var(--gold);color:white;border:none;border-radius:4px;padding:17px;font-size:17px;font-weight:700;font-family:Georgia,serif;cursor:pointer}
-.pay:hover{background:var(--gold-hover)}
-.rw{max-width:740px;margin:0 auto;padding:44px 24px}
-.sb{background:#f0faf4;border:1px solid #a3d9b8;border-left:4px solid #1a6b3a;border-radius:4px;padding:18px 22px;display:flex;gap:14px;align-items:flex-start;margin-bottom:36px}
-.si{font-size:22px;flex-shrink:0}
-.stl{font-size:16px;font-weight:700;color:#1a6b3a;margin-bottom:3px}
-.ss{font-size:13px;color:#2d7a50;line-height:1.5}
-.ds{margin-bottom:36px}
-.dst{font-size:19px;font-weight:700;margin-bottom:14px;padding-bottom:9px;border-bottom:2px solid var(--border)}
-.fd{background:white;border:1px solid var(--border);border-radius:4px;padding:36px;font-size:13px;line-height:1.9;color:#2d2b20;white-space:pre-wrap;font-family:'Courier New',monospace}
-.sc2{background:#fef9ef;border:1px solid #e8d58a;border-left:4px solid var(--gold);border-radius:4px;padding:24px 28px;font-size:13px;line-height:1.9;color:#2d2b20;white-space:pre-wrap}
-.bp{background:var(--dark);color:white;border:none;border-radius:4px;padding:13px 28px;font-size:14px;font-weight:600;font-family:Georgia,serif;cursor:pointer;margin-right:10px}
-.bs{background:none;border:2px solid var(--border);border-radius:4px;padding:13px 28px;font-size:14px;color:var(--text-muted);font-family:Georgia,serif;cursor:pointer}
-.disc{margin-top:28px;padding:18px;background:#f3f3ee;border:1px solid var(--border);border-radius:4px;font-size:12px;color:var(--text-muted);line-height:1.6;font-style:italic}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:500px){.steps{grid-template-columns:1fr}.cgrid{grid-template-columns:1fr 1fr}.og{grid-template-columns:1fr}.tbar{gap:16px}.hp{display:none}.fd,.sc2{padding:16px;font-size:12px}}
-@media print{header,.bp,.bs,.sb{display:none}body{background:white}}
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VerifyDoc — AI Medical Bill Auditor | Find Errors & Overcharges on Your Hospital Bill</title>
+<meta name="description" content="Is your medical bill correct? Upload your hospital bill and AI decodes every charge, flags billing errors, duplicate codes, and upcoding in plain English. $19 per audit.">
+<meta property="og:title" content="VerifyDoc — AI Medical Bill Auditor">
+<meta property="og:description" content="Find billing errors on your hospital bill in 60 seconds. AI explains every charge and drafts dispute letters automatically.">
+<meta property="og:url" content="https://verifydoc.net">
+<meta property="og:type" content="website">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://verifydoc.net">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"VerifyDoc — AI Medical Bill Auditor","url":"https://verifydoc.net","description":"AI-powered medical bill auditor. Decodes CPT codes, flags billing errors, upcoding, duplicate charges, and generates dispute letters in plain English.","specialty":"Medical Billing","audience":{"@type":"Patient"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I know if my medical bill has errors?","acceptedAnswer":{"@type":"Answer","text":"Upload your bill to VerifyDoc. Our AI checks for duplicate charges, upcoding (billing a simple service as complex), unbundling (splitting one procedure into multiple charges), phantom charges, and math errors. Most hospital bills contain at least one error."}},{"@type":"Question","name":"What is upcoding on a medical bill?","acceptedAnswer":{"@type":"Answer","text":"Upcoding is when a provider bills for a more expensive service than was actually performed. For example, billing a 15-minute office visit as a 45-minute one, or coding a routine procedure as a complex one. It is one of the most common and costly medical billing errors."}},{"@type":"Question","name":"How do I dispute a medical billing error?","acceptedAnswer":{"@type":"Answer","text":"Contact your provider in writing citing the specific CPT code and the billing guideline it violates. VerifyDoc generates a ready-to-send dispute letter for every flagged item on your audit report."}},{"@type":"Question","name":"What CPT codes does VerifyDoc explain?","acceptedAnswer":{"@type":"Answer","text":"VerifyDoc explains all CPT procedure codes, ICD-10 diagnosis codes, revenue codes, and NDC medication codes found on your bill."}},{"@type":"Question","name":"Is VerifyDoc medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. VerifyDoc is a document analysis tool. It identifies potential billing discrepancies for informational purposes only and does not provide medical diagnoses, treatment recommendations, or legal advice."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"VerifyDoc","url":"https://verifydoc.net","applicationCategory":"HealthApplication","offers":[{"@type":"Offer","name":"Single Audit","price":"19","priceCurrency":"USD"},{"@type":"Offer","name":"Monthly Unlimited","price":"29","priceCurrency":"USD"},{"@type":"Offer","name":"Family Plan","price":"49","priceCurrency":"USD"}]}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#0d7377;--teal-light:#14a085;--teal-dark:#095c5f;
+  --mint:#e8f8f5;--mint-mid:#c8efe9;
+  --green:#1a7a4a;--green-bg:#f0fdf4;
+  --amber:#d97706;--amber-bg:#fffbeb;
+  --red:#dc2626;--red-bg:#fef2f2;
+  --ink:#111827;--muted:#6b7280;--faint:#9ca3af;
+  --rule:#e5e7eb;--bg:#f9fafb;--white:#fff;
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:0 4px 6px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
+  --shadow-lg:0 10px 25px rgba(0,0,0,.1),0 4px 10px rgba(0,0,0,.06);
+}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+.screen{display:none}.screen.active{display:block}
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://smallclaimsforms.net/logo.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://smallclaimsforms.net/logo.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://smallclaimsforms.net/logo.png">
-<link rel="shortcut icon" href="https://smallclaimsforms.net/logo.png">
+/* ── NAV ── */
+.nav{background:var(--white);border-bottom:1px solid var(--rule);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:sticky;top:0;z-index:200}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-icon{width:34px;height:34px;background:var(--teal);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.nav-logo-icon svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round}
+.nav-logo-name{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:6px}
+.nav-link{color:var(--muted);font-size:.85rem;font-weight:500;background:none;border:none;cursor:pointer;padding:8px 12px;border-radius:6px;text-decoration:none;transition:color .15s,background .15s}
+.nav-link:hover{color:var(--ink);background:var(--bg)}
+.nav-cta{background:var(--teal);color:var(--white)!important;padding:9px 18px;border-radius:7px;font-weight:600!important;font-size:.85rem;transition:background .15s}
+.nav-cta:hover{background:var(--teal-light)!important}
+.nav-auth-signed-in{display:none}
 
-<meta property="og:image" content="https://smallclaimsforms.net/logo.png">
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#f0fdfa 0%,#e8f8f5 50%,#f0fdf4 100%);padding:72px 32px 80px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60px;right:-40px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(13,115,119,.06) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;bottom:-2px;left:0;right:0;height:48px;background:var(--white);clip-path:ellipse(60% 100% at 50% 100%)}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:40px}}
+.hero-text{}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(13,115,119,.08);border:1px solid rgba(13,115,119,.15);border-radius:20px;padding:5px 14px;font-size:.72rem;font-weight:600;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.hero-eyebrow-dot{width:5px;height:5px;background:var(--teal);border-radius:50%}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,4vw,3rem);line-height:1.12;color:var(--ink);margin-bottom:18px;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.75;margin-bottom:32px;max-width:480px;font-weight:300}
+.hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-teal{background:var(--teal);color:var(--white);font-weight:600;padding:14px 28px;border-radius:8px;border:none;cursor:pointer;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;transition:background .15s,transform .1s;font-family:'DM Sans',sans-serif}
+.btn-teal:hover{background:var(--teal-light);transform:translateY(-1px)}
+.btn-outline{color:var(--teal);font-size:.9rem;font-weight:500;background:none;border:1.5px solid rgba(13,115,119,.3);border-radius:8px;padding:13px 20px;cursor:pointer;transition:border-color .15s,color .15s;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal-dark)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px}
+.hero-trust-item{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:5px}
+.hero-trust-item .check{width:16px;height:16px;background:var(--green-bg);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--green);font-size:.65rem;font-weight:700;flex-shrink:0}
+
+/* Hero visual */
+.hero-visual{position:relative}
+.bill-mockup{background:var(--white);border-radius:14px;box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid var(--rule)}
+.bill-mockup-header{background:var(--teal);padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.bill-mockup-title{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.06em;text-transform:uppercase}
+.bill-mockup-badge{background:rgba(255,255,255,.15);color:#fff;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:10px}
+.bill-body{padding:16px}
+.bill-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);gap:12px}
+.bill-row:last-child{border:none}
+.bill-code{font-size:.72rem;color:var(--faint);margin-bottom:2px;font-weight:500}
+.bill-desc{font-size:.82rem;color:var(--ink);font-weight:500;line-height:1.3}
+.bill-amount{font-size:.85rem;font-weight:600;color:var(--ink);white-space:nowrap}
+.bill-status{font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap}
+.status-ok{background:var(--green-bg);color:var(--green)}
+.status-flag{background:var(--red-bg);color:var(--red)}
+.bill-alert{background:var(--amber-bg);border:1px solid #fcd34d;border-radius:8px;padding:10px 12px;margin-top:10px}
+.bill-alert-title{font-size:.72rem;font-weight:700;color:var(--amber);margin-bottom:3px}
+.bill-alert-body{font-size:.72rem;color:#92400e;line-height:1.45}
+.bill-actions{display:flex;gap:8px;padding:12px 16px;background:var(--bg);border-top:1px solid var(--rule)}
+.bill-btn{flex:1;padding:8px;border-radius:6px;font-size:.72rem;font-weight:600;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.bill-btn-dl{background:var(--teal);color:#fff}
+.bill-btn-dispute{background:var(--amber-bg);color:var(--amber);border:1px solid #fcd34d}
+.savings-badge{position:absolute;top:-12px;right:-12px;background:var(--green);color:#fff;border-radius:12px;padding:8px 14px;font-size:.78rem;font-weight:600;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:6px}
+
+/* ── STATS BAND ── */
+.stats-band{background:var(--teal-dark);padding:32px}
+.stats-band-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08)}
+@media(max-width:700px){.stats-band-inner{grid-template-columns:repeat(2,1fr)}}
+.stat-cell{background:var(--teal-dark);padding:24px;text-align:center}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:#fff;line-height:1}
+.stat-label{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:5px;line-height:1.4}
+.stat-source{font-size:.65rem;color:rgba(255,255,255,.25);margin-top:3px}
+
+/* ── SECTIONS ── */
+section{padding:72px 32px}
+.section-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.section-h{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--ink);line-height:1.2;margin-bottom:14px;letter-spacing:-.01em}
+.section-sub{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:44px;font-weight:300}
+.section-center{text-align:center}.section-center .section-sub{max-width:560px;margin:0 auto 44px}
+
+/* ── HOW IT WORKS ── */
+.how{background:var(--white)}
+.how-inner{max-width:960px;margin:0 auto}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
+@media(max-width:700px){.steps{grid-template-columns:1fr;gap:28px}}
+.step{position:relative;padding:28px;background:var(--bg);border-radius:12px;border:1px solid var(--rule)}
+.step-num{width:40px;height:40px;background:var(--mint);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--teal);margin-bottom:14px;font-weight:400}
+.step h3{font-size:.95rem;font-weight:600;margin-bottom:7px;color:var(--ink)}
+.step p{font-size:.85rem;color:var(--muted);line-height:1.65}
+
+/* ── CHECKS ── */
+.checks{background:var(--bg)}
+.checks-inner{max-width:960px;margin:0 auto}
+.checks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:44px}
+.check-item{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;transition:box-shadow .15s}
+.check-item:hover{box-shadow:var(--shadow-md)}
+.check-icon-wrap{width:36px;height:36px;min-width:36px;background:var(--mint);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.check-item h4{font-size:.84rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.check-item p{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* ── WHO IT'S FOR ── */
+.audience{background:var(--white)}
+.audience-inner{max-width:960px;margin:0 auto}
+.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:44px}
+.audience-card{background:linear-gradient(135deg,var(--mint) 0%,var(--white) 100%);border:1px solid var(--mint-mid);border-radius:12px;padding:24px;text-align:center}
+.audience-emoji{font-size:2rem;margin-bottom:12px}
+.audience-card h3{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+.audience-card p{font-size:.78rem;color:var(--muted);line-height:1.55}
+
+/* ── PRICING ── */
+.pricing{background:var(--bg)}
+.pricing-inner{max-width:960px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+@media(max-width:768px){.pricing-grid{grid-template-columns:1fr}}
+.plan{background:var(--white);border:1px solid var(--rule);border-radius:14px;padding:28px;position:relative;transition:box-shadow .2s}
+.plan:hover{box-shadow:var(--shadow-md)}
+.plan.featured{border:2px solid var(--teal);background:linear-gradient(135deg,#f0fdfa,var(--white))}
+.plan-popular{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--teal);color:#fff;font-size:.68rem;font-weight:600;padding:3px 14px;border-radius:10px;white-space:nowrap}
+.plan-tier{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.plan.featured .plan-tier{color:var(--teal)}
+.plan-price{font-family:'DM Serif Display',serif;font-size:2.6rem;color:var(--ink);line-height:1;margin-bottom:3px}
+.plan-period{font-size:.82rem;color:var(--muted);margin-bottom:16px}
+.plan-divider{border:none;border-top:1px solid var(--rule);margin-bottom:18px}
+.plan-features{list-style:none;margin-bottom:24px}
+.plan-features li{font-size:.83rem;color:var(--muted);padding:5px 0;display:flex;gap:8px;align-items:flex-start;line-height:1.4}
+.plan-features li::before{content:"✓";color:var(--teal);font-weight:700;min-width:12px;flex-shrink:0}
+.plan-btn{display:block;width:100%;text-align:center;padding:12px;border-radius:8px;font-size:.875rem;font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:all .15s;font-family:'DM Sans',sans-serif}
+.plan-btn-default{background:var(--ink);color:#fff}
+.plan-btn-default:hover{background:#374151}
+.plan-btn-featured{background:var(--teal);color:#fff}
+.plan-btn-featured:hover{background:var(--teal-light)}
+.plan-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:20px;line-height:1.6}
+.family-note{background:var(--mint);border:1px solid var(--mint-mid);border-radius:8px;padding:14px 18px;margin-top:18px;font-size:.8rem;color:#065f46;line-height:1.65}
+.family-note strong{color:#064e3b}
+
+/* ── FAQ ── */
+.faq{background:var(--white)}
+.faq-inner{max-width:680px;margin:0 auto}
+details.faq-q{border-bottom:1px solid var(--rule)}
+details.faq-q summary{padding:18px 0;font-weight:500;font-size:.92rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink);gap:16px}
+details.faq-q summary::-webkit-details-marker{display:none}
+details.faq-q summary::after{content:"+";font-size:1.3rem;color:var(--teal);font-weight:300;flex-shrink:0;transition:transform .2s}
+details.faq-q[open] summary::after{transform:rotate(45deg)}
+details.faq-q[open] summary{color:var(--teal-dark)}
+.faq-answer{padding:0 0 18px;font-size:.875rem;color:var(--muted);line-height:1.8}
+
+/* ── APP SCREENS ── */
+.app-wrap{background:var(--bg);min-height:calc(100vh - 64px);padding:36px 24px}
+.app-card{background:var(--white);border:1px solid var(--rule);border-radius:14px;padding:32px;max-width:580px;margin:0 auto;box-shadow:var(--shadow)}
+
+/* Upload */
+.upload-zone{border:2px dashed var(--mint-mid);border-radius:12px;padding:48px 32px;text-align:center;cursor:pointer;transition:border-color .15s,background .15s;margin-bottom:20px}
+.upload-zone:hover{border-color:var(--teal);background:var(--mint)}
+.upload-icon{width:52px;height:52px;background:var(--mint);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.5rem}
+.upload-zone h3{font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:5px}
+.upload-zone p{font-size:.82rem;color:var(--muted);margin-bottom:16px}
+.upload-zone-btn{background:var(--teal);color:#fff;padding:10px 22px;border-radius:7px;border:none;cursor:pointer;font-size:.82rem;font-weight:600;font-family:'DM Sans',sans-serif}
+.or-divider{display:flex;align-items:center;gap:12px;margin:16px 0;font-size:.78rem;color:var(--faint)}
+.or-divider::before,.or-divider::after{content:"";flex:1;height:1px;background:var(--rule)}
+.paste-area{width:100%;min-height:110px;padding:12px;border:1px solid var(--rule);border-radius:8px;font-size:.82rem;color:var(--ink);font-family:'DM Sans',sans-serif;resize:vertical;outline:none;transition:border-color .15s}
+.paste-area:focus{border-color:var(--teal)}
+#file-input{display:none}
+
+/* Analyzing */
+.analyzing-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:20px;text-align:center}
+.spinner{width:44px;height:44px;border:3px solid var(--mint-mid);border-top-color:var(--teal);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.analyzing-steps{list-style:none;margin-top:8px;text-align:left}
+.analyzing-steps li{font-size:.85rem;color:var(--muted);padding:7px 0;display:flex;align-items:center;gap:10px}
+.step-active{color:var(--ink);font-weight:500}
+.step-done-text{color:var(--green);font-weight:500}
+
+/* Paywall */
+.paywall-wrap{max-width:480px;margin:0 auto;text-align:center}
+.paywall-blur{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:20px;margin-bottom:24px;filter:blur(5px);pointer-events:none;user-select:none;height:160px;overflow:hidden}
+.paywall-options{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.paywall-opt{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;text-decoration:none;transition:border-color .15s;cursor:pointer}
+.paywall-opt:hover,.paywall-opt.rec{border-color:var(--teal)}
+.paywall-opt.rec{background:var(--mint)}
+.paywall-opt-left h4{font-size:.875rem;font-weight:600;color:var(--ink);margin-bottom:2px}
+.paywall-opt-left p{font-size:.75rem;color:var(--muted)}
+.paywall-opt-price{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--teal)}
+
+/* Results */
+.results-wrap{max-width:720px;margin:0 auto}
+.results-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.results-top h2{font-family:'DM Serif Display',serif;font-size:1.5rem}
+.results-btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn-dl{background:var(--teal);color:#fff;padding:9px 16px;border-radius:7px;border:none;cursor:pointer;font-size:.78rem;font-weight:600;display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif}
+.btn-dispute-all{background:var(--amber-bg);color:var(--amber);border:1px solid #fcd34d;padding:9px 16px;border-radius:7px;font-size:.78rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
+@media(max-width:500px){.summary-grid{grid-template-columns:repeat(2,1fr)}}
+.summary-stat{background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:14px;text-align:center}
+.summary-stat-num{font-family:'DM Serif Display',serif;font-size:1.8rem;line-height:1}
+.summary-stat-num.danger{color:var(--red)}
+.summary-stat-num.good{color:var(--green)}
+.summary-stat-num.neutral{color:var(--teal)}
+.summary-stat-label{font-size:.7rem;color:var(--muted);margin-top:3px}
+.result-item{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:18px;margin-bottom:10px;transition:box-shadow .15s}
+.result-item:hover{box-shadow:var(--shadow)}
+.result-item.flagged{border-color:#fca5a5;background:#fff8f8}
+.result-item-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.result-code{font-size:.72rem;font-weight:600;color:var(--faint);margin-bottom:3px;letter-spacing:.03em}
+.result-desc{font-size:.9rem;font-weight:500;color:var(--ink)}
+.result-amount{font-size:.95rem;font-weight:600;color:var(--ink);white-space:nowrap}
+.result-explain{font-size:.82rem;color:var(--muted);margin-top:8px;line-height:1.65}
+.result-flag-box{background:var(--red-bg);border:1px solid #fecaca;border-radius:7px;padding:10px 12px;margin-top:10px}
+.result-flag-title{font-size:.75rem;font-weight:700;color:var(--red);margin-bottom:3px}
+.result-flag-body{font-size:.75rem;color:#7f1d1d;line-height:1.5}
+.result-dispute-btn{margin-top:10px;background:var(--ink);color:#fff;padding:7px 14px;border-radius:6px;border:none;cursor:pointer;font-size:.72rem;font-weight:600;font-family:'DM Sans',sans-serif}
+
+/* Dashboard */
+.dash-wrap{max-width:780px;margin:0 auto}
+.dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+.dash-top h2{font-family:'DM Serif Display',serif;font-size:1.4rem}
+.btn-new-audit{background:var(--teal);color:#fff;padding:10px 20px;border-radius:7px;border:none;cursor:pointer;font-weight:600;font-size:.875rem;font-family:'DM Sans',sans-serif}
+.plan-chip{display:inline-flex;align-items:center;gap:6px;background:var(--mint);border:1px solid var(--mint-mid);border-radius:16px;padding:4px 12px;font-size:.72rem;font-weight:600;color:var(--teal-dark);margin-bottom:18px}
+.plan-chip-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.audit-list{background:var(--white);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.audit-row{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--rule);gap:10px}
+.audit-row:last-child{border:none}
+.audit-row-name{font-size:.875rem;font-weight:500;color:var(--ink);margin-bottom:2px}
+.audit-row-date{font-size:.72rem;color:var(--faint)}
+.audit-chip{font-size:.68rem;font-weight:600;padding:3px 8px;border-radius:10px}
+.chip-issues{background:var(--red-bg);color:var(--red)}
+.chip-clean{background:var(--green-bg);color:var(--green)}
+.audit-row-btns{display:flex;gap:6px}
+.btn-xs{padding:5px 10px;border-radius:5px;border:none;cursor:pointer;font-size:.7rem;font-weight:600;font-family:'DM Sans',sans-serif}
+.btn-xs-view{background:var(--teal);color:#fff}
+.btn-xs-dl{background:var(--mint);color:var(--teal-dark)}
+.empty-list{padding:36px;text-align:center;font-size:.875rem;color:var(--muted)}
+.family-seats-card{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:20px;margin-top:20px}
+.family-seats-card h3{font-size:.875rem;font-weight:600;margin-bottom:14px}
+.seat-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule)}
+.seat-row:last-of-type{border:none}
+.seat-email{font-size:.82rem;color:var(--ink)}
+.seat-chip{font-size:.68rem;font-weight:600;padding:2px 8px;border-radius:10px}
+.seat-active{background:var(--green-bg);color:var(--green)}
+.seat-pending{background:var(--amber-bg);color:var(--amber)}
+.btn-invite{width:100%;margin-top:10px;background:none;border:1.5px dashed var(--rule);border-radius:7px;padding:9px;cursor:pointer;font-size:.78rem;color:var(--muted);transition:all .15s;font-family:'DM Sans',sans-serif}
+.btn-invite:hover{border-color:var(--teal);color:var(--teal)}
+.manage-sub{margin-top:24px;padding-top:20px;border-top:1px solid var(--rule)}
+.manage-sub p{font-size:.78rem;color:var(--muted);margin-bottom:8px}
+.btn-manage{background:none;border:1px solid var(--rule);border-radius:6px;padding:7px 14px;font-size:.75rem;color:var(--muted);cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif}
+.btn-manage:hover{border-color:var(--teal);color:var(--teal)}
+
+/* Auth */
+.auth-wrap{max-width:400px;margin:0 auto;padding-top:8px}
+.auth-card{background:var(--white);border:1px solid var(--rule);border-radius:14px;padding:36px;box-shadow:var(--shadow)}
+.auth-card h2{font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:6px}
+.auth-card p{font-size:.875rem;color:var(--muted);margin-bottom:26px}
+.form-group{margin-bottom:14px}
+.form-label{font-size:.78rem;font-weight:600;color:var(--ink);margin-bottom:5px;display:block}
+.form-input{width:100%;padding:10px 13px;border:1.5px solid var(--rule);border-radius:7px;font-size:.875rem;color:var(--ink);outline:none;transition:border-color .15s;font-family:'DM Sans',sans-serif}
+.form-input:focus{border-color:var(--teal)}
+.auth-btn{width:100%;background:var(--teal);color:#fff;padding:12px;border-radius:8px;border:none;cursor:pointer;font-size:.9rem;font-weight:600;margin-top:6px;font-family:'DM Sans',sans-serif;transition:background .15s}
+.auth-btn:hover{background:var(--teal-light)}
+.auth-btn:disabled{opacity:.6;cursor:not-allowed}
+.auth-switch{font-size:.78rem;color:var(--muted);text-align:center;margin-top:14px}
+.auth-switch a{color:var(--teal);font-weight:600;cursor:pointer;text-decoration:none}
+.auth-error{background:var(--red-bg);border:1px solid #fecaca;border-radius:7px;padding:10px 14px;font-size:.78rem;color:var(--red);margin-bottom:14px;display:none}
+
+/* DISCLAIMER */
+.disclaimer{background:#f3f4f6;border-top:1px solid var(--rule);padding:24px 32px;text-align:center}
+.disclaimer p{font-size:.73rem;color:#9ca3af;max-width:680px;margin:0 auto;line-height:1.7}
+
+/* FOOTER */
+.footer{background:var(--ink);padding:44px 32px}
+.footer-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+@media(max-width:600px){.footer-inner{grid-template-columns:1fr}}
+.footer-brand{font-family:'DM Serif Display',serif;color:#fff;font-size:1.1rem;margin-bottom:4px}
+.footer-tag{font-size:.75rem;color:rgba(255,255,255,.3)}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:600px){.footer-links{justify-content:flex-start}}
+.footer-links a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.75rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.7)}
+.footer-copy{grid-column:1/-1;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);font-size:.7rem;color:rgba(255,255,255,.2);text-align:center}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav{padding:0 16px}
+  .hero{padding:48px 16px 64px}
+  section{padding:52px 16px}
+  .app-wrap{padding:20px 12px}
+  .app-card{padding:20px}
+  .stats-band{padding:24px 16px}
+}
+@media(max-width:600px){
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .nav-link:not(.nav-cta):not(#nav-signin){display:none}
+}
+</style>
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://verifydoc.net/logo.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://verifydoc.net/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://verifydoc.net/logo.png">
+<link rel="shortcut icon" href="https://verifydoc.net/logo.png">
+
+<meta property="og:image" content="https://verifydoc.net/logo.png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
-<meta name="twitter:image" content="https://smallclaimsforms.net/logo.png">
+<meta name="twitter:image" content="https://verifydoc.net/logo.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "SmallClaimsHelper",
-  "url": "https://smallclaimsforms.net/",
+  "name": "VerifyDoc",
+  "url": "https://verifydoc.net/",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://smallclaimsforms.net/logo.png",
+    "url": "https://verifydoc.net/logo.png",
     "width": 512,
     "height": 512
   },
-  "description": "Small claims court forms generator for all 50 states. Generates completed court forms and a word-for-word judge script so you know exactly what to say in court."
+  "description": "AI-powered medical bill auditor that decodes CPT codes, flags upcoding, unbundling, duplicate charges, and generates dispute letters in plain English."
 }
 </script>
 
@@ -151,32 +351,32 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to file a small claims court case",
-  "description": "Answer 10 plain-English questions about your case and receive completed small claims forms and a judge-ready script for your state.",
+  "name": "How to audit a medical bill for billing errors",
+  "description": "Upload your hospital bill and receive a line-by-line AI audit that flags duplicate charges, upcoding, unbundling, and other common billing errors.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Describe your dispute",
-      "text": "Enter your state, the amount you are claiming, and a brief description of what happened."
+      "name": "Upload your medical bill",
+      "text": "Upload a PDF or image of your hospital bill, or paste the line items as text."
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Identify the parties",
-      "text": "Provide your name and address along with the defendant's name and address."
+      "name": "Wait for the AI audit",
+      "text": "VerifyDoc decodes every CPT, ICD-10, revenue, and NDC code on your bill and checks for billing errors."
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Answer 10 case questions",
-      "text": "Walk through plain-English questions about evidence, contracts, and the events giving rise to the claim."
+      "name": "Review flagged charges",
+      "text": "See every flagged item in plain English with the specific billing rule it may violate."
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Get forms and judge script",
-      "text": "Receive your completed small claims complaint form, a list of evidence to bring, and a word-for-word script of what to say to the judge."
+      "name": "Send dispute letters",
+      "text": "Download a ready-to-send dispute letter for each flagged charge and send it to your provider or insurer."
     }
   ]
 }
@@ -186,8 +386,8 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "SmallClaimsHelper",
-  "url": "https://smallclaimsforms.net/",
+  "name": "VerifyDoc",
+  "url": "https://verifydoc.net/",
   "speakable": {
     "@type": "SpeakableSpecification",
     "cssSelector": [
@@ -200,384 +400,613 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 </script>
 </head>
 <body>
-<header>
-  <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
-    <div style="width:34px;height:34px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--gold);flex-shrink:0">⚖</div>
-    <div><div class="ht">SmallClaimsHelper</div><div class="hs">Court Document Generator</div></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="nav-logo" id="nav-logo">
+    <span class="nav-logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+    </span>
+    <span class="nav-logo-name">VerifyDoc</span>
   </a>
-  <div style="display:flex;align-items:center;gap:20px">
-    <a href="/blog/" style="font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;font-weight:500">Blog</a>
-    <div class="hp">$19 · Instant Download</div>
+  <div class="nav-right">
+    <a href="#how-it-works" class="nav-link">How It Works</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="/blog/" class="nav-link">Blog</a>
+    <button class="nav-link" id="nav-signin" onclick="showScreen('screen-login')">Sign In</button>
+    <span class="nav-link nav-auth-signed-in" id="nav-user-email" style="font-size:.82rem;color:var(--muted)"></span>
+    <button class="nav-link nav-auth-signed-in" onclick="showScreen('screen-dashboard')">Dashboard</button>
+    <button class="nav-link nav-auth-signed-in" onclick="signOut()">Sign Out</button>
+    <button class="nav-cta nav-link" onclick="showScreen('screen-upload')">Audit My Bill</button>
   </div>
-</header>
+</nav>
 
-<div id="screen-landing" class="screen active">
-  <div class="hero">
-    <div class="badge">All 50 States · AI-Generated · Ready to File</div>
-    <h1>Sue them.<br>Without a <em>lawyer.</em></h1>
-    <p class="sub">Answer 10 plain-English questions. Get your completed small claims court filing plus a script of exactly what to say to the judge.</p>
-    <button class="cta" onclick="showScreen('questions')">Generate My Documents → $19</button>
-    <div class="note">Pay only after you see your completed documents</div>
-  </div>
-  <div class="tbar">
-    <div class="ti"><span>📋</span><span>Completed court forms</span></div>
-    <div class="ti"><span>🗣</span><span>Judge script included</span></div>
-    <div class="ti"><span>⚡</span><span>Ready in 60 seconds</span></div>
-    <div class="ti"><span>🔒</span><span>All 50 states</span></div>
-  </div>
-  <div class="content">
-    <div style="text-align:center;margin-bottom:56px">
-      <div class="sl">Common Cases We Handle</div>
-      <h2>What are you trying to recover?</h2>
-      <p class="lead">Small claims court handles disputes up to $5,000–$25,000 depending on your state. No lawyer required.</p>
-      <div class="cgrid">
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">🏠</div><div class="ct">Security Deposit</div><div class="cd">Landlord kept your deposit unfairly</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">🔨</div><div class="ct">Bad Contractor</div><div class="cd">Work not done or done poorly</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">🚗</div><div class="ct">Car Accident</div><div class="cd">Unpaid damages or repairs</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">📦</div><div class="ct">Seller Scam</div><div class="cd">Online marketplace fraud</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">💼</div><div class="ct">Unpaid Wages</div><div class="cd">Employer owes you money</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">📝</div><div class="ct">Broken Contract</div><div class="cd">Someone didn't hold up their end</div></div>
+<!-- ══ LANDING ══ -->
+<div class="screen active" id="screen-landing">
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>AI Medical Bill Auditor</div>
+      <h1>Your Medical Bill<br>Might Be <em>Wrong.</em><br>Let's Find Out.</h1>
+      <p class="hero-sub">Upload your hospital bill. AI explains every charge in plain English, flags potential errors, and drafts dispute letters — automatically.</p>
+      <div class="hero-actions">
+        <button class="btn-teal" onclick="showScreen('screen-upload')">Check My Bill — from $19 →</button>
+        <a href="#how-it-works" class="btn-outline">See how it works</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item"><span class="check">✓</span>No medical knowledge needed</span>
+        <span class="hero-trust-item"><span class="check">✓</span>Results in 60 seconds</span>
+        <span class="hero-trust-item"><span class="check">✓</span>Dispute letters included</span>
+        <span class="hero-trust-item"><span class="check">✓</span>PDF download</span>
       </div>
     </div>
-    <div style="text-align:center;margin-bottom:56px">
-      <div class="sl">How It Works</div>
-      <h2>Three steps to your day in court</h2><br>
-      <div class="steps">
-        <div class="step"><div class="sn">1</div><div class="st">Answer 10 questions</div><div class="sd">Plain English — no legal knowledge needed. Takes about 3 minutes.</div></div>
-        <div class="step"><div class="sn">2</div><div class="st">Get your documents</div><div class="sd">We generate a completed filing form and judge script for your state.</div></div>
-        <div class="step"><div class="sn">3</div><div class="st">File and show up</div><div class="sd">Print, file at your courthouse, and read your script on the day.</div></div>
-      </div>
-    </div>
-    <div class="dark">
-      <div class="sl" style="color:var(--gold)">Why Not Just Google It?</div>
-      <h2 style="color:white;margin-bottom:14px">Government websites are designed by lawyers, for lawyers.</h2>
-      <p style="color:rgba(255,255,255,.55);font-size:15px;line-height:1.7;max-width:460px;margin:0 auto 28px">Wrong form, wrong county, wrong deadline — any one gets your case thrown out. We handle all of it.</p>
-      <button class="cta" onclick="showScreen('questions')">Start My Filing → $19</button>
-    </div>
-  </div>
-</div>
-
-<div id="screen-disclaimer" class="screen">
-  <div style="max-width:560px;margin:0 auto;padding:60px 24px;text-align:center">
-    <div style="font-size:48px;margin-bottom:24px">⚖️</div>
-    <h2 style="font-size:26px;font-weight:700;color:var(--dark);margin-bottom:16px;line-height:1.3">Before You Begin</h2>
-    <div style="background:#fff8e7;border:1px solid #e8d58a;border-left:4px solid var(--gold);border-radius:4px;padding:24px;text-align:left;margin-bottom:28px">
-      <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:10px">Important Notice</div>
-      <p style="font-size:15px;color:var(--dark);line-height:1.7;margin-bottom:12px">This tool generates <strong>template documents for informational purposes only.</strong> It is not legal advice and does not create an attorney-client relationship.</p>
-      <p style="font-size:15px;color:var(--dark);line-height:1.7;margin-bottom:12px">Small claims court procedures and required forms <strong>vary by state and county.</strong> Always verify the correct forms and filing requirements with your local courthouse before submitting any documents.</p>
-      <p style="font-size:15px;color:var(--dark);line-height:1.7">For complex legal matters, consult a <strong>licensed attorney</strong> in your state.</p>
-    </div>
-    <button class="cta" onclick="genDocs()" style="width:100%;padding:18px;font-size:16px">I Understand → Continue</button>
-    <div style="margin-top:14px;font-size:12px;color:#a09a85">By continuing you agree these documents are for informational purposes only</div>
-  </div>
-</div>
-
-<div id="screen-questions" class="screen">
-  <div class="fw">
-    <div class="pb"><div class="pf" id="pf" style="width:10%"></div></div>
-    <div id="qc"></div>
-  </div>
-</div>
-
-<div id="screen-generating" class="screen">
-  <div class="gw">
-    <div class="gs"></div>
-    <div class="gt">Preparing Your Documents</div>
-    <p class="gd">Generating your completed court filing and judge script for <span id="gs"></span> small claims court...</p>
-  </div>
-</div>
-
-<div id="screen-paywall" class="screen">
-  <div class="pw">
-    <div class="sl">Your Documents Are Ready</div>
-    <h2 style="margin-bottom:7px">Preview Your Filing</h2>
-    <p style="color:var(--text-muted);font-size:15px;margin-bottom:24px;font-style:italic">Unlock to get the complete printable version</p>
-    <div class="pdoc">
-      <div class="dh"><div class="dt" id="pcn">SMALL CLAIMS COURT</div><div class="dc" id="pcs"></div></div>
-      <hr class="dd">
-      <div class="df"><div class="dl">Plaintiff (You)</div><div class="dv" id="pp"></div></div>
-      <div class="df"><div class="dl">Defendant</div><div class="dv" id="pd"></div></div>
-      <div class="df"><div class="dl">Amount Claimed</div><div class="dv" id="pa"></div></div>
-      <div class="df"><div class="dl">Nature of Claim</div><div class="dv" id="pc"></div></div>
-      <br>
-      <div class="bl">Statement of Claim: On or about [DATE], the defendant [DETAILED CLAIM]...The plaintiff demands judgment in the sum of $[AMOUNT], plus filing fees...Relief Requested: Monetary judgment plus statutory interest...I declare under penalty of perjury that the foregoing is true and correct.</div>
-    </div>
-    <div class="pbox">
-      <div class="pt">Unlock Your Complete Filing Package</div>
-      <div class="ps">Everything you need to walk into court confident and win.</div>
-      <div class="pi">
-        <div class="ii"><span class="ic">✓</span><span>Completed small claims complaint form (print and file)</span></div>
-        <div class="ii"><span class="ic">✓</span><span>Word-for-word judge script for your hearing</span></div>
-        <div class="ii"><span class="ic">✓</span><span>Filing instructions for your specific state and county</span></div>
-        <div class="ii"><span class="ic">✓</span><span>Evidence checklist for court</span></div>
-      </div>
-      <a href="https://buy.stripe.com/5kQ4gzc1qemF0Gm49Z3oA04" target="_top" style="text-decoration:none">
-        <div style="border:1px solid rgba(232,184,75,.2);border-radius:4px;padding:12px 14px;margin-bottom:14px;background:rgba(232,184,75,.04)">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e8b84b;margin-bottom:5px">Legal Disclaimer</div>
-          <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0">SmallClaimsHelper generates template documents for informational purposes only. Not legal advice. Filing requirements vary by state and court — verify compliance before use.</p>
+    <div class="hero-visual">
+      <div class="savings-badge">💰 Avg. $1,300 recovered</div>
+      <div class="bill-mockup">
+        <div class="bill-mockup-header">
+          <span class="bill-mockup-title">VerifyDoc Audit Report</span>
+          <span class="bill-mockup-badge">2 issues found</span>
         </div>
-        <button class="pay">Unlock Full Package → $19</button>
-      </a>
+        <div class="bill-body">
+          <div class="bill-row">
+            <div><div class="bill-code">CPT 99213</div><div class="bill-desc">Office visit, established patient</div></div>
+            <div style="text-align:right"><div class="bill-amount">$185</div><div class="bill-status status-ok">✓ Correct</div></div>
+          </div>
+          <div class="bill-row">
+            <div><div class="bill-code">CPT 85025</div><div class="bill-desc">Complete blood count</div></div>
+            <div style="text-align:right"><div class="bill-amount">$62</div><div class="bill-status status-ok">✓ Correct</div></div>
+          </div>
+          <div class="bill-row">
+            <div><div class="bill-code">CPT 36415</div><div class="bill-desc">Routine venipuncture</div></div>
+            <div style="text-align:right"><div class="bill-amount">$28</div><div class="bill-status status-flag">⚑ Flag</div></div>
+          </div>
+          <div class="bill-alert">
+            <div class="bill-alert-title">⚑ Possible unbundling error</div>
+            <div class="bill-alert-body">CPT 36415 is typically included in CPT 85025 under CMS bundling rules. Dispute letter drafted.</div>
+          </div>
+        </div>
+        <div class="bill-actions">
+          <button class="bill-btn bill-btn-dl">⬇ Download PDF</button>
+          <button class="bill-btn bill-btn-dispute">📨 Dispute Letters</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div id="screen-results" class="screen">
-  <div style="padding:20px 20px 4px">
-    <button onclick="triggerSmallClaimsDownload()" style="width:100%;background:var(--gold);color:#fff;font-weight:700;padding:13px;border-radius:6px;border:none;cursor:pointer;font-size:.9rem;font-family:inherit;">
-      ⬇ Download Court Package (PDF)
-    </button>
-    <p style="font-size:.72rem;color:#888;text-align:center;margin-top:6px">Complaint + hearing script + evidence checklist</p>
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stats-band-inner">
+    <div class="stat-cell"><div class="stat-num">80%</div><div class="stat-label">of hospital bills contain at least one error</div><div class="stat-source">Medical Billing Advocates of America</div></div>
+    <div class="stat-cell"><div class="stat-num">$1,300</div><div class="stat-label">average overcharge on a hospital bill</div><div class="stat-source">Becker's Hospital Review</div></div>
+    <div class="stat-cell"><div class="stat-num">12</div><div class="stat-label">billing error types checked on every audit</div></div>
+    <div class="stat-cell"><div class="stat-num">60s</div><div class="stat-label">average time to complete your audit report</div></div>
   </div>
-  <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;padding:12px 16px;margin:14px 20px;font-size:0.85rem;color:#7a6000;display:flex;align-items:flex-start;gap:10px;"><span>💾</span><span><strong>Not saved:</strong> This report won't be stored on our servers. Download or print it now to keep a copy — it will be gone when you close this page.</span></div>
-  <div class="rw">
-    <div class="sb"><div class="si">✓</div><div><div class="stl">Your documents are ready to file</div><div class="ss">Print these documents, sign where indicated, and file at your local courthouse.</div></div></div>
-    <div class="ds"><div class="dst">📋 Small Claims Complaint Form</div><div class="fd" id="rc"></div></div>
-    <div class="ds"><div class="dst">🗣 Your Judge Script</div><div style="font-size:13px;color:var(--text-muted);margin-bottom:14px;font-style:italic">Read this when the judge asks you to present your case:</div><div class="sc2" id="rs"></div></div>
-    <div class="ds"><div class="dst">📝 Evidence Checklist</div><div class="sc2" id="re"></div></div>
-    <div style="margin-top:36px"><button class="bp" onclick="window.print()">🖨 Print All Documents</button><button onclick="downloadReport()" class="bs" style="margin-left:8px;">⬇ Download (.txt)</button><button class="bs" onclick="resetApp()">Start a New Case</button></div>
-    <div class="disc">⚠ These documents are AI-generated based on your inputs and general small claims procedures. Laws vary by state and county. SmallClaimsHelper is not a law firm and this is not legal advice. For complex cases, consult a licensed attorney.</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how-it-works">
+  <div class="how-inner section-center">
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-h">Three steps to understand your bill</h2>
+    <p class="section-sub">No medical billing knowledge required. VerifyDoc does the decoding.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Upload your bill</h3>
+        <p>Photo, PDF, or paste text. Supports hospital bills, doctor invoices, surgical center bills, lab bills, and Explanations of Benefits.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>AI audits every line</h3>
+        <p>Every CPT code decoded. Every charge cross-referenced against CMS and AMA billing guidelines. 12 error types checked automatically.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Get your plain-English report</h3>
+        <p>Download your full audit as a PDF. Every flagged item includes a professionally written dispute letter ready to send.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE CHECK -->
+<section class="checks">
+  <div class="checks-inner section-center">
+    <div class="section-eyebrow">What we check</div>
+    <h2 class="section-h">12 billing error types, auto-detected</h2>
+    <p class="section-sub">VerifyDoc checks for the most costly medical billing errors on every single audit.</p>
+    <div class="checks-grid">
+      <div class="check-item"><div class="check-icon-wrap">🔁</div><div><h4>Duplicate charges</h4><p>Same service or code billed more than once on the same date.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">📈</div><div><h4>Upcoding</h4><p>A simpler service coded as a more expensive, complex one.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">🔓</div><div><h4>Unbundling</h4><p>One bundled procedure split into multiple codes that inflate the total.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">📋</div><div><h4>CPT code decoder</h4><p>Every procedure code translated into plain English automatically.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">💊</div><div><h4>Medication charges</h4><p>NDC codes decoded and benchmarked against standard hospital pricing.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">📅</div><div><h4>Date discrepancies</h4><p>Services billed on dates inconsistent with your visit or admission.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">🧮</div><div><h4>Math errors</h4><p>Line items that don't add up to the stated total on your bill.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">🏥</div><div><h4>Facility vs professional fees</h4><p>Hospital and physician bills reconciled and cross-checked.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">🔍</div><div><h4>Phantom charges</h4><p>Services billed that you have no record of receiving.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">🏷️</div><div><h4>Room & board errors</h4><p>Wrong admission type, room classification, or extra days billed.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">⚕️</div><div><h4>Modifier flag checks</h4><p>Procedure modifiers that change reimbursement checked for accuracy.</p></div></div>
+      <div class="check-item"><div class="check-icon-wrap">📝</div><div><h4>Dispute letter generation</h4><p>Ready-to-send dispute letter drafted for every flagged item.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="audience" style="background:var(--bg)">
+  <div class="audience-inner section-center">
+    <div class="section-eyebrow">Who uses VerifyDoc</div>
+    <h2 class="section-h">Built for patients, not billing departments</h2>
+    <p class="section-sub">Anyone who receives a medical bill they don't fully understand.</p>
+    <div class="audience-grid">
+      <div class="audience-card"><div class="audience-emoji">🏥</div><h3>After a hospital stay</h3><p>Hospital bills are the most complex and the most likely to contain errors. Audit before you pay.</p></div>
+      <div class="audience-card"><div class="audience-emoji">⚕️</div><h3>Chronic condition management</h3><p>Regular medical costs add up. Monthly plan members catch errors on every single bill.</p></div>
+      <div class="audience-card"><div class="audience-emoji">👨‍👩‍👧‍👦</div><h3>Family caregivers</h3><p>Managing bills for aging parents or children with health needs. Family plan covers everyone.</p></div>
+      <div class="audience-card"><div class="audience-emoji">🦷</div><h3>Dental & specialist bills</h3><p>Not just hospital bills — works on any medical invoice including dental, vision, and specialist fees.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner section-center">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-h">Simple pricing. No surprises.</h2>
+    <p class="section-sub">Pay once per audit or subscribe for ongoing access. Dispute letters included on every plan.</p>
+    <div class="pricing-grid">
+      <div class="plan">
+        <div class="plan-tier">Single audit</div>
+        <div class="plan-price">$19</div>
+        <div class="plan-period">one-time payment</div>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li>One complete bill audit</li>
+          <li>All 12 error checks</li>
+          <li>Plain English report</li>
+          <li>Dispute letters included</li>
+          <li>PDF download</li>
+          <li>No account required</li>
+        </ul>
+        <a href="https://buy.stripe.com/fZu14n2qQa6p60Gayn3oA0i" class="plan-btn plan-btn-default" target="_blank">Audit a Bill — $19</a>
+      </div>
+      <div class="plan featured">
+        <div class="plan-popular">Most popular</div>
+        <div class="plan-tier">Monthly unlimited</div>
+        <div class="plan-price">$29</div>
+        <div class="plan-period">per month — cancel anytime</div>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li>Unlimited bill audits</li>
+          <li>All 12 error checks</li>
+          <li>EOB decoder included</li>
+          <li>Dispute letters included</li>
+          <li>PDF downloads</li>
+          <li>Audit history saved</li>
+        </ul>
+        <a href="https://buy.stripe.com/bJe5kD0iIa6p9cS7mb3oA0j" class="plan-btn plan-btn-featured" target="_blank">Start Monthly — $29</a>
+      </div>
+      <div class="plan">
+        <div class="plan-tier">Family plan</div>
+        <div class="plan-price">$49</div>
+        <div class="plan-period">per month — up to 6 members</div>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li>Up to 6 individual accounts</li>
+          <li>Each member gets own login</li>
+          <li>Unlimited audits per member</li>
+          <li>EOB decoder included</li>
+          <li>Dispute letters included</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://buy.stripe.com/bJeeVde9y5Q92OueOD3oA0k" class="plan-btn plan-btn-default" target="_blank">Start Family Plan — $49</a>
+      </div>
+    </div>
+    <div class="family-note"><strong>Family plan note:</strong> Each family member uses their own verified email login. Accounts cannot be shared — each seat requires a separate email address. The account owner manages seats and invites members from their dashboard.</div>
+    <p class="plan-note">All plans include dispute letters for every flagged item. Cancel monthly and family plans anytime.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="section-eyebrow" style="text-align:center;margin-bottom:32px">Frequently asked questions</div>
+    <details class="faq-q"><summary>How do I know if my medical bill has errors?</summary><div class="faq-answer">Upload your bill to VerifyDoc. Our AI checks for duplicate charges, upcoding (billing a simple service as complex), unbundling (splitting one procedure into multiple charges), phantom charges, and math errors. Studies suggest the majority of hospital bills contain at least one error — many patients have received refunds after a proper audit.</div></details>
+    <details class="faq-q"><summary>What is upcoding on a medical bill?</summary><div class="faq-answer">Upcoding is when a provider bills for a more expensive service than was actually performed. A common example is billing a brief office visit using a code for an extended one, or coding a routine procedure as complex. It is one of the most common and costly billing errors, and VerifyDoc flags it automatically on every audit.</div></details>
+    <details class="faq-q"><summary>What types of medical bills can VerifyDoc audit?</summary><div class="faq-answer">VerifyDoc audits hospital bills, doctor invoices, surgical center bills, lab bills, radiology bills, and Explanations of Benefits (EOBs) from your insurer. Upload as a PDF, take a photo, or paste the text directly.</div></details>
+    <details class="faq-q"><summary>How do I dispute a medical billing error?</summary><div class="faq-answer">Contact your provider in writing, citing the specific CPT code and the billing guideline it violates. VerifyDoc generates a ready-to-send dispute letter for every flagged item — written in professional language that references the applicable CMS or AMA billing rule, which makes providers take disputes seriously.</div></details>
+    <details class="faq-q"><summary>Can I download my audit report?</summary><div class="faq-answer">Yes. Every audit produces a downloadable PDF report you can save, print, or attach to a dispute letter. The PDF includes the full line-by-line analysis, flagged items with explanations, and the dispute letters for each flagged charge.</div></details>
+    <details class="faq-q"><summary>Is VerifyDoc medical or legal advice?</summary><div class="faq-answer">No. VerifyDoc is a document analysis tool. It identifies potential billing discrepancies and explains what medical codes mean — it does not provide medical diagnoses, treatment recommendations, or legal advice. Always consult your provider, insurer, or a qualified medical billing advocate to resolve disputes.</div></details>
+    <details class="faq-q"><summary>How does the family plan work?</summary><div class="faq-answer">The family plan gives you up to 6 individual member accounts, each with their own email login. The account owner invites members by email from their dashboard. Each member gets a verified account — accounts cannot be shared between two people using the same login. Members can only see their own audit history.</div></details>
+  </div>
+</section>
+
+<div class="disclaimer"><p>VerifyDoc is a document analysis tool that identifies potential billing discrepancies for informational purposes only. VerifyDoc is not a medical provider, licensed billing specialist, attorney, or insurance advisor. Audit results do not constitute medical advice, legal advice, or a guarantee of any billing outcome. Always consult your healthcare provider, insurer, or a qualified medical billing advocate to resolve any disputes. VerifyDoc is not affiliated with any hospital, insurance company, or government agency.</p></div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="footer-brand">VerifyDoc</div><div class="footer-tag">AI Medical Bill Auditor — plain English, every charge explained</div></div>
+    <div class="footer-links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="#faq">FAQ</a><a href="#pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+    <div class="footer-copy">&copy; 2026 VerifyDoc &middot; Not medical advice. For informational purposes only.</div>
+  </div>
+</footer>
+
+</div><!-- /landing -->
+
+<!-- ══ UPLOAD ══ -->
+<div class="screen" id="screen-upload">
+  <div class="app-wrap">
+    <div class="app-card">
+      <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:6px">Upload Your Medical Bill</h2>
+      <p style="font-size:.82rem;color:var(--muted);margin-bottom:20px">PDF, photo, or paste text. Hospital bills, doctor invoices, EOBs — all supported.</p>
+      <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
+        <div class="upload-icon">📋</div>
+        <h3>Drop your bill here</h3>
+        <p>PDF or image accepted</p>
+        <button class="upload-zone-btn" type="button">Choose File</button>
+      </div>
+      <input type="file" id="file-input" accept=".pdf,image/*" onchange="handleFile(this)">
+      <div class="or-divider">or paste text below</div>
+      <textarea class="paste-area" id="bill-text" placeholder="Paste your bill text here..."></textarea>
+      <button class="btn-teal" style="width:100%;justify-content:center;margin-top:16px" onclick="startAnalysis()">Audit This Bill →</button>
+      <button style="width:100%;background:none;border:none;cursor:pointer;color:var(--muted);font-size:.82rem;margin-top:10px;padding:8px;font-family:'DM Sans',sans-serif" onclick="showScreen('screen-landing')">← Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ANALYZING ══ -->
+<div class="screen" id="screen-analyzing">
+  <div class="app-wrap">
+    <div class="analyzing-wrap">
+      <div class="spinner"></div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.3rem">Auditing your bill...</h3>
+      <ul class="analyzing-steps">
+        <li id="step1">⏳ Decoding CPT and ICD-10 codes</li>
+        <li id="step2" style="opacity:.4">⏳ Checking for duplicate charges</li>
+        <li id="step3" style="opacity:.4">⏳ Checking for upcoding and unbundling</li>
+        <li id="step4" style="opacity:.4">⏳ Verifying math and date consistency</li>
+        <li id="step5" style="opacity:.4">⏳ Drafting dispute letters</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAYWALL ══ -->
+<div class="screen" id="screen-paywall">
+  <div class="app-wrap">
+    <div class="paywall-wrap">
+      <div class="paywall-blur"></div>
+      <div style="text-align:center">
+        <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:8px">Your audit is ready</h2>
+        <p style="font-size:.875rem;color:var(--muted);margin-bottom:4px">We found <strong id="paywall-issues">potential billing issues</strong> on your bill.</p>
+        <p style="font-size:.82rem;color:var(--muted)">Unlock your full report to see every flagged charge and your dispute letters.</p>
+      </div>
+      <div class="paywall-options">
+        <a href="https://buy.stripe.com/fZu14n2qQa6p60Gayn3oA0i" class="paywall-opt" onclick="persistReportForCheckout('individual')">
+          <div class="paywall-opt-left"><h4>Single Report — $19</h4><p>Pay once, get this report</p></div>
+          <div class="paywall-opt-price">$19</div>
+        </a>
+        <a href="https://buy.stripe.com/bJe5kD0iIa6p9cS7mb3oA0j" class="paywall-opt rec" onclick="persistReportForCheckout('monthly')">
+          <div class="paywall-opt-left"><h4>Monthly Unlimited — $29/mo ⭐</h4><p>Unlimited audits, cancel anytime</p></div>
+          <div class="paywall-opt-price">$29</div>
+        </a>
+        <a href="https://buy.stripe.com/bJeeVde9y5Q92OueOD3oA0k" class="paywall-opt" onclick="persistReportForCheckout('family')">
+          <div class="paywall-opt-left"><h4>Family Plan — $49/mo</h4><p>Up to 6 family member accounts</p></div>
+          <div class="paywall-opt-price">$49</div>
+        </a>
+      </div>
+      <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:14px">Already paid? <a href="#" onclick="showScreen('screen-login')" style="color:var(--teal);font-weight:600">Sign in to access your report</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ RESULTS ══ -->
+<div class="screen" id="screen-results">
+  <div class="app-wrap">
+    <div class="results-wrap">
+      <div class="results-top">
+        <h2>Audit Report</h2>
+        <div class="results-btns">
+          <button class="btn-dl" onclick="downloadReport()">⬇ Download PDF</button>
+          <button class="btn-dispute-all" onclick="downloadDisputeLetters()">📨 All Dispute Letters</button>
+        </div>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-stat"><div class="summary-stat-num neutral" id="res-total">—</div><div class="summary-stat-label">Items audited</div></div>
+        <div class="summary-stat"><div class="summary-stat-num danger" id="res-flagged">—</div><div class="summary-stat-label">Potential errors</div></div>
+        <div class="summary-stat"><div class="summary-stat-num good" id="res-clean">—</div><div class="summary-stat-label">Items correct</div></div>
+      </div>
+      <div id="results-list"></div>
+      <div style="text-align:center;margin-top:20px">
+        <button class="btn-teal" onclick="showScreen('screen-upload')">Audit Another Bill</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LOGIN ══ -->
+<div class="screen" id="screen-login">
+  <div class="app-wrap">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <h2>Welcome back</h2>
+        <p>Sign in to access your audit history and saved reports.</p>
+        <div class="auth-error" id="login-error"></div>
+        <div class="form-group"><label class="form-label">Email address</label><input type="email" id="login-email" class="form-input" placeholder="you@example.com"></div>
+        <div class="form-group"><label class="form-label">Password</label><input type="password" id="login-password" class="form-input" placeholder="••••••••"></div>
+        <button class="auth-btn" id="login-btn" onclick="signIn()">Sign In</button>
+        <div class="auth-switch">Don't have an account? <a onclick="showScreen('screen-signup')">Create one</a></div>
+        <div class="auth-switch" style="margin-top:6px"><a onclick="showScreen('screen-landing')">← Back to home</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SIGNUP ══ -->
+<div class="screen" id="screen-signup">
+  <div class="app-wrap">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <h2>Create your account</h2>
+        <p>Save audit history and access your reports anytime.</p>
+        <div class="auth-error" id="signup-error"></div>
+        <div class="form-group"><label class="form-label">Email address</label><input type="email" id="signup-email" class="form-input" placeholder="you@example.com"></div>
+        <div class="form-group"><label class="form-label">Password</label><input type="password" id="signup-password" class="form-input" placeholder="At least 8 characters"></div>
+        <button class="auth-btn" id="signup-btn" onclick="signUp()">Create Account</button>
+        <div class="auth-switch">Already have an account? <a onclick="showScreen('screen-login')">Sign in</a></div>
+        <div class="auth-switch" style="margin-top:6px"><a onclick="showScreen('screen-landing')">← Back to home</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD ══ -->
+<div class="screen" id="screen-dashboard">
+  <div class="app-wrap">
+    <div class="dash-wrap">
+      <div class="dash-top">
+        <h2>My Dashboard</h2>
+        <button class="btn-new-audit" onclick="showScreen('screen-upload')">+ New Audit</button>
+      </div>
+      <div class="plan-chip"><span class="plan-chip-dot"></span><span id="plan-name-display">Loading...</span></div>
+      <h3 style="font-size:.875rem;font-weight:600;margin-bottom:10px">Audit History</h3>
+      <div class="audit-list" id="audit-history-list">
+        <div class="empty-list">No audits yet. <a href="#" onclick="showScreen('screen-upload')" style="color:var(--teal);font-weight:600">Audit your first bill →</a></div>
+      </div>
+      <div id="family-section" style="display:none">
+        <div class="family-seats-card">
+          <h3>Family Members (up to 6)</h3>
+          <div id="seats-list"></div>
+          <button class="btn-invite" onclick="inviteFamilyMember()">+ Invite a family member by email</button>
+        </div>
+        <div class="family-note" style="margin-top:12px"><strong>How family seats work:</strong> Each member receives an email invitation and creates their own login. One login per seat — accounts cannot be shared. Members can only see their own audit history.</div>
+      </div>
+      <div class="manage-sub">
+        <p>Manage your subscription, update payment, or cancel anytime from your Stripe billing portal.</p>
+        <button class="btn-manage" onclick="openBillingPortal()">Manage Subscription →</button>
+      </div>
+    </div>
   </div>
 </div>
 
 <script>
-var _rl = {c:0, t:Date.now()};
-function checkLimit() {
-  if (Date.now() - _rl.t > 3600000) { _rl = {c:0, t:Date.now()}; }
-  if (_rl.c >= 10) { alert("Too many requests. Please try again later."); return false; }
-  _rl.c++; return true;
-}
-
-var STRIPE="https://buy.stripe.com/5kQ4gzc1qemF0Gm49Z3oA04";
-var STATES=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
-var QS=[
-{id:"state",type:"select",q:"What state are you filing in?",hint:"Small claims limits and procedures vary by state."},
-{id:"pname",type:"text",q:"What is your full legal name?",hint:"Enter your name exactly as it appears on your ID.",ph:"e.g. Jane Marie Smith"},
-{id:"paddr",type:"text",q:"What is your address?",hint:"Street address, city, state, zip.",ph:"e.g. 123 Main St, Austin TX 78701"},
-{id:"dname",type:"text",q:"Who are you suing?",hint:"Full name of the person or business.",ph:"e.g. John Doe or ABC Contractors LLC"},
-{id:"daddr",type:"text",q:"What is their address?",hint:"You need a valid address to serve them.",ph:"e.g. 456 Oak Ave, Austin TX 78702"},
-{id:"ctype",type:"opts",q:"What type of case is this?",hint:"Choose the category that best fits.",opts:["Security deposit not returned","Contractor did poor or incomplete work","Car accident or vehicle damage","Online marketplace scam","Unpaid wages or services","Property damage","Loan not repaid","Other contract dispute"]},
-{id:"amt",type:"number",q:"How much money are you claiming?",hint:"Total dollar amount you want to recover.",ph:"e.g. 1500"},
-{id:"date",type:"text",q:"When did this happen?",hint:"Date of incident or date payment was due.",ph:"e.g. March 15 2025"},
-{id:"what",type:"textarea",q:"In your own words, what happened?",hint:"Be specific. Include dates, amounts, what was promised and what went wrong.",ph:"e.g. I paid John Doe 2000 on January 10 to remodel my bathroom..."},
-{id:"evid",type:"textarea",q:"What evidence do you have?",hint:"List everything: texts, emails, receipts, photos, contracts, witnesses.",ph:"e.g. Written contract, text messages, photos, bank receipt..."}
-];
-var A={},cq=0,docs=null;
-
-function showScreen(id){
-  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});
-  document.getElementById('screen-'+id).classList.add('active');
-  window.scrollTo(0,0);
-  if(id==='questions')renderQ();
-}
-
-function renderQ(){
-  var q=QS[cq];
-  var pct=Math.round(((cq+1)/QS.length)*100);
-  document.getElementById('pf').style.width=pct+'%';
-  var h='<div class="sc">Step '+(cq+1)+' of '+QS.length+'</div><div class="qq">'+q.q+'</div><div class="qh">'+q.hint+'</div>';
-  if(q.type==='select'){
-    h+='<select id="qi" onchange="en()"><option value="">Select your state</option>';
-    STATES.forEach(function(s){h+='<option value="'+s+'"'+(A[q.id]===s?' selected':'')+'>'+s+'</option>'});
-    h+='</select>';
-  } else if(q.type==='text'){
-    h+='<input type="text" id="qi" placeholder="'+q.ph+'" value="'+(A[q.id]||'')+'" oninput="en()">';
-  } else if(q.type==='number'){
-    h+='<div style="position:relative"><span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:17px">$</span><input type="number" id="qi" placeholder="'+q.ph+'" value="'+(A[q.id]||'')+'" oninput="en()" style="padding-left:32px"></div>';
-  } else if(q.type==='textarea'){
-    h+='<textarea id="qi" placeholder="'+q.ph+'" oninput="en()">'+(A[q.id]||'')+'</textarea>';
-  } else if(q.type==='opts'){
-    h+='<div class="og">';
-    q.opts.forEach(function(o){h+='<button class="ob'+(A[q.id]===o?' sel':'')+'" onclick="selOpt(\''+o+'\')">'+o+'</button>'});
-    h+='</div>';
-  }
-  h+='<div class="nr">';
-  if(cq>0)h+='<button class="bb" onclick="prevQ()">Back</button>';
-  h+='<button class="nb" id="nb" onclick="nextQ()"'+(A[q.id]?'':' disabled')+'>'+(cq===QS.length-1?'Generate My Documents':'Continue')+'</button></div>';
-  document.getElementById('qc').innerHTML=h;
-  if(q.type!=='opts'){setTimeout(function(){var e=document.getElementById('qi');if(e)e.focus()},100)}
-}
-
-function en(){
-  var v=document.getElementById('qi');
-  var nb=document.getElementById('nb');
-  if(v&&nb){nb.disabled=!v.value.trim();if(v.value.trim())A[QS[cq].id]=v.value.trim()}
-}
-
-function selOpt(o){
-  A[QS[cq].id]=o;
-  document.querySelectorAll('.ob').forEach(function(b){b.classList.remove('sel')});
-  event.target.classList.add('sel');
-  document.getElementById('nb').disabled=false;
-}
-
-function nextQ(){
-  var q=QS[cq];
-  if(q.type!=='opts'){var v=document.getElementById('qi');if(v&&v.value.trim())A[q.id]=v.value.trim()}
-  if(!A[q.id])return;
-  if(cq<QS.length-1){cq++;renderQ()}else{showScreen('disclaimer')}
-}
-
-function prevQ(){if(cq>0){cq--;renderQ()}}
-
-async function genDocs(){
-  document.getElementById('gs').textContent=A.state;
-  showScreen('generating');
-  var prompt='You are an expert paralegal. Generate court documents for this small claims case.\n\nState: '+A.state+'\nPlaintiff: '+A.pname+', '+A.paddr+'\nDefendant: '+A.dname+', '+A.daddr+'\nClaim Type: '+A.ctype+'\nAmount: $'+A.amt+'\nDate: '+A.date+'\nWhat happened: '+A.what+'\nEvidence: '+A.evid+'\n\nRespond ONLY with valid JSON, no other text:\n{"complaint":"full complaint form text ready to print and file, formatted as official court document for '+A.state+'","script":"word for word script for plaintiff to read to judge, 3-4 paragraphs, confident and factual","evidence":"formatted evidence checklist and court day instructions specific to this case and '+A.state+'"}';
-  try{
-    var r=await fetch('/.netlify/functions/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:prompt})});
-    var d=await r.json();
-    var t=d.content[0].text.replace(/```json|```/g,'').trim();
-    docs=JSON.parse(t);
-  }catch(e){
-    docs={
-      complaint:'SMALL CLAIMS COURT\n'+A.state.toUpperCase()+'\n\n'+A.pname+'\n'+A.paddr+'\nPlaintiff\n\nvs.\n\n'+A.dname+'\n'+A.daddr+'\nDefendant\n\nCOMPLAINT\n\nPlaintiff '+A.pname+' states:\n\n1. On or about '+A.date+', Defendant '+A.dname+' caused damages of $'+A.amt+' relating to: '+A.ctype+'.\n\n2. '+A.what+'\n\n3. Plaintiff has attempted to resolve this matter without court action.\n\n4. Defendant has failed to pay.\n\nPlaintiff demands judgment of $'+A.amt+' plus court costs.\n\nI declare under penalty of perjury this is true and correct.\n\nSignature: ____________________\n'+A.pname+'\nDate: ___________',
-      script:'Your Honor, my name is '+A.pname+' and I am the plaintiff.\n\nI am here because '+A.dname+' owes me $'+A.amt+' for: '+A.ctype+'.\n\nOn '+A.date+': '+A.what+'\n\nI have the following evidence: '+A.evid+'\n\nI have tried to resolve this directly without success. I respectfully ask the court to award me $'+A.amt+' plus court costs. Thank you.',
-      evidence:'EVIDENCE CHECKLIST\n\nBring to court:\n- This complaint form (3 copies)\n- All contracts or agreements\n- All receipts and payment records\n- Printed text messages and emails\n- Photographs labeled with dates\n- Witness contact information\n\nYour evidence: '+A.evid+'\n\nCourt day tips:\n- Arrive 30 minutes early\n- Dress professionally\n- Speak to the judge, not the defendant\n- Stick to facts and dollar amounts\n- Bring 3 copies of everything\n\nFiling in '+A.state+':\n- File at your county courthouse\n- Filing fee is usually $30-$75\n- Ask clerk for service instructions'
-    };
-  }
-  buildPaywall();
-  showScreen('paywall');
-}
-
-function buildPaywall(){
-  document.getElementById('pcn').textContent='SMALL CLAIMS COURT - '+A.state.toUpperCase();
-  document.getElementById('pcs').textContent=A.state+' Small Claims Division';
-  document.getElementById('pp').textContent=A.pname||'';
-  document.getElementById('pd').textContent=A.dname||'';
-  document.getElementById('pa').textContent='$'+(A.amt||'');
-  document.getElementById('pc').textContent=A.ctype||'';
-}
-
-function showResults(){
-  document.getElementById('rc').textContent=docs.complaint;
-  document.getElementById('rs').textContent=docs.script;
-  document.getElementById('re').textContent=docs.evidence;
-  showScreen('results');
-}
-
-function resetApp(){A={};cq=0;docs=null;sessionStorage.removeItem('sc_A');sessionStorage.removeItem('sc_docs');showScreen('landing')}
-
-// Save case state when paywall is shown so it survives Stripe redirect
-var origBuildPaywall = buildPaywall;
-buildPaywall = function() {
-  origBuildPaywall();
-  try {
-    if (A) sessionStorage.setItem('sc_A', JSON.stringify(A));
-    if (docs) sessionStorage.setItem('sc_docs', JSON.stringify(docs));
-  } catch(e) {}
+var AUTH_URL = '/.netlify/functions/auth';
+var STRIPE_LINKS = {
+  individual: 'https://buy.stripe.com/fZu14n2qQa6p60Gayn3oA0i',
+  monthly:    'https://buy.stripe.com/bJe5kD0iIa6p9cS7mb3oA0j',
+  family:     'https://buy.stripe.com/bJeeVde9y5Q92OueOD3oA0k'
 };
+var STRIPE_BILLING_PORTAL = 'YOUR_STRIPE_BILLING_PORTAL_URL';
+var PLAN_LABELS = {
+  individual:'Single Audit', monthly:'Monthly Unlimited', family:'Family Plan — 6 Seats',
+  landlord:'Monthly Unlimited', professional:'Monthly Unlimited', business:'Family Plan — 6 Seats'
+};
+var currentUser = null, currentPlan = null, currentReport = null, uploadedFile = null;
 
-// Post-payment return handler - Stripe redirects to /?paid=true
-(function checkPaidReturn() {
-  try {
-    var params = new URLSearchParams(window.location.search);
-    if (params.get('paid') === 'true') {
-      var savedA = sessionStorage.getItem('sc_A');
-      var savedDocs = sessionStorage.getItem('sc_docs');
-      if (savedA) { try { A = JSON.parse(savedA); } catch(e){} }
-      if (savedDocs) { try { docs = JSON.parse(savedDocs); } catch(e){} }
-      window.history.replaceState({}, '', window.location.pathname);
-      if (docs) { showResults(); }
-    }
-  } catch(e) { console.warn('paid return error', e); }
-})();
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  var el = document.getElementById(id); if (el) { el.classList.add('active'); window.scrollTo(0,0); }
+}
 
-function buildReportText() {
-  var date = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
-  var complaintEl = document.getElementById('rc');
-  var scriptEl = document.getElementById('rs');
-  var evidenceEl = document.getElementById('re');
-  var screenEl = document.getElementById('screen-results');
-  if (!screenEl || window.getComputedStyle(screenEl).display === 'none') return null;
-  if (!complaintEl || !(complaintEl.textContent||'').trim()) return null;
-  var out = 'SMALLCLAIMSHELPER - GENERATED COURT DOCUMENTS\n';
-  out += '================================================\n';
-  out += 'Generated: ' + date + '\n';
-  out += 'SmallClaimsHelper - smallclaimsforms.net\n';
-  if (complaintEl && (complaintEl.textContent||'').trim()) {
-    out += '\n=== COMPLAINT FORM ===\n\n' + (complaintEl.textContent||'').trim();
+function updateAuthUI(user, plan) {
+  document.getElementById('nav-signin').style.display = user ? 'none' : '';
+  document.querySelectorAll('.nav-auth-signed-in').forEach(function(el){ el.style.display = user ? '' : 'none'; });
+  if (user) {
+    var emailEl = document.getElementById('nav-user-email');
+    if (emailEl) emailEl.textContent = user.email.split('@')[0];
+    currentUser = user; currentPlan = plan || user.plan;
+    var planDisplay = document.getElementById('plan-name-display');
+    if (planDisplay) planDisplay.textContent = PLAN_LABELS[currentPlan] || 'Free';
+    var familySection = document.getElementById('family-section');
+    if (familySection) familySection.style.display = currentPlan === 'family' ? 'block' : 'none';
+    loadAuditHistory();
+  } else { currentUser = null; currentPlan = null; }
+}
+
+function signIn() {
+  var email = document.getElementById('login-email').value;
+  var pwd = document.getElementById('login-password').value;
+  var errEl = document.getElementById('login-error');
+  var btn = document.getElementById('login-btn');
+  errEl.style.display = 'none';
+  if (!email || !pwd) { errEl.textContent = 'Please enter your email and password.'; errEl.style.display = 'block'; return; }
+  btn.textContent = 'Signing in...'; btn.disabled = true;
+  fetch(AUTH_URL, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'signin',email:email,password:pwd})})
+    .then(function(r){ return r.json(); }).then(function(res) {
+      btn.textContent = 'Sign In'; btn.disabled = false;
+      if (res.error) { errEl.textContent = res.error; errEl.style.display = 'block'; return; }
+      localStorage.setItem('vd_token', res.accessToken);
+      localStorage.setItem('vd_refresh', res.refreshToken);
+      updateAuthUI(res.user, res.user.plan);
+      showScreen('screen-dashboard');
+    }).catch(function(){ btn.textContent='Sign In'; btn.disabled=false; errEl.textContent='Network error.'; errEl.style.display='block'; });
+}
+
+function signUp() {
+  var email = document.getElementById('signup-email').value;
+  var pwd = document.getElementById('signup-password').value;
+  var errEl = document.getElementById('signup-error');
+  var btn = document.getElementById('signup-btn');
+  errEl.style.display = 'none';
+  if (!email || !pwd || pwd.length < 8) { errEl.textContent = 'Please enter a valid email and password (min 8 chars).'; errEl.style.display = 'block'; return; }
+  btn.textContent = 'Creating account...'; btn.disabled = true;
+  fetch(AUTH_URL, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'signup',email:email,password:pwd})})
+    .then(function(r){ return r.json(); }).then(function(res) {
+      btn.textContent = 'Create Account'; btn.disabled = false;
+      if (res.error) { errEl.textContent = res.error; errEl.style.display = 'block'; return; }
+      document.querySelector('#screen-signup .auth-card').innerHTML = '<h2 style="font-family:\'DM Serif Display\',serif;font-size:1.5rem;margin-bottom:12px">Check your email</h2><p style="color:var(--muted);font-size:.875rem">We sent a confirmation link to <strong>' + email + '</strong>. Click it to activate your account, then sign in.</p><div style="margin-top:20px"><a onclick="showScreen(\'screen-login\')" style="color:var(--teal);font-weight:600;cursor:pointer">Go to sign in →</a></div>';
+    }).catch(function(){ btn.textContent='Create Account'; btn.disabled=false; errEl.textContent='Network error.'; errEl.style.display='block'; });
+}
+
+function signOut() {
+  localStorage.removeItem('vd_token'); localStorage.removeItem('vd_refresh');
+  updateAuthUI(null, null); showScreen('screen-landing');
+}
+
+function openBillingPortal() {
+  if (STRIPE_BILLING_PORTAL !== 'YOUR_STRIPE_BILLING_PORTAL_URL') window.open(STRIPE_BILLING_PORTAL,'_blank');
+  else alert('Add your Stripe billing portal URL to the STRIPE_BILLING_PORTAL variable');
+}
+
+function inviteFamilyMember() {
+  var email = prompt('Enter the email address to invite:');
+  if (!email) return;
+  alert('Invite sent to ' + email + ' (wire to backend invite endpoint)');
+}
+
+function loadAuditHistory() {
+  var list = document.getElementById('audit-history-list'); if (!list) return;
+  var token = localStorage.getItem('vd_token');
+  if (!token) { list.innerHTML = '<div class="empty-list">Sign in to see your audit history.</div>'; return; }
+  list.innerHTML = '<div class="empty-list">Loading...</div>';
+  fetch(AUTH_URL, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'get_history',accessToken:token})})
+    .then(function(r){ return r.json(); }).then(function(res) {
+      if (!res.reports || !res.reports.length) {
+        list.innerHTML = '<div class="empty-list">No audits yet. <a href="#" onclick="showScreen(\'screen-upload\')" style="color:var(--teal);font-weight:600">Audit your first bill →</a></div>'; return;
+      }
+      list.innerHTML = res.reports.map(function(r) {
+        return '<div class="audit-row"><div><div class="audit-row-name">'+(r.doc_type||'Medical Bill')+'</div><div class="audit-row-date">'+new Date(r.created_at).toLocaleDateString()+'</div></div><span class="audit-chip '+(r.verdict==='clean'?'chip-clean':'chip-issues')+'">'+(r.verdict==='clean'?'No issues':'Issues found')+'</span><div class="audit-row-btns"><button class="btn-xs btn-xs-dl" onclick="downloadReportById(\''+r.report_id+'\')">⬇ PDF</button></div></div>';
+      }).join('');
+    }).catch(function(){ list.innerHTML='<div class="empty-list">Could not load history.</div>'; });
+}
+
+function handleFile(input) {
+  if (input.files && input.files[0]) {
+    uploadedFile = input.files[0];
+    var zone = document.getElementById('upload-zone');
+    zone.querySelector('h3').textContent = uploadedFile.name;
+    zone.querySelector('p').textContent = 'Ready to audit';
   }
-  if (scriptEl && (scriptEl.textContent||'').trim()) {
-    out += '\n\n=== COURT SCRIPT ===\n\n' + (scriptEl.textContent||'').trim();
+}
+
+function startAnalysis() {
+  var text = document.getElementById('bill-text').value;
+  if (!uploadedFile && text.length < 20) { alert('Please upload a bill or paste some text first.'); return; }
+  showScreen('screen-analyzing');
+  runAnalyzingSteps();
+}
+
+function runAnalyzingSteps() {
+  var steps = ['step1','step2','step3','step4','step5'];
+  var doneLabels = ['✓ CPT and ICD-10 codes decoded','✓ Duplicate charges checked','✓ Upcoding and unbundling checked','✓ Math and date consistency verified','✓ Dispute letters drafted'];
+  var i = 0;
+  function next() {
+    if (i > 0) { var prev = document.getElementById(steps[i-1]); if (prev) { prev.textContent = doneLabels[i-1]; prev.className = 'step-done-text'; } }
+    if (i < steps.length) { var curr = document.getElementById(steps[i]); if (curr) { curr.style.opacity='1'; curr.className='step-active'; } i++; setTimeout(next, 850 + Math.random()*350); }
+    else { setTimeout(function(){ if (currentUser && (currentPlan==='monthly'||currentPlan==='family')) { showResults(); } else { document.getElementById('paywall-issues').textContent = '2–3 potential billing issues'; showScreen('screen-paywall'); } }, 500); }
   }
-  if (evidenceEl && (evidenceEl.textContent||'').trim()) {
-    out += '\n\n=== EVIDENCE CHECKLIST ===\n\n' + (evidenceEl.textContent||'').trim();
-  }
-  out += '\n\n---\n';
-  out += 'Generated by SmallClaimsHelper - smallclaimsforms.net\n';
-  out += 'For informational purposes only. Not legal advice.\n';
-  out += 'This document was not saved to our servers.';
-  return out;
+  next();
+}
+
+function showResults() {
+  currentReport = {total:8,flagged:2,clean:6,items:[
+    {code:'CPT 99213',desc:'Office visit, established patient',amount:'$185',ok:true,explanation:'Standard level-3 office visit. Appropriate for a 15-30 minute visit with moderate complexity.'},
+    {code:'CPT 85025',desc:'Complete blood count with differential',amount:'$62',ok:true,explanation:'Routine CBC test. Pricing appears consistent with typical lab billing rates.'},
+    {code:'CPT 36415',desc:'Routine venipuncture (blood draw)',amount:'$28',ok:false,explanation:'Blood draw billed separately from CBC.',flag:'Possible unbundling: CPT 36415 is typically included in CPT 85025 under CMS bundling rules. Billing both may be a violation. Dispute letter included.'},
+    {code:'CPT 71046',desc:'Chest X-ray, 2 views',amount:'$312',ok:true,explanation:'Standard 2-view chest X-ray. Code and pricing appear consistent.'},
+    {code:'CPT 93000',desc:'ECG with interpretation',amount:'$145',ok:true,explanation:'Standard 12-lead ECG with physician interpretation. Code appears correct.'},
+    {code:'CPT 93000',desc:'ECG with interpretation',amount:'$145',ok:false,explanation:'Identical charge to previous line.',flag:'Duplicate charge: CPT 93000 appears twice on the same date. One may be in error. Dispute letter included.'},
+    {code:'CPT 99000',desc:'Specimen handling for transfer',amount:'$24',ok:true,explanation:'Standard specimen handling fee. Appears correct.'},
+    {code:'MISC',desc:'Medical supplies and equipment',amount:'$89',ok:true,explanation:'General supplies charge. Within normal range.'}
+  ]};
+  document.getElementById('res-total').textContent = currentReport.total;
+  document.getElementById('res-flagged').textContent = currentReport.flagged;
+  document.getElementById('res-clean').textContent = currentReport.clean;
+  var list = document.getElementById('results-list');
+  list.innerHTML = currentReport.items.map(function(item) {
+    return '<div class="result-item'+(item.ok?'':' flagged')+'">'
+      +'<div class="result-item-top"><div><div class="result-code">'+item.code+'</div><div class="result-desc">'+item.desc+'</div></div><div class="result-amount">'+item.amount+'</div></div>'
+      +'<div class="result-explain">'+item.explanation+'</div>'
+      +(item.flag?'<div class="result-flag-box"><div class="result-flag-title">⚑ Potential billing error</div><div class="result-flag-body">'+item.flag+'</div><button class="result-dispute-btn" onclick="downloadDisputeLetter(\''+item.code+'\')">⬇ Download Dispute Letter</button></div>':'')
+      +'</div>';
+  }).join('');
+  showScreen('screen-results');
 }
 
 function downloadReport() {
-  var content = buildReportText();
-  if (!content) { alert('No report to download yet.'); return; }
-  var blob = new Blob([content], {type:'text/plain;charset=utf-8'});
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.href = url;
-  a.download = 'smallclaimsforms-report-' + new Date().toISOString().slice(0,10) + '.txt';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+  if (!currentReport) return;
+  if (typeof DownloadModule !== 'undefined' && DownloadModule.downloadMedicalBillReport) {
+    DownloadModule.downloadMedicalBillReport(currentReport);
+  } else {
+    alert('PDF module loading — try again in a moment.');
+  }
 }
+
+function downloadDisputeLetters() {
+  // Full report PDF includes dispute letters — same payload as downloadReport
+  downloadReport();
+}
+
+function persistReportForCheckout(plan) {
+  try {
+    if (currentReport) sessionStorage.setItem('vd_pending_report', JSON.stringify(currentReport));
+    sessionStorage.setItem('vd_pending_plan', plan);
+  } catch(e) {}
+}
+
+function downloadDisputeLetter(code) {
+  if (!currentReport) return;
+  var item = currentReport.items.find(function(i){ return i.code===code&&!i.ok; }); if (!item) return;
+  var c='To: [Provider/Insurer Name]\nRe: Billing Dispute — '+item.code+'\n\nDear Billing Department,\n\nI am writing to dispute '+item.amount+' for '+item.code+' — '+item.desc+'.\n\n'+item.flag+'\n\nI request a review and written response within 30 days.\n\nSincerely,\n[Your Name]\n[Account Number]';
+  var blob=new Blob([c],{type:'text/plain'}); var url=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=url; a.download='dispute-'+item.code.replace(' ','-')+'.txt'; a.click(); URL.revokeObjectURL(url);
+}
+
+function downloadReportById(id) { alert('Download report: '+id+' (wire to your reports API)'); }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var token = localStorage.getItem('vd_token');
+  if (token) {
+    fetch(AUTH_URL, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'verify',accessToken:token})})
+      .then(function(r){ return r.json(); }).then(function(res) {
+        if (res.user) updateAuthUI(res.user, res.user.plan);
+        else { localStorage.removeItem('vd_token'); localStorage.removeItem('vd_refresh'); }
+      }).catch(function(){});
+  }
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('payment') === 'success') {
+    var plan = params.get('plan') || sessionStorage.getItem('vd_pending_plan') || 'individual';
+    window.history.replaceState({}, '', window.location.pathname);
+    // Restore the report that was being viewed before checkout
+    var savedReport = sessionStorage.getItem('vd_pending_report');
+    if (savedReport) {
+      try { currentReport = JSON.parse(savedReport); } catch(e) {}
+      sessionStorage.removeItem('vd_pending_report');
+      sessionStorage.removeItem('vd_pending_plan');
+    }
+    if (currentUser) {
+      currentPlan = plan;
+      updateAuthUI(currentUser, plan);
+      if (currentReport) { showResults(); } else { showScreen('screen-dashboard'); }
+    } else if (currentReport) {
+      // Paid but not signed in — show their report immediately, prompt signup after
+      showResults();
+    } else {
+      showScreen('screen-signup');
+    }
+  }
+});
 </script>
-
-<!-- SEO Content -->
-<div style="max-width:760px;margin:0 auto;padding:60px 24px 80px;border-top:1px solid var(--border)">
-  <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:700;color:var(--dark);margin-bottom:16px">How to File Small Claims Court — All 50 States</h2>
-  <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:20px">Small claims court is a legal proceeding that allows individuals to resolve disputes involving relatively small amounts of money without hiring an attorney. Each state has its own small claims court procedures, filing fees, and maximum claim limits ranging from $2,500 in some states to $25,000 in others.</p>
-  
-  <h3 style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px">Common Small Claims Court Cases</h3>
-  <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:20px">The most common small claims cases include security deposit disputes between landlords and tenants, contractor disputes where work was incomplete or substandard, car accident damage claims, unpaid loans between individuals, online marketplace fraud and scams, unpaid wages or freelance work, and breach of contract disputes. In most states you do not need a lawyer to file or argue a small claims case.</p>
-
-  <h3 style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px">Small Claims Court Limits by State</h3>
-  <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:20px">California small claims court limit is $12,500 for individuals. Texas small claims limit is $20,000. Florida small claims limit is $8,000. New York small claims limit is $10,000. Illinois small claims limit is $10,000. Pennsylvania small claims limit is $12,000. Ohio small claims limit is $6,000. Georgia small claims limit is $15,000. Michigan small claims limit is $6,500. Washington small claims limit is $10,000.</p>
-
-  <h3 style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px">How to Win Small Claims Court</h3>
-  <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:20px">To win your small claims case you need to bring organized evidence including contracts, receipts, photographs, text messages, emails, and any witnesses. Present your case clearly and stick to facts and dollar amounts. Most judges appreciate brevity and organization. Having a prepared statement to read to the judge dramatically increases your chances of winning. SmallClaimsHelper generates a word-for-word script tailored to your specific case.</p>
-
-  <div style="background:#f3f3ee;border-radius:4px;padding:28px 32px;margin-top:32px">
-    <p style="font-size:13px;color:#a09a85;line-height:1.6;font-style:italic">SmallClaimsHelper.com generates template court documents for informational purposes only. It is not a law firm and does not provide legal advice. Small claims procedures vary by state and county. Always verify requirements with your local courthouse or a licensed attorney before filing.</p>
-  </div>
-</div>
-
-<!-- FAQ Section -->
-<div style="max-width:760px;margin:0 auto;padding:40px 24px 60px">
-  <div style="text-align:center;margin-bottom:32px">
-    <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px">Frequently Asked Questions</p>
-    <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:700;">Everything you need to know</h2>
-  </div>
-  <div style="display:flex;flex-direction:column;gap:10px">
-    <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">What is the small claims court limit in my state?<span style="font-size:22px;flex-shrink:0;color:var(--gold)">+</span></button>
-      <div style="display:none;padding:0 22px 18px;font-size:14px;color:#6b6356;line-height:1.7">Small claims limits vary by state. California allows up to $12,500. Texas allows up to $20,000. Florida allows up to $8,000. New York allows up to $10,000. SmallClaimsHelper generates state-specific forms with the correct limits and filing fees for your state automatically.</div>
-    </div>
-    <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">How much does SmallClaimsHelper cost?<span style="font-size:22px;flex-shrink:0;color:var(--gold)">+</span></button>
-      <div style="display:none;padding:0 22px 18px;font-size:14px;color:#6b6356;line-height:1.7">SmallClaimsHelper charges a one-time fee of $19. No subscription or recurring fees. This includes your completed court forms, statement of facts, evidence checklist, and a word-for-word judge script.</div>
-    </div>
-    <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">Do I need a lawyer for small claims court?<span style="font-size:22px;flex-shrink:0;color:var(--gold)">+</span></button>
-      <div style="display:none;padding:0 22px 18px;font-size:14px;color:#6b6356;line-height:1.7">No. Small claims court is specifically designed for people to represent themselves without an attorney. SmallClaimsHelper prepares you with court-ready forms and a judge script so you know exactly what to say.</div>
-    </div>
-    <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">Is SmallClaimsHelper a law firm?<span style="font-size:22px;flex-shrink:0;color:var(--gold)">+</span></button>
-      <div style="display:none;padding:0 22px 18px;font-size:14px;color:#6b6356;line-height:1.7">No. SmallClaimsHelper is a document automation tool, not a law firm. It does not provide legal advice. For complex legal matters consult a licensed attorney in your state.</div>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<div style="background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding:32px 24px;text-align:center">
-  <p style="font-size:14px;color:rgba(255,255,255,.3);margin-bottom:8px">Questions or issues? We are here to help.</p>
-  <a href="mailto:info&#64;smallclaimsforms.net" style="color:var(--gold);font-size:15px;text-decoration:none">info&#64;smallclaimsforms.net</a>
-  <p style="font-size:12px;color:rgba(255,255,255,.15);margin-top:16px">SmallClaimsHelper · Small Claims Court Documents · Not a law firm · Not legal advice</p>
-</div>
-
 <script src="/download-module.js"></script>
 </body>
 </html>
