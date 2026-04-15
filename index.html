@@ -120,6 +120,84 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 @media print{header,.bp,.bs,.sb{display:none}body{background:white}}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://smallclaimsforms.net/logo.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://smallclaimsforms.net/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://smallclaimsforms.net/logo.png">
+<link rel="shortcut icon" href="https://smallclaimsforms.net/logo.png">
+
+<meta property="og:image" content="https://smallclaimsforms.net/logo.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta name="twitter:image" content="https://smallclaimsforms.net/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SmallClaimsHelper",
+  "url": "https://smallclaimsforms.net/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://smallclaimsforms.net/logo.png",
+    "width": 512,
+    "height": 512
+  },
+  "description": "Small claims court forms generator for all 50 states. Generates completed court forms and a word-for-word judge script so you know exactly what to say in court."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to file a small claims court case",
+  "description": "Answer 10 plain-English questions about your case and receive completed small claims forms and a judge-ready script for your state.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Describe your dispute",
+      "text": "Enter your state, the amount you are claiming, and a brief description of what happened."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Identify the parties",
+      "text": "Provide your name and address along with the defendant's name and address."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Answer 10 case questions",
+      "text": "Walk through plain-English questions about evidence, contracts, and the events giving rise to the claim."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Get forms and judge script",
+      "text": "Receive your completed small claims complaint form, a list of evidence to bring, and a word-for-word script of what to say to the judge."
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SmallClaimsHelper",
+  "url": "https://smallclaimsforms.net/",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      "h2",
+      ".hero-sub"
+    ]
+  }
+}
+</script>
 </head>
 <body>
 <header>
@@ -378,7 +456,32 @@ function showResults(){
   showScreen('results');
 }
 
-function resetApp(){A={};cq=0;docs=null;showScreen('landing')}
+function resetApp(){A={};cq=0;docs=null;sessionStorage.removeItem('sc_A');sessionStorage.removeItem('sc_docs');showScreen('landing')}
+
+// Save case state when paywall is shown so it survives Stripe redirect
+var origBuildPaywall = buildPaywall;
+buildPaywall = function() {
+  origBuildPaywall();
+  try {
+    if (A) sessionStorage.setItem('sc_A', JSON.stringify(A));
+    if (docs) sessionStorage.setItem('sc_docs', JSON.stringify(docs));
+  } catch(e) {}
+};
+
+// Post-payment return handler - Stripe redirects to /?paid=true
+(function checkPaidReturn() {
+  try {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('paid') === 'true') {
+      var savedA = sessionStorage.getItem('sc_A');
+      var savedDocs = sessionStorage.getItem('sc_docs');
+      if (savedA) { try { A = JSON.parse(savedA); } catch(e){} }
+      if (savedDocs) { try { docs = JSON.parse(savedDocs); } catch(e){} }
+      window.history.replaceState({}, '', window.location.pathname);
+      if (docs) { showResults(); }
+    }
+  } catch(e) { console.warn('paid return error', e); }
+})();
 
 function buildReportText() {
   var date = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
