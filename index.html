@@ -4,16 +4,25 @@
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="hqSsEC93a0tlqhdMI-jDrKM3kVMpIgGSMch-JAYPsnA">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Small Claims Court Forms — File Your Case in Minutes | SmallClaimsHelper</title>
+<title>Small Claims Court Forms â File Your Case in Minutes | SmallClaimsHelper</title>
 <meta name="description" content="Generate completed small claims court forms for all 50 states in minutes. Get a word-for-word judge script. No lawyer needed. Only $19.">
 <meta name="keywords" content="small claims court forms, how to file small claims, small claims court California, small claims court Texas, small claims court Florida, small claims court New York, sue landlord security deposit, small claims court filing, how to sue someone, small claims complaint form">
-<meta property="og:title" content="Small Claims Court Forms — File Your Case in Minutes">
+<meta property="og:title" content="Small Claims Court Forms â File Your Case in Minutes">
 <meta property="og:description" content="Answer 10 questions. Get completed court forms and a judge script for your state. No lawyer needed. $19.">
 <meta property="og:url" content="https://smallclaimsforms.net">
 <link rel="canonical" href="https://smallclaimsforms.net">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="SmallClaimsHelper">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Small Claims Court Forms Generator","url":"https://smallclaimsforms.net","description":"Generate state-specific small claims court forms and a judge-ready script in minutes. All 50 states. Know exactly what to say in court.","applicationCategory":"LegalApplication","offers":{"@type":"Offer","price":"19.00","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Small Claims Court Forms Generator","url":"https://smallclaimsforms.net","description":"Generate state-specific small claims court forms and a judge-ready script in minutes. All 50 states. Know exactly what to say in court.","applicationCategory":"LegalApplication","offers":{"@type":"Offer","price":"19.00","priceCurrency":"USD"}}
+function triggerSmallClaimsDownload() {
+  var rc=document.getElementById('rc'), rs=document.getElementById('rs');
+  var claim={plaintiffName:'[Your Name]',plaintiffAddress:'[Your Address]',defendantName:'[Defendant]',defendantAddress:'[Defendant Address]',amount:'0',state:'[State]',claimType:'Civil Dispute',filingFee:'Check with your local court',court:'Your local small claims court',deadline:'Check statute of limitations',statementLines:[],evidence:['Contracts or agreements','Receipts or invoices','Photographs','Text messages or emails','Witness information'],keyPoints:['State facts clearly and chronologically','Present evidence when relevant','Address judge as "Your Honor"','Ask for the exact amount claimed']};
+  if(rc){claim.statementLines=[rc.innerText.trim().slice(0,1000)];var am=rc.innerText.match(/\$[\d,]+/);if(am)claim.amount=am[0].replace(/[$,]/g,'');}
+  if(rs)claim.openingStatement=rs.innerText.trim().slice(0,500);
+  if(typeof DownloadModule!=='undefined')DownloadModule.downloadSmallClaimsPackage(claim);
+  else alert('PDF download loading — try again in a moment.');
+}
+</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the small claims court limit in my state?","acceptedAnswer":{"@type":"Answer","text":"Small claims limits vary by state. California allows up to $12,500. Texas allows up to $20,000. Florida allows up to $8,000. New York allows up to $10,000. SmallClaimsHelper generates state-specific forms with the correct limits for your state."}},{"@type":"Question","name":"How much does SmallClaimsHelper cost?","acceptedAnswer":{"@type":"Answer","text":"SmallClaimsHelper charges a one-time fee of $19. No subscription or recurring fees. This includes your completed court forms and a word-for-word judge script."}},{"@type":"Question","name":"What documents does SmallClaimsHelper generate?","acceptedAnswer":{"@type":"Answer","text":"SmallClaimsHelper generates your completed small claims complaint form, a statement of facts, a list of evidence to bring, and a word-for-word script of exactly what to say to the judge."}},{"@type":"Question","name":"Do I need a lawyer for small claims court?","acceptedAnswer":{"@type":"Answer","text":"No. Small claims court is specifically designed for people to represent themselves without an attorney. SmallClaimsHelper prepares you with court-ready forms and a judge script so you know exactly what to say."}},{"@type":"Question","name":"How long does it take to generate my forms?","acceptedAnswer":{"@type":"Answer","text":"Answer 10 plain-English questions about your case. Your complete small claims forms and judge script are generated in about 60 seconds."}},{"@type":"Question","name":"Is SmallClaimsHelper a law firm?","acceptedAnswer":{"@type":"Answer","text":"No. SmallClaimsHelper is a document automation tool, not a law firm. It does not provide legal advice. For complex legal matters consult a licensed attorney."}}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -103,53 +112,54 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 @media(max-width:500px){.steps{grid-template-columns:1fr}.cgrid{grid-template-columns:1fr 1fr}.og{grid-template-columns:1fr}.tbar{gap:16px}.hp{display:none}.fd,.sc2{padding:16px;font-size:12px}}
 @media print{header,.bp,.bs,.sb{display:none}body{background:white}}
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 <header>
   <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
-    <div style="width:34px;height:34px;border:2px solid #b8860b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#b8860b;flex-shrink:0">⚖</div>
+    <div style="width:34px;height:34px;border:2px solid #b8860b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#b8860b;flex-shrink:0">â</div>
     <div><div class="ht">SmallClaimsHelper</div><div class="hs">Court Document Generator</div></div>
   </a>
   <div style="display:flex;align-items:center;gap:20px">
     <a href="/blog/" style="font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;font-weight:500">Blog</a>
-    <div class="hp">$19 · Instant Download</div>
+    <div class="hp">$19 Â· Instant Download</div>
   </div>
 </header>
 
 
 <div id="screen-landing" class="screen active">
   <div class="hero">
-    <div class="badge">All 50 States · AI-Generated · Ready to File</div>
+    <div class="badge">All 50 States Â· AI-Generated Â· Ready to File</div>
     <h1>Sue them.<br>Without a <em>lawyer.</em></h1>
     <p class="sub">Answer 10 plain-English questions. Get your completed small claims court filing plus a script of exactly what to say to the judge.</p>
-    <button class="cta" onclick="showScreen('questions')">Generate My Documents — $19</button>
+    <button class="cta" onclick="showScreen('questions')">Generate My Documents â $19</button>
     <div class="note">Pay only after you see your completed documents</div>
   </div>
   <div class="tbar">
-    <div class="ti"><span>📋</span><span>Completed court forms</span></div>
-    <div class="ti"><span>🗣</span><span>Judge script included</span></div>
-    <div class="ti"><span>⚡</span><span>Ready in 60 seconds</span></div>
-    <div class="ti"><span>🏛</span><span>All 50 states</span></div>
+    <div class="ti"><span>ð</span><span>Completed court forms</span></div>
+    <div class="ti"><span>ð£</span><span>Judge script included</span></div>
+    <div class="ti"><span>â¡</span><span>Ready in 60 seconds</span></div>
+    <div class="ti"><span>ð</span><span>All 50 states</span></div>
   </div>
   <div class="content">
     <div style="text-align:center;margin-bottom:56px">
       <div class="sl">Common Cases We Handle</div>
       <h2>What are you trying to recover?</h2>
-      <p class="lead">Small claims court handles disputes up to $5,000–$25,000 depending on your state. No lawyer required.</p>
+      <p class="lead">Small claims court handles disputes up to $5,000â$25,000 depending on your state. No lawyer required.</p>
       <div class="cgrid">
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">🏠</div><div class="ct">Security Deposit</div><div class="cd">Landlord kept your deposit unfairly</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">🔨</div><div class="ct">Bad Contractor</div><div class="cd">Work not done or done poorly</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">🚗</div><div class="ct">Car Accident</div><div class="cd">Unpaid damages or repairs</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">📦</div><div class="ct">Seller Scam</div><div class="cd">Online marketplace fraud</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">💼</div><div class="ct">Unpaid Wages</div><div class="cd">Employer owes you money</div></div>
-        <div class="cc" onclick="showScreen('questions')"><div class="ci">📄</div><div class="ct">Broken Contract</div><div class="cd">Someone didn't hold up their end</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">ð </div><div class="ct">Security Deposit</div><div class="cd">Landlord kept your deposit unfairly</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">ð¨</div><div class="ct">Bad Contractor</div><div class="cd">Work not done or done poorly</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">ð</div><div class="ct">Car Accident</div><div class="cd">Unpaid damages or repairs</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">ð¦</div><div class="ct">Seller Scam</div><div class="cd">Online marketplace fraud</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">ð¼</div><div class="ct">Unpaid Wages</div><div class="cd">Employer owes you money</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">ð</div><div class="ct">Broken Contract</div><div class="cd">Someone didn't hold up their end</div></div>
       </div>
     </div>
     <div style="text-align:center;margin-bottom:56px">
       <div class="sl">How It Works</div>
       <h2>Three steps to your day in court</h2><br>
       <div class="steps">
-        <div class="step"><div class="sn">1</div><div class="st">Answer 10 questions</div><div class="sd">Plain English — no legal knowledge needed. Takes about 3 minutes.</div></div>
+        <div class="step"><div class="sn">1</div><div class="st">Answer 10 questions</div><div class="sd">Plain English â no legal knowledge needed. Takes about 3 minutes.</div></div>
         <div class="step"><div class="sn">2</div><div class="st">Get your documents</div><div class="sd">We generate a completed filing form and judge script for your state.</div></div>
         <div class="step"><div class="sn">3</div><div class="st">File and show up</div><div class="sd">Print, file at your courthouse, and read your script on the day.</div></div>
       </div>
@@ -157,8 +167,8 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
     <div class="dark">
       <div class="sl" style="color:#d4a017">Why Not Just Google It?</div>
       <h2 style="color:white;margin-bottom:14px">Government websites are designed by lawyers, for lawyers.</h2>
-      <p style="color:rgba(255,255,255,.55);font-size:15px;line-height:1.7;max-width:460px;margin:0 auto 28px">Wrong form, wrong county, wrong deadline — any one gets your case thrown out. We handle all of it.</p>
-      <button class="cta" onclick="showScreen('questions')">Start My Filing — $19</button>
+      <p style="color:rgba(255,255,255,.55);font-size:15px;line-height:1.7;max-width:460px;margin:0 auto 28px">Wrong form, wrong county, wrong deadline â any one gets your case thrown out. We handle all of it.</p>
+      <button class="cta" onclick="showScreen('questions')">Start My Filing â $19</button>
     </div>
   </div>
 </div>
@@ -167,7 +177,7 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 
 <div id="screen-disclaimer" class="screen">
   <div style="max-width:560px;margin:0 auto;padding:60px 24px;text-align:center">
-    <div style="font-size:48px;margin-bottom:24px">⚖️</div>
+    <div style="font-size:48px;margin-bottom:24px">âï¸</div>
     <h2 style="font-size:26px;font-weight:700;color:#1a1a2e;margin-bottom:16px;line-height:1.3">Before You Begin</h2>
     <div style="background:#fff8e7;border:1px solid #e8d58a;border-left:4px solid #b8860b;border-radius:4px;padding:24px;text-align:left;margin-bottom:28px">
       <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#b8860b;margin-bottom:10px">Important Notice</div>
@@ -175,7 +185,7 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
       <p style="font-size:15px;color:#1a1a2e;line-height:1.7;margin-bottom:12px">Small claims court procedures and required forms <strong>vary by state and county.</strong> Always verify the correct forms and filing requirements with your local courthouse before submitting any documents.</p>
       <p style="font-size:15px;color:#1a1a2e;line-height:1.7">For complex legal matters, consult a <strong>licensed attorney</strong> in your state.</p>
     </div>
-    <button class="cta" onclick="genDocs()" style="width:100%;padding:18px;font-size:16px">I Understand — Continue</button>
+    <button class="cta" onclick="genDocs()" style="width:100%;padding:18px;font-size:16px">I Understand â Continue</button>
     <div style="margin-top:14px;font-size:12px;color:#a0a0bc">By continuing you agree these documents are for informational purposes only</div>
   </div>
 </div>
@@ -214,17 +224,17 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
       <div class="pt">Unlock Your Complete Filing Package</div>
       <div class="ps">Everything you need to walk into court confident and win.</div>
       <div class="pi">
-        <div class="ii"><span class="ic">✓</span><span>Completed small claims complaint form (print and file)</span></div>
-        <div class="ii"><span class="ic">✓</span><span>Word-for-word judge script for your hearing</span></div>
-        <div class="ii"><span class="ic">✓</span><span>Filing instructions for your specific state and county</span></div>
-        <div class="ii"><span class="ic">✓</span><span>Evidence checklist for court</span></div>
+        <div class="ii"><span class="ic">â</span><span>Completed small claims complaint form (print and file)</span></div>
+        <div class="ii"><span class="ic">â</span><span>Word-for-word judge script for your hearing</span></div>
+        <div class="ii"><span class="ic">â</span><span>Filing instructions for your specific state and county</span></div>
+        <div class="ii"><span class="ic">â</span><span>Evidence checklist for court</span></div>
       </div>
       <a href="https://buy.stripe.com/5kQ4gzc1qemF0Gm49Z3oA04" target="_top" style="text-decoration:none">
         <div style="border:1px solid rgba(232,184,75,.2);border-radius:4px;padding:12px 14px;margin-bottom:14px;background:rgba(232,184,75,.04)">
       <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e8b84b;margin-bottom:5px">Legal Disclaimer</div>
-      <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0">SmallClaimsHelper generates template documents for informational purposes only. Not legal advice. Filing requirements vary by state and court — verify compliance before use.</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0">SmallClaimsHelper generates template documents for informational purposes only. Not legal advice. Filing requirements vary by state and court â verify compliance before use.</p>
     </div>
-    <button class="pay">Unlock Full Package — $19</button>
+    <button class="pay">Unlock Full Package â $19</button>
       </a>
     </div>
 
@@ -232,15 +242,21 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 </div>
 
 <div id="screen-results" class="screen">
-  <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;padding:12px 16px;margin:14px 0;font-size:0.85rem;color:#7a6000;display:flex;align-items:flex-start;gap:10px;"><span>💾</span><span><strong>Not saved:</strong> This report won't be stored on our servers. Download or print it now to keep a copy — it will be gone when you close this page.</span></div>
+  <div style="padding:20px 20px 4px">
+    <button onclick="triggerSmallClaimsDownload()" style="width:100%;background:#1a1a2e;color:#c9a84c;border:2px solid #c9a84c;font-weight:700;padding:13px;border-radius:6px;border:none;cursor:pointer;font-size:.9rem;font-family:inherit;background:#b8860b;color:#fff;border:none;">
+      ⬇ Download Court Package (PDF)
+    </button>
+    <p style="font-size:.72rem;color:#888;text-align:center;margin-top:6px">Complaint + hearing script + evidence checklist</p>
+  </div>
+  <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;padding:12px 16px;margin:14px 0;font-size:0.85rem;color:#7a6000;display:flex;align-items:flex-start;gap:10px;"><span>ð¾</span><span><strong>Not saved:</strong> This report won't be stored on our servers. Download or print it now to keep a copy â it will be gone when you close this page.</span></div>
   <div class="rw">
-    <div class="sb"><div class="si">✅</div><div><div class="stl">Your documents are ready to file</div><div class="ss">Print these documents, sign where indicated, and file at your local courthouse.</div></div></div>
-    <div class="ds"><div class="dst">📋 Small Claims Complaint Form</div><div class="fd" id="rc"></div></div>
-    <div class="ds"><div class="dst">🗣 Your Judge Script</div><div style="font-size:13px;color:#6b6b8a;margin-bottom:14px;font-style:italic">Read this when the judge asks you to present your case:</div><div class="sc2" id="rs"></div></div>
-    <div class="ds"><div class="dst">📁 Evidence Checklist</div><div class="sc2" id="re"></div></div>
-    <div style="margin-top:36px"><button class="bp" onclick="window.print()">🖨 Print All Documents</button>
-          <button onclick="downloadReport()" class="btn-secondary" style="margin-left:8px;">⬇ Download (.txt)</button><button class="bs" onclick="resetApp()">Start a New Case</button></div>
-    <div class="disc">⚖ These documents are AI-generated based on your inputs and general small claims procedures. Laws vary by state and county. SmallClaimsHelper is not a law firm and this is not legal advice. For complex cases, consult a licensed attorney.</div>
+    <div class="sb"><div class="si">â</div><div><div class="stl">Your documents are ready to file</div><div class="ss">Print these documents, sign where indicated, and file at your local courthouse.</div></div></div>
+    <div class="ds"><div class="dst">ð Small Claims Complaint Form</div><div class="fd" id="rc"></div></div>
+    <div class="ds"><div class="dst">ð£ Your Judge Script</div><div style="font-size:13px;color:#6b6b8a;margin-bottom:14px;font-style:italic">Read this when the judge asks you to present your case:</div><div class="sc2" id="rs"></div></div>
+    <div class="ds"><div class="dst">ð Evidence Checklist</div><div class="sc2" id="re"></div></div>
+    <div style="margin-top:36px"><button class="bp" onclick="window.print()">ð¨ Print All Documents</button>
+          <button onclick="downloadReport()" class="btn-secondary" style="margin-left:8px;">â¬ Download (.txt)</button><button class="bs" onclick="resetApp()">Start a New Case</button></div>
+    <div class="disc">â These documents are AI-generated based on your inputs and general small claims procedures. Laws vary by state and county. SmallClaimsHelper is not a law firm and this is not legal advice. For complex cases, consult a licensed attorney.</div>
   </div>
 </div>
 
@@ -406,7 +422,7 @@ function downloadReport() {
 
 <!-- SEO Content Block - Visible to Google, below the fold -->
 <div style="max-width:760px;margin:0 auto;padding:60px 24px 80px;border-top:1px solid #e0e0d5">
-  <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:700;color:#1a1a2e;margin-bottom:16px">How to File Small Claims Court — All 50 States</h2>
+  <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:700;color:#1a1a2e;margin-bottom:16px">How to File Small Claims Court â All 50 States</h2>
   <p style="font-size:15px;color:#6b6b8a;line-height:1.8;margin-bottom:20px">Small claims court is a legal proceeding that allows individuals to resolve disputes involving relatively small amounts of money without hiring an attorney. Each state has its own small claims court procedures, filing fees, and maximum claim limits ranging from $2,500 in some states to $25,000 in others.</p>
   
   <h3 style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:12px">Common Small Claims Court Cases</h3>
@@ -436,7 +452,7 @@ function downloadReport() {
 
 <!-- SEO Content Block - Visible to Google, below the fold -->
 <div style="max-width:760px;margin:0 auto;padding:60px 24px 80px;border-top:1px solid #e0e0d5">
-  <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:700;color:#1a1a2e;margin-bottom:16px">How to File Small Claims Court — All 50 States</h2>
+  <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:700;color:#1a1a2e;margin-bottom:16px">How to File Small Claims Court â All 50 States</h2>
   <p style="font-size:15px;color:#6b6b8a;line-height:1.8;margin-bottom:20px">Small claims court is a legal proceeding that allows individuals to resolve disputes involving relatively small amounts of money without hiring an attorney. Each state has its own small claims court procedures, filing fees, and maximum claim limits ranging from $2,500 in some states to $25,000 in others.</p>
   
   <h3 style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:#1a1a2e;margin-bottom:12px">Common Small Claims Court Cases</h3>
@@ -477,27 +493,27 @@ function downloadReport() {
   </div>
   <div style="display:flex;flex-direction:column;gap:10px">
     <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">What is the small claims court limit in my state?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'â':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">What is the small claims court limit in my state?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
       <div style="display:none;padding:0 22px 18px;font-size:14px;color:#666;line-height:1.7">Small claims limits vary by state. California allows up to $12,500. Texas allows up to $20,000. Florida allows up to $8,000. New York allows up to $10,000. SmallClaimsHelper generates state-specific forms with the correct limits and filing fees for your state automatically.</div>
     </div>
     <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">How much does SmallClaimsHelper cost?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'â':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">How much does SmallClaimsHelper cost?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
       <div style="display:none;padding:0 22px 18px;font-size:14px;color:#666;line-height:1.7">SmallClaimsHelper charges a one-time fee of $19. No subscription or recurring fees. This includes your completed court forms, statement of facts, evidence checklist, and a word-for-word judge script. Compare that to a paralegal at $100-200 per hour.</div>
     </div>
     <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">What documents does SmallClaimsHelper generate?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'â':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">What documents does SmallClaimsHelper generate?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
       <div style="display:none;padding:0 22px 18px;font-size:14px;color:#666;line-height:1.7">SmallClaimsHelper generates your completed small claims complaint form, a statement of facts, a list of evidence to bring to court, and a word-for-word script of exactly what to say to the judge. Everything you need to walk into court prepared and confident.</div>
     </div>
     <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">Do I need a lawyer for small claims court?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'â':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">Do I need a lawyer for small claims court?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
       <div style="display:none;padding:0 22px 18px;font-size:14px;color:#666;line-height:1.7">No. Small claims court is specifically designed for people to represent themselves without an attorney. Most states actually prohibit attorneys from appearing in small claims court. SmallClaimsHelper prepares you with court-ready forms and a judge script so you know exactly what to say.</div>
     </div>
     <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">How long does it take to generate my forms?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'â':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">How long does it take to generate my forms?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
       <div style="display:none;padding:0 22px 18px;font-size:14px;color:#666;line-height:1.7">Answer 10 plain-English questions about your case. Your complete small claims forms and judge script are generated in about 60 seconds. The entire process takes about 4 minutes.</div>
     </div>
     <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
-      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">Is SmallClaimsHelper a law firm?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'â':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">Is SmallClaimsHelper a law firm?<span style="font-size:22px;flex-shrink:0;color:#c47f17">+</span></button>
       <div style="display:none;padding:0 22px 18px;font-size:14px;color:#666;line-height:1.7">No. SmallClaimsHelper is a document automation tool, not a law firm. It does not provide legal advice. For complex legal matters or cases involving more than $10,000 consult a licensed attorney in your state.</div>
     </div>
   </div>
@@ -517,7 +533,7 @@ function downloadReport() {
   <h2 style="font-family:Georgia,serif;font-size:24px;font-weight:700;color:#e8e4f0;margin-bottom:12px;margin-top:32px">What Cases Can You File in Small Claims Court?</h2>
   <p style="font-size:15px;color:#8a8698;line-height:1.8;margin-bottom:14px">Small claims court handles money disputes only. Common cases include security deposit disputes, unpaid invoices, contractor disputes, car accident damage, personal loans not repaid, and defective products. You cannot sue for emotional distress or seek an injunction in small claims court.</p>
   <h2 style="font-family:Georgia,serif;font-size:24px;font-weight:700;color:#e8e4f0;margin-bottom:12px;margin-top:32px">How to Win Your Small Claims Case</h2>
-  <p style="font-size:15px;color:#8a8698;line-height:1.8;margin-bottom:14px">Bring every document you have — contracts, receipts, photos, texts, emails, and bank statements. Organize them in order. Practice your story. Be concise and respectful to the judge. SmallClaimsHelper generates a judge presentation script telling you exactly what to say step by step.</p>
+  <p style="font-size:15px;color:#8a8698;line-height:1.8;margin-bottom:14px">Bring every document you have â contracts, receipts, photos, texts, emails, and bank statements. Organize them in order. Practice your story. Be concise and respectful to the judge. SmallClaimsHelper generates a judge presentation script telling you exactly what to say step by step.</p>
   <h2 style="font-family:Georgia,serif;font-size:24px;font-weight:700;color:#e8e4f0;margin-bottom:12px;margin-top:32px">Small Claims Court Filing Fees</h2>
   <p style="font-size:15px;color:#8a8698;line-height:1.8;margin-bottom:14px">Filing fees for small claims court typically range from $30 to $100 depending on your state and the amount you are suing for. California charges $30 to $75. Texas charges $54 to $100. If you win your case you can usually recover your filing fee from the defendant as part of the judgment.</p>
   <div style="margin-top:28px;padding:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:4px;font-size:12px;color:#6a6580;line-height:1.7;font-style:italic">SmallClaimsHelper generates template documents for informational purposes only. It is not a law firm and does not provide legal advice. Court procedures vary by jurisdiction. Always verify current requirements with your local court before filing.</div>
@@ -525,7 +541,9 @@ function downloadReport() {
 <div style="background:#1a1a2e;border-top:1px solid rgba(255,255,255,0.06);padding:32px 24px;text-align:center">
   <p style="font-size:14px;color:#6a6580;margin-bottom:8px">Questions or issues? We are here to help.</p>
   <span style="color:#e8b84b;font-size:15px;font-family:Georgia,serif"><a href="mailto:info@smallclaimsforms.net" style="color:#e8b84b;text-decoration:none">info@smallclaimsforms.net</a></span>
-  <p style="font-size:12px;color:#4a4560;margin-top:16px">SmallClaimsHelper · Small Claims Court Documents · Not a law firm · Not legal advice</p>
+  <p style="font-size:12px;color:#4a4560;margin-top:16px">SmallClaimsHelper Â· Small Claims Court Documents Â· Not a law firm Â· Not legal advice</p>
 </div>
+
+<script src="/download-module.js"></script>
 </body>
 </html>
