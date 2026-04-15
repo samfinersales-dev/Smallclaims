@@ -1,0 +1,44 @@
+name: Monthly Compliance Auto-Update
+
+on:
+  schedule:
+    - cron: '0 9 1 * *'  # 1st of every month at 9am UTC
+  workflow_dispatch:       # Manual trigger anytime
+
+jobs:
+  compliance-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write     # needed to create branches and commit
+      pull-requests: write # needed to open PRs
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Copy auto-update script
+        run: cp .github/scripts/auto-update.js ./auto-update.js
+
+      - name: Run compliance auto-update
+        env:
+          ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY:  ${{ github.repository }}
+          SITE_DOMAIN:        ${{ vars.SITE_DOMAIN }}
+          SITE_NAME:          ${{ vars.SITE_NAME }}
+          APP_TYPE:           ${{ vars.APP_TYPE }}
+          REGULATORY_AREA:    ${{ vars.REGULATORY_AREA }}
+          CHECK_ITEMS:        ${{ vars.CHECK_ITEMS }}
+        run: node auto-update.js
+
+      - name: Cleanup
+        if: always()
+        run: rm -f auto-update.js
