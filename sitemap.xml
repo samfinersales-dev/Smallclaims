@@ -2,33 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://smallclaimsforms.net/</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://smallclaimsforms.net/blog/</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smallclaimsforms.net/blog/how-to-file-small-claims-court.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smallclaimsforms.net/blog/small-claims-evidence-guide.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://smallclaimsforms.net/blog/small-claims-court-north-dakota</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
