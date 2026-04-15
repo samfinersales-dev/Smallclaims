@@ -1,0 +1,46 @@
+name: Auto Blog Post Generator
+
+on:
+  schedule:
+    - cron: '0 8 * * 1,4'  # Every Monday and Thursday at 8am UTC
+  workflow_dispatch:       # Manual trigger from GitHub Actions tab
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Copy blog generator script
+        run: |
+          # Script is stored in .github/scripts/ within this repo
+          cp .github/scripts/generate-blog-post.js ./generate-blog-post.js
+
+      - name: Run blog generator
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NETLIFY_HOOK:       ${{ secrets.NETLIFY_HOOK }}
+          SITE_DOMAIN:        ${{ vars.SITE_DOMAIN }}
+          SITE_NAME:          ${{ vars.SITE_NAME }}
+          TOPIC_AREA:         ${{ vars.TOPIC_AREA }}
+          TARGET_AUDIENCE:    ${{ vars.TARGET_AUDIENCE }}
+          PRODUCT_DESC:       ${{ vars.PRODUCT_DESC }}
+          CTA_TEXT:           ${{ vars.CTA_TEXT }}
+          PRIMARY_COLOR:      ${{ vars.PRIMARY_COLOR }}
+          ACCENT_COLOR:       ${{ vars.ACCENT_COLOR }}
+        run: node generate-blog-post.js
+
+      - name: Cleanup
+        run: rm -f generate-blog-post.js
