@@ -686,27 +686,57 @@ function showResults(){
 
 function resetApp(){A={};cq=0;docs=null;sessionStorage.removeItem('sc_A');sessionStorage.removeItem('sc_docs');showScreen('landing')}
 
-// Save case state when paywall is shown so it survives Stripe redirect
+// Save ONLY answers (not generated docs) so we can regenerate after verified payment
 var origBuildPaywall = buildPaywall;
 buildPaywall = function() {
   origBuildPaywall();
   try {
     if (A) sessionStorage.setItem('sc_A', JSON.stringify(A));
-    if (docs) sessionStorage.setItem('sc_docs', JSON.stringify(docs));
+    // NOT saving docs to sessionStorage — docs stay in memory only until payment verified
   } catch(e) {}
 };
 
-// Post-payment return handler - Stripe redirects to /?paid=true
-(function checkPaidReturn() {
+// Post-payment return handler - Stripe redirects to /?session_id=cs_xxx
+(async function checkPaidReturn() {
   try {
     var params = new URLSearchParams(window.location.search);
-    if (params.get('paid') === 'true') {
-      var savedA = sessionStorage.getItem('sc_A');
-      var savedDocs = sessionStorage.getItem('sc_docs');
-      if (savedA) { try { A = JSON.parse(savedA); } catch(e){} }
-      if (savedDocs) { try { docs = JSON.parse(savedDocs); } catch(e){} }
-      window.history.replaceState({}, '', window.location.pathname);
+    var sessionId = params.get('session_id');
+    if (!sessionId) return;
+
+    // Clean URL immediately
+    window.history.replaceState({}, '', window.location.pathname);
+
+    // Show a loading state
+    showScreen('generating');
+    document.getElementById('gs').textContent = 'Verifying payment...';
+
+    // Verify with Stripe via our server
+    var vr = await fetch('/.netlify/functions/verify-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ session_id: sessionId })
+    });
+    var vd = await vr.json();
+
+    if (!vd.paid) {
+      alert('Payment could not be verified. If you completed payment, please contact support.');
+      showScreen('landing');
+      return;
+    }
+
+    // Payment verified — restore answers and regenerate docs
+    var savedA = sessionStorage.getItem('sc_A');
+    if (savedA) { try { A = JSON.parse(savedA); } catch(e){} }
+
+    if (A && A.state) {
+      document.getElementById('gs').textContent = A.state;
+      // Regenerate the documents server-side now that payment is confirmed
+      await genDocs();
+      // genDocs ends by showing paywall, but we're already paid — skip to results
       if (docs) { showResults(); }
+    } else {
+      alert('Session expired. Please start over.');
+      showScreen('landing');
     }
   } catch(e) { console.warn('paid return error', e); }
 })();
