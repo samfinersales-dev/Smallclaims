@@ -4,402 +4,386 @@
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="hqSsEC93a0tlqhdMI-jDrKM3kVMpIgGSMch-JAYPsnA">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>USCIS Form Error Checker — Fix Mistakes Before You File | FormGuard</title>
-<meta name="description" content="AI-powered USCIS form review. Catch errors on I-485, I-130, I-765, N-400 and more before USCIS rejects your application. Instant results. Only $24.">
-<meta name="keywords" content="USCIS form checker, USCIS form errors, I-485 mistakes, I-130 errors, N-400 mistakes, immigration form review, USCIS rejection reasons, how to fill out USCIS form, immigration form help, USCIS form I-765, green card application errors">
-<meta property="og:title" content="USCIS Form Error Checker — Catch Mistakes Before USCIS Rejects Your Application">
-<meta property="og:description" content="Upload your completed USCIS form. Get an instant AI review of common errors. $24 one-time. No subscription.">
-<meta property="og:url" content="https://uscisformcheck.com">
-<link rel="canonical" href="https://uscisformcheck.com">
+<title>Small Claims Court Forms — File Your Case in Minutes | SmallClaimsHelper</title>
+<meta name="description" content="Generate completed small claims court forms for all 50 states in minutes. Get a word-for-word judge script. No lawyer needed. Only $19.">
+<meta name="keywords" content="small claims court forms, how to file small claims, small claims court California, small claims court Texas, small claims court Florida, small claims court New York, sue landlord security deposit, small claims court filing, how to sue someone, small claims complaint form">
+<meta property="og:title" content="Small Claims Court Forms — File Your Case in Minutes">
+<meta property="og:description" content="Answer 10 questions. Get completed court forms and a judge script for your state. No lawyer needed. $19.">
+<meta property="og:url" content="https://smallclaimsforms.net">
+<link rel="canonical" href="https://smallclaimsforms.net">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="author" content="FormGuard">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"USCIS Form Error Checker","url":"https://uscisformcheck.com","description":"AI-powered USCIS immigration form checker. Upload your completed form and get an instant error report.","applicationCategory":"LegalApplication","offers":{"@type":"Offer","price":"24.00","priceCurrency":"USD"}}</script>
+<meta name="author" content="SmallClaimsHelper">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Small Claims Court Forms Generator","url":"https://smallclaimsforms.net","description":"Generate state-specific small claims court forms and a judge-ready script in minutes. All 50 states. Know exactly what to say in court.","applicationCategory":"LegalApplication","offers":{"@type":"Offer","price":"19.00","priceCurrency":"USD"}}</script>
 <script>
-function triggerFormGuardDownload() {
-  var el=document.getElementById('result-issues');
-  var fnEl=document.getElementById('form-name-checking')||document.getElementById('form-name-upload');
-  var report={formName:fnEl?fnEl.textContent.trim():'USCIS Form',formVersion:'Latest edition',totalFields:0,errors:[],warnings:[]};
-  if(el){var items=el.querySelectorAll('.issue-card');items.forEach(function(it,i){var field=it.querySelector('.issue-card-field');var prob=it.querySelector('.issue-problem');var fix=it.querySelector('.issue-fix');report.errors.push({field:field?field.textContent.trim():'Field '+(i+1),part:'',item:'',issue:prob?prob.textContent.trim():'',fix:fix?fix.textContent.trim():''});});report.totalFields=Math.max(report.errors.length+5,10);}
-  if(typeof DownloadModule!=='undefined' && DownloadModule.downloadFormGuardReport){
-    DownloadModule.downloadFormGuardReport(report);
-  } else {
-    // Fallback: download as text
-    var lines = ['FORMGUARD — USCIS FORM CHECK REPORT','======================================','Form: '+report.formName,'Date: '+new Date().toLocaleDateString(),''];
-    if(report.errors.length>0){lines.push('ISSUES FOUND:','');report.errors.forEach(function(e,i){lines.push((i+1)+'. '+e.field);if(e.issue)lines.push('   Issue: '+e.issue);if(e.fix)lines.push('   Fix: '+e.fix);lines.push('');});}
-    lines.push('---','FormGuard — uscisformcheck.com','For informational purposes only. Not legal or immigration advice.');
-    var blob=new Blob([lines.join('\n')],{type:'text/plain'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='formguard-report-'+new Date().toISOString().slice(0,10)+'.txt';a.click();URL.revokeObjectURL(url);
-  }
+function triggerSmallClaimsDownload() {
+  var rc=document.getElementById('rc'), rs=document.getElementById('rs'), re=document.getElementById('re');
+  var claim={
+    plaintiffName: A.pname || '[Your Name]',
+    plaintiffAddress: A.paddr || '[Your Address]',
+    defendantName: A.dname || '[Defendant]',
+    defendantAddress: A.daddr || '[Defendant Address]',
+    amount: A.amt || '0',
+    state: A.state || '[State]',
+    claimType: A.ctype || 'Civil Dispute',
+    filingFee: 'Check with your local court',
+    court: A.state ? A.state + ' Small Claims Court' : 'Your local small claims court',
+    statementLines: [],
+    evidence: [],
+    keyPoints: ['State facts clearly and chronologically','Present evidence when relevant','Address judge as "Your Honor"','Ask for the exact amount claimed']
+  };
+  if(rc) claim.statementLines = rc.innerText.trim().split('\n').filter(function(l){return l.trim().length>10;});
+  if(rs) claim.openingStatement = rs.innerText.trim();
+  if(re) claim.evidence = re.innerText.trim().split('\n').filter(function(l){return l.trim().length>5;});
+  if(!claim.evidence.length) claim.evidence = [A.evid || 'See attached evidence'];
+  if(typeof DownloadModule!=='undefined') DownloadModule.downloadSmallClaimsPackage(claim);
+  else alert('PDF download loading — try again in a moment.');
 }
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What USCIS forms does FormGuard check?","acceptedAnswer":{"@type":"Answer","text":"FormGuard checks I-485, I-130, I-765, N-400, I-131, and I-864. Upload a photo and receive an instant error report."}},{"@type":"Question","name":"How much does a USCIS form check cost?","acceptedAnswer":{"@type":"Answer","text":"FormGuard charges a one-time fee of $24 per form review. No subscription or recurring fees."}},{"@type":"Question","name":"What errors does FormGuard find?","acceptedAnswer":{"@type":"Answer","text":"Missing signatures, incorrect date formats, blank required fields, name inconsistencies, wrong checkboxes, incorrect fee amounts, and missing initials."}},{"@type":"Question","name":"How long does the form check take?","acceptedAnswer":{"@type":"Answer","text":"Upload your form photo and receive your complete error report in under 60 seconds."}},{"@type":"Question","name":"Can FormGuard guarantee my form will be approved?","acceptedAnswer":{"@type":"Answer","text":"No. FormGuard checks for common errors but cannot guarantee USCIS approval. Always verify at uscis.gov before filing."}},{"@type":"Question","name":"Is FormGuard a law firm?","acceptedAnswer":{"@type":"Answer","text":"No. FormGuard is a document review tool, not a law firm. It does not provide legal advice."}},{"@type":"Question","name":"Is my form data kept private?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your form image is analyzed in memory and never stored on our servers. We do not retain any form data."}},{"@type":"Question","name":"What if USCIS requirements have changed?","acceptedAnswer":{"@type":"Answer","text":"USCIS updates form requirements frequently. FormGuard reflects current instructions but you should always verify at uscis.gov before submitting. For complex cases consult a licensed immigration attorney."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the small claims court limit in my state?","acceptedAnswer":{"@type":"Answer","text":"Small claims limits vary by state. California allows up to $12,500. Texas allows up to $20,000. Florida allows up to $8,000. New York allows up to $10,000. SmallClaimsHelper generates state-specific forms with the correct limits for your state."}},{"@type":"Question","name":"How much does SmallClaimsHelper cost?","acceptedAnswer":{"@type":"Answer","text":"SmallClaimsHelper charges a one-time fee of $19. No subscription or recurring fees. This includes your completed court forms and a word-for-word judge script."}},{"@type":"Question","name":"What documents does SmallClaimsHelper generate?","acceptedAnswer":{"@type":"Answer","text":"SmallClaimsHelper generates your completed small claims complaint form, a statement of facts, a list of evidence to bring, and a word-for-word script of exactly what to say to the judge."}},{"@type":"Question","name":"Do I need a lawyer for small claims court?","acceptedAnswer":{"@type":"Answer","text":"No. Small claims court is specifically designed for people to represent themselves without an attorney. SmallClaimsHelper prepares you with court-ready forms and a judge script so you know exactly what to say."}},{"@type":"Question","name":"How long does it take to generate my forms?","acceptedAnswer":{"@type":"Answer","text":"Answer 10 plain-English questions about your case. Your complete small claims forms and judge script are generated in about 60 seconds."}},{"@type":"Question","name":"Is SmallClaimsHelper a law firm?","acceptedAnswer":{"@type":"Answer","text":"No. SmallClaimsHelper is a document automation tool, not a law firm. It does not provide legal advice. For complex legal matters consult a licensed attorney."}}]}</script>
 <style>
-  /* ── DESIGN TOKENS ─────────────────────────────────────── */
-  :root {
-    --bg:        #0a0e1a;
-    --bg-elev:   #0f1422;
-    --surface:   rgba(255,255,255,0.03);
-    --surface-2: rgba(255,255,255,0.06);
-    --border:    rgba(255,255,255,0.08);
-    --border-2:  rgba(255,255,255,0.14);
-    --ink:       #f0ece0;
-    --ink-2:     #c0b8ac;
-    --muted:     #8a8278;
-    --faint:     #4a4540;
-    --gold:      #d4af6e;
-    --gold-2:    #b8923f;
-    --red:       #ff6b6b;
-    --green:     #6cd17a;
-    --r-sm: 8px; --r-md: 14px; --r-lg: 20px; --r-pill: 999px;
-    --space-1: 6px; --space-2: 12px; --space-3: 20px; --space-4: 32px;
-    --space-5: 56px; --space-6: 88px;
-  }
+:root {
+  --gold: #b8860b;
+  --gold-hover: #d4a017;
+  --gold-soft: #f5ebd0;
+  --dark: #0f1015;
+  --dark-2: #1a1c24;
+  --light-bg: #faf8f3;
+  --surface: #ffffff;
+  --border: #e6e2d6;
+  --border-strong: #c8c2b0;
+  --ink: #1a1c24;
+  --ink-2: #4a4a3e;
+  --text-muted: #7a7560;
+  --r-sm: 6px; --r-md: 10px; --r-lg: 14px;
+  --space-1: 6px; --space-2: 12px; --space-3: 20px; --space-4: 32px;
+  --space-5: 56px; --space-6: 88px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--light-bg);
+  color:var(--ink);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  min-height:100vh;
+  font-feature-settings:"ss01","cv11";
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
 
-  /* ── BASE ──────────────────────────────────────────────── */
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    min-height: 100vh;
-    background: radial-gradient(1200px 600px at 50% -10%, rgba(212,175,110,0.08), transparent 60%), var(--bg);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--ink);
-    overflow-x: hidden;
-    font-feature-settings: "ss01", "cv11";
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,16,21,0.96);
+  backdrop-filter:blur(12px);
+  color:#fff;padding:14px 28px;
+  display:flex;align-items:center;gap:16px;
+  border-bottom:1px solid rgba(184,134,11,0.2);
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand-mark{
+  width:38px;height:38px;border-radius:10px;flex-shrink:0;
+  background:url('/logo.png') center/cover, linear-gradient(135deg,var(--gold),#8a6608);
+  box-shadow:0 4px 14px rgba(184,134,11,0.3);
+}
+.brand-text{line-height:1.15}
+.brand-name{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:600;font-size:17px;color:#fff;
+  letter-spacing:-0.01em;
+}
+.brand-sub{
+  font-size:11px;color:#a09a85;
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-top:2px;font-weight:500;
+}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:24px}
+.header-link{font-size:14px;color:rgba(255,255,255,0.7);text-decoration:none;font-weight:500;transition:color .15s}
+.header-link:hover{color:var(--gold)}
+.header-price{
+  font-size:12px;color:var(--gold);
+  padding:6px 12px;
+  border:1px solid rgba(184,134,11,0.3);
+  border-radius:999px;
+  background:rgba(184,134,11,0.08);
+}
 
-  /* ── HEADER ────────────────────────────────────────────── */
-  header {
-    position: sticky; top: 0; z-index: 50;
-    backdrop-filter: blur(12px);
-    background: rgba(10,14,26,0.72);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 28px;
-    display: flex; align-items: center; gap: 16px;
-  }
-  .brand {
-    display: flex; align-items: center; gap: 12px;
-    text-decoration: none; color: inherit;
-  }
-  .brand-mark {
-    width: 38px; height: 38px;
-    border-radius: 10px; flex-shrink: 0;
-    background: url('/logo.png') center/cover, linear-gradient(135deg, var(--gold), var(--gold-2));
-    box-shadow: 0 4px 14px rgba(212,175,110,0.25);
-  }
-  .brand-text { line-height: 1.15; }
-  .brand-name {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 600; font-size: 17px; color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-  .brand-sub {
-    font-size: 11px; color: var(--muted);
-    letter-spacing: 0.1em; text-transform: uppercase;
-    margin-top: 2px; font-weight: 500;
-  }
-  .header-right { margin-left: auto; display: flex; align-items: center; gap: 24px; }
-  .header-link {
-    font-size: 14px; color: var(--ink-2);
-    text-decoration: none; font-weight: 500;
-    transition: color .15s;
-  }
-  .header-link:hover { color: var(--gold); }
-  .header-price {
-    font-size: 12px; color: var(--gold);
-    padding: 6px 12px;
-    border: 1px solid rgba(212,175,110,0.25);
-    border-radius: var(--r-pill);
-    background: rgba(212,175,110,0.06);
-  }
+.screen{display:none}.screen.active{display:block}
 
-  /* ── LAYOUT ────────────────────────────────────────────── */
-  main { max-width: 760px; margin: 0 auto; padding: var(--space-6) 28px; }
-  .screen { display: none; }
-  .screen.active { display: block; }
-  .center { text-align: center; }
+/* HERO */
+.hero{
+  background:radial-gradient(900px 500px at 50% -10%, rgba(184,134,11,0.18), transparent 60%), var(--dark);
+  color:#fff;padding:96px 28px 110px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(184,134,11,0.4);
+  border-radius:999px;padding:7px 16px;
+  font-size:12px;letter-spacing:0.04em;
+  color:var(--gold);margin-bottom:28px;font-weight:500;
+}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+h1{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:clamp(40px,7vw,68px);
+  font-weight:500;line-height:1.02;
+  letter-spacing:-0.025em;
+  color:#fff;margin-bottom:22px;
+}
+h1 em{color:var(--gold);font-style:italic;font-weight:400}
+.sub{
+  font-size:18px;color:rgba(255,255,255,0.65);
+  line-height:1.55;max-width:540px;margin:0 auto 36px;
+}
+.cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--gold),#8a6608);
+  color:#fff;border:none;border-radius:12px;
+  padding:16px 36px;font-size:16px;font-weight:600;
+  cursor:pointer;font-family:inherit;letter-spacing:-0.01em;
+  box-shadow:0 8px 24px rgba(184,134,11,0.3),inset 0 1px 0 rgba(255,255,255,0.2);
+  transition:transform .15s,box-shadow .15s;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(184,134,11,0.4),inset 0 1px 0 rgba(255,255,255,0.25)}
+.note{margin-top:14px;font-size:13px;color:rgba(255,255,255,0.4)}
 
-  /* ── HERO ──────────────────────────────────────────────── */
-  .hero { text-align: center; margin-bottom: var(--space-6); }
-  .badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(212,175,110,0.08);
-    border: 1px solid rgba(212,175,110,0.2);
-    border-radius: var(--r-pill); padding: 7px 16px;
-    font-size: 12px; color: var(--gold);
-    letter-spacing: 0.04em; font-weight: 500;
-    margin-bottom: var(--space-4);
-  }
-  .badge::before {
-    content: ""; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--gold); box-shadow: 0 0 8px var(--gold);
-  }
-  h1 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: clamp(40px, 7vw, 64px);
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-    color: var(--ink);
-    margin-bottom: var(--space-3);
-  }
-  h1 em { color: var(--gold); font-style: italic; font-weight: 400; }
-  .subtitle {
-    font-size: 18px; color: var(--ink-2);
-    line-height: 1.55; max-width: 520px;
-    margin: 0 auto var(--space-4); font-weight: 400;
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-2));
-    color: #0a0e1a; border: none; border-radius: 12px;
-    padding: 16px 36px; font-size: 16px; font-weight: 600;
-    cursor: pointer; letter-spacing: -0.01em;
-    box-shadow: 0 8px 24px rgba(212,175,110,0.28), inset 0 1px 0 rgba(255,255,255,0.25);
-    transition: transform .15s, box-shadow .15s;
-    font-family: inherit;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(212,175,110,0.4), inset 0 1px 0 rgba(255,255,255,0.3); }
-  .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-  .btn-full { width: 100%; padding: 18px; font-size: 17px; justify-content: center; }
-  .btn-ghost {
-    background: none; border: none; color: var(--muted);
-    cursor: pointer; font-size: 14px; padding: 0; margin-bottom: var(--space-4);
-    font-family: inherit;
-  }
-  .btn-ghost:hover { color: var(--ink); }
-  .btn-secondary {
-    width: 100%; background: var(--surface);
-    border: 1px solid var(--border); border-radius: var(--r-md);
-    padding: 16px; font-size: 15px; color: var(--ink-2);
-    cursor: pointer; font-family: inherit; font-weight: 500;
-    transition: border-color .15s, background .15s;
-  }
-  .btn-secondary:hover { border-color: var(--border-2); background: var(--surface-2); }
-  .pay-after {
-    margin-top: 14px; font-size: 13px; color: var(--muted);
-  }
+/* TRUST BAR */
+.tbar{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  padding:22px 28px;display:flex;justify-content:center;
+  gap:48px;flex-wrap:wrap;
+}
+.ti{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);font-weight:500}
+.ti span:first-child{font-size:16px}
 
-  /* ── STATS ─────────────────────────────────────────────── */
-  .stats-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-2); margin-bottom: var(--space-5);
-  }
-  .stat-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--r-md); padding: 24px 18px; text-align: center;
-    transition: border-color .15s, transform .15s;
-  }
-  .stat-card:hover { border-color: var(--border-2); transform: translateY(-1px); }
-  .stat-n {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 30px; font-weight: 500;
-    color: var(--gold); margin-bottom: 6px;
-    letter-spacing: -0.02em;
-  }
-  .stat-label { font-size: 12px; color: var(--muted); line-height: 1.5; }
+/* CONTENT SECTIONS */
+.content{max-width:880px;margin:0 auto;padding:var(--space-6) 28px}
+.section{margin-bottom:var(--space-6)}
+.sl{
+  font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;font-weight:600;
+}
+h2{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:clamp(28px,4.5vw,42px);
+  font-weight:500;color:var(--ink);
+  margin-bottom:14px;line-height:1.1;
+  letter-spacing:-0.02em;
+}
+.lead{
+  font-size:17px;color:var(--ink-2);
+  line-height:1.65;margin-bottom:var(--space-5);
+  max-width:600px;margin-left:auto;margin-right:auto;
+}
 
-  /* ── REJECTION BOX ─────────────────────────────────────── */
-  .rejection-box {
-    background: rgba(255,107,107,0.04);
-    border: 1px solid rgba(255,107,107,0.14);
-    border-radius: var(--r-lg); padding: 28px 32px;
-  }
-  .rejection-title {
-    font-size: 12px; color: var(--red);
-    letter-spacing: 0.08em; text-transform: uppercase;
-    margin-bottom: 18px; font-weight: 600;
-  }
-  .rejection-item {
-    display: flex; gap: 12px; align-items: flex-start;
-    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-  .rejection-item:last-child { border-bottom: none; }
-  .rejection-x {
-    color: var(--red); font-weight: 700;
-    font-size: 13px; margin-top: 2px; flex-shrink: 0;
-  }
-  .rejection-text { font-size: 14px; color: var(--ink-2); line-height: 1.6; }
+/* CASE TYPE GRID */
+.cgrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:14px;margin-bottom:var(--space-5);
+}
+.cc{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-md);padding:24px 20px;
+  cursor:pointer;transition:all .2s;text-align:left;
+}
+.cc:hover{
+  border-color:var(--gold);
+  background:linear-gradient(180deg,#fefaf0,var(--surface));
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(184,134,11,0.1);
+}
+.ci{font-size:26px;margin-bottom:12px;display:block}
+.ct{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:17px;font-weight:600;color:var(--ink);
+  margin-bottom:4px;letter-spacing:-0.01em;
+}
+.cd{font-size:13px;color:var(--text-muted);line-height:1.5}
 
-  /* ── FORM SELECT GRID ──────────────────────────────────── */
-  .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-  .form-btn {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--r-md); padding: 22px 20px;
-    text-align: left; cursor: pointer; color: var(--ink);
-    transition: all .15s; font-family: inherit;
-  }
-  .form-btn:hover { border-color: rgba(212,175,110,0.3); background: var(--surface-2); transform: translateY(-1px); }
-  .form-btn.selected { background: rgba(212,175,110,0.1); border-color: rgba(212,175,110,0.4); }
-  .form-name {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 22px; font-weight: 500;
-    color: var(--gold); margin-bottom: 4px;
-    letter-spacing: -0.01em;
-  }
-  .form-desc { font-size: 13px; color: var(--muted); }
+/* STEPS */
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:32px;margin-bottom:var(--space-5);
+  max-width:840px;margin-left:auto;margin-right:auto;
+}
+.step{text-align:center}
+.sn{
+  width:48px;height:48px;
+  background:var(--dark);color:var(--gold);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-size:20px;font-weight:600;
+  margin:0 auto 18px;
+  border:2px solid var(--gold);
+}
+.st{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:18px;font-weight:600;margin-bottom:8px;
+  color:var(--ink);letter-spacing:-0.01em;
+}
+.sd{font-size:14px;color:var(--text-muted);line-height:1.6}
 
-  /* ── UPLOAD ZONE ───────────────────────────────────────── */
-  .upload-zone {
-    border: 2px dashed var(--border-2);
-    border-radius: var(--r-lg); padding: 56px 32px;
-    text-align: center; cursor: pointer;
-    background: var(--surface);
-    transition: all .2s; margin-bottom: var(--space-3);
-  }
-  .upload-zone:hover { border-color: rgba(212,175,110,0.4); background: var(--surface-2); }
-  .upload-zone.has-image { border: 2px solid rgba(212,175,110,0.4); background: rgba(212,175,110,0.04); }
-  .upload-icon { font-size: 44px; margin-bottom: 14px; }
-  .upload-text { color: var(--ink-2); font-size: 16px; margin-bottom: 6px; font-weight: 500; }
-  .upload-hint { color: var(--muted); font-size: 13px; }
-  .upload-preview { max-width: 100%; max-height: 300px; border-radius: var(--r-sm); margin-bottom: 14px; }
-  .upload-confirm { color: var(--gold); font-size: 14px; }
-  .trust-row { margin-top: var(--space-3); display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
-  .trust-item { font-size: 12px; color: var(--muted); }
+/* DARK CTA BLOCK */
+.dark{
+  background:radial-gradient(600px 300px at 50% 0%,rgba(184,134,11,0.15),transparent 60%),var(--dark);
+  color:#fff;border-radius:var(--r-lg);
+  padding:64px 40px;text-align:center;
+  border:1px solid rgba(184,134,11,0.2);
+}
+.dark .sl{color:var(--gold)}
+.dark h2{color:#fff}
+.dark p{color:rgba(255,255,255,0.65);font-size:16px;line-height:1.65;max-width:480px;margin:0 auto 32px}
 
-  /* ── CHECKING / SPINNER ────────────────────────────────── */
-  .spinner-wrap { max-width: 480px; margin: 0 auto; padding: 120px 28px; text-align: center; }
-  .spinner {
-    width: 72px; height: 72px;
-    border: 3px solid rgba(212,175,110,0.15);
-    border-top-color: var(--gold);
-    border-radius: 50%; margin: 0 auto var(--space-4);
-    animation: spin 0.9s linear infinite;
-  }
-  .checking-title {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 26px; font-weight: 500; color: var(--ink);
-    margin-bottom: 10px; letter-spacing: -0.015em;
-  }
-  .checking-sub { color: var(--muted); font-size: 15px; line-height: 1.6; }
+/* QUESTION FLOW */
+.fw{max-width:640px;margin:0 auto;padding:var(--space-5) 28px}
+.pb{height:4px;background:var(--border);border-radius:999px;margin-bottom:var(--space-4);overflow:hidden}
+.pf{height:100%;background:var(--gold);border-radius:999px;transition:width .4s}
+.sc{font-size:11px;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.qq{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:clamp(22px,3.5vw,30px);font-weight:500;
+  color:var(--ink);margin-bottom:8px;line-height:1.2;letter-spacing:-0.02em;
+}
+.qh{font-size:14px;color:var(--text-muted);margin-bottom:28px;line-height:1.6}
 
-  /* ── RESULTS / ISSUES ──────────────────────────────────── */
-  .risk-banner {
-    border-radius: var(--r-lg); padding: 28px;
-    margin-bottom: var(--space-4); text-align: center;
-  }
-  .risk-label { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
-  .risk-title { font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.015em; }
-  .risk-summary { font-size: 15px; color: var(--ink-2); }
-  .preview-box {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--r-lg); padding: 28px; margin-bottom: var(--space-4);
-  }
-  .preview-label { font-size: 13px; color: var(--muted); margin-bottom: 14px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600; }
-  .issue-row { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
-  .issue-row:last-child { border-bottom: none; }
-  .severity-badge {
-    padding: 3px 9px; border-radius: 4px;
-    font-size: 10px; font-weight: 700; letter-spacing: 0.05em;
-    white-space: nowrap; height: fit-content; flex-shrink: 0;
-  }
-  .issue-field { font-size: 14px; color: var(--ink-2); font-weight: 600; margin-bottom: 4px; }
-  .issue-text { font-size: 13px; color: var(--muted); }
-  .paywall-note { text-align: center; font-size: 13px; color: var(--muted); margin-top: var(--space-2); }
-  .paywall-compare { text-align: center; margin-top: 6px; font-size: 13px; color: var(--muted); font-style: italic; }
-  .section-label { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-2); font-weight: 600; }
-  .result-header {
-    display: flex; align-items: center; gap: 16px; margin-bottom: var(--space-4);
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--r-lg); padding: 20px 24px;
-  }
-  .result-icon {
-    width: 52px; height: 52px; border-radius: var(--r-md);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px; flex-shrink: 0;
-  }
-  .result-risk { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; font-weight: 600; }
-  .result-summary { font-size: 16px; color: var(--ink); font-weight: 500; }
-  .issue-card { border-radius: var(--r-md); padding: 20px; margin-bottom: 12px; }
-  .issue-card-header { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
-  .issue-card-field { font-size: 15px; font-weight: 600; color: var(--ink); }
-  .issue-problem { font-size: 14px; color: var(--ink-2); margin-bottom: 10px; line-height: 1.6; }
-  .issue-fix { font-size: 14px; color: var(--green); line-height: 1.6; }
-  .clear-box {
-    background: rgba(108,209,122,0.04);
-    border: 1px solid rgba(108,209,122,0.14);
-    border-radius: var(--r-md); padding: 20px; margin-bottom: var(--space-4);
-  }
-  .clear-item { display: flex; gap: 10px; padding: 6px 0; font-size: 14px; color: var(--green); }
-  .disclaimer-box {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--r-md); padding: 18px 20px; margin-bottom: var(--space-4);
-  }
-  .disclaimer-text { font-size: 12px; color: var(--muted); line-height: 1.6; font-style: italic; }
+input[type=text],input[type=number],select,textarea{
+  width:100%;padding:14px 16px;border:1.5px solid var(--border);
+  border-radius:var(--r-sm);font-family:inherit;font-size:16px;
+  color:var(--ink);background:var(--surface);outline:none;
+  transition:border-color .2s;margin-bottom:8px;appearance:none;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,134,11,0.1)}
+textarea{resize:vertical;min-height:120px;line-height:1.6}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.ob{
+  padding:14px 16px;border:1.5px solid var(--border);
+  border-radius:var(--r-sm);background:var(--surface);
+  font-family:inherit;font-size:14px;color:var(--ink);
+  cursor:pointer;text-align:left;transition:all .15s;line-height:1.4;
+}
+.ob:hover{border-color:var(--gold);background:#fefaf0}
+.ob.sel{border-color:var(--gold);background:var(--gold-soft);font-weight:600}
+.nr{display:flex;gap:12px;margin-top:32px;align-items:center;justify-content:space-between}
+.bb{
+  background:none;border:1.5px solid var(--border);
+  border-radius:var(--r-sm);padding:12px 22px;
+  font-family:inherit;font-size:14px;color:var(--text-muted);
+  cursor:pointer;font-weight:500;transition:border-color .15s;
+}
+.bb:hover{border-color:var(--border-strong);color:var(--ink)}
+.nb{
+  background:var(--dark);color:#fff;border:none;
+  border-radius:var(--r-sm);padding:13px 32px;
+  font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;
+  letter-spacing:-0.01em;transition:transform .15s;
+}
+.nb:hover:not(:disabled){transform:translateY(-1px)}
+.nb:disabled{opacity:0.4;cursor:not-allowed}
 
-  /* ── ANIMATIONS ────────────────────────────────────────── */
-  @keyframes spin { to { transform: rotate(360deg); } }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-  .fade-up { animation: fadeUp 0.6s cubic-bezier(.2,.7,.2,1) both; }
-  .fade-up-2 { animation: fadeUp 0.6s cubic-bezier(.2,.7,.2,1) 0.1s both; opacity: 0; }
-  .fade-up-3 { animation: fadeUp 0.6s cubic-bezier(.2,.7,.2,1) 0.2s both; opacity: 0; }
-  .blurred { filter: blur(4px); user-select: none; pointer-events: none; }
+/* GENERATING */
+.gw{max-width:480px;margin:0 auto;padding:120px 28px;text-align:center}
+.gs{width:72px;height:72px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;margin:0 auto var(--space-4);animation:spin .9s linear infinite}
+.gt{font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:500;margin-bottom:10px;letter-spacing:-0.015em}
+.gd{font-size:15px;color:var(--text-muted);line-height:1.6}
 
-  /* ── RESPONSIVE ────────────────────────────────────────── */
-  @media (max-width: 640px) {
-    header { padding: 12px 18px; }
-    main { padding: 56px 20px; }
-    .stats-grid { grid-template-columns: 1fr; }
-    .forms-grid { grid-template-columns: 1fr; }
-    .trust-row { gap: 10px; }
-    .header-price { display: none; }
-    .header-right { gap: 14px; }
-    .brand-sub { display: none; }
-  }
+/* PAYWALL / DOCUMENT PREVIEW */
+.pw{max-width:620px;margin:0 auto;padding:var(--space-5) 28px}
+.pdoc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:32px;margin-bottom:28px;position:relative;overflow:hidden;font-family:'Courier New',monospace;font-size:13px;line-height:1.8;color:#2d2b20}
+.pdoc:after{content:'';position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to bottom,transparent,var(--surface))}
+.dh{text-align:center;margin-bottom:18px}
+.dt{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.dc{font-size:12px;color:var(--text-muted)}
+.dd{border:none;border-top:2px solid var(--ink);margin:12px 0}
+.df{margin-bottom:8px}
+.dl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+.dv{font-size:14px;font-weight:600}
+.bl{filter:blur(5px);user-select:none}
 
-  /* ── FAQ ───────────────────────────────────────────────── */
-  .faq-section { max-width: 760px; margin: 0 auto; padding: 0 28px var(--space-6); }
-  .faq-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 8px; text-align: center; }
-  .faq-title { font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 500; color: var(--ink); text-align: center; margin-bottom: var(--space-4); letter-spacing: -0.02em; }
-  .faq-list { display: flex; flex-direction: column; gap: 10px; }
-  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: border-color .15s; }
-  .faq-item:hover { border-color: var(--border-2); }
-  .faq-q-btn { width: 100%; padding: 18px 22px; text-align: left; background: none; border: none; font-family: inherit; font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-  .faq-toggle { color: var(--gold); font-size: 22px; flex-shrink: 0; transition: transform .2s; }
-  .faq-a { display: none; padding: 0 22px 18px; font-size: 14px; color: var(--ink-2); line-height: 1.7; }
+.pbox{
+  background:radial-gradient(500px 250px at 50% 0%,rgba(184,134,11,0.18),transparent 60%),var(--dark);
+  border-radius:var(--r-lg);padding:40px 36px;color:#fff;text-align:center;margin-bottom:14px;
+  border:1px solid rgba(184,134,11,0.2);
+}
+.pt{font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:500;margin-bottom:8px;letter-spacing:-0.015em}
+.ps{font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:28px;line-height:1.6}
+.pi{text-align:left;margin-bottom:28px;background:rgba(255,255,255,0.04);border-radius:var(--r-sm);padding:16px 20px}
+.ii{display:flex;gap:10px;padding:8px 0;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.ii:last-child{border:none}
+.ic{color:var(--gold);flex-shrink:0;font-weight:700}
+.pay{
+  width:100%;background:linear-gradient(135deg,var(--gold),#8a6608);
+  color:#fff;border:none;border-radius:var(--r-md);padding:17px;
+  font-size:17px;font-weight:600;font-family:inherit;cursor:pointer;
+  box-shadow:0 8px 24px rgba(184,134,11,0.3);transition:transform .15s;
+}
+.pay:hover{transform:translateY(-2px)}
 
-  /* ── SEO CONTENT BLOCK ─────────────────────────────────── */
-  .seo-block { max-width: 760px; margin: 0 auto; padding: var(--space-6) 28px var(--space-6); border-top: 1px solid var(--border); }
-  .seo-block h2 { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 500; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.02em; }
-  .seo-block h3 { font-family: 'Fraunces', Georgia, serif; font-size: 20px; font-weight: 500; color: var(--gold); margin-bottom: 12px; margin-top: var(--space-4); letter-spacing: -0.01em; }
-  .seo-block p { font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-bottom: var(--space-3); }
-  .seo-disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 22px; margin-top: var(--space-4); }
-  .seo-disclaimer p { font-size: 13px; color: var(--muted); line-height: 1.65; font-style: italic; margin: 0; }
+/* RESULTS */
+.rw{max-width:780px;margin:0 auto;padding:var(--space-5) 28px}
+.sb{background:#f0faf4;border:1px solid #a3d9b8;border-left:4px solid #1a6b3a;border-radius:var(--r-sm);padding:20px 24px;display:flex;gap:14px;align-items:flex-start;margin-bottom:var(--space-4)}
+.si{font-size:24px;flex-shrink:0}
+.stl{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:600;color:#1a6b3a;margin-bottom:4px;letter-spacing:-0.01em}
+.ss{font-size:13px;color:#2d7a50;line-height:1.5}
+.ds{margin-bottom:var(--space-4)}
+.dst{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:500;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);letter-spacing:-0.015em}
+.fd{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:36px;font-size:13px;line-height:1.9;color:#2d2b20;white-space:pre-wrap;font-family:'Courier New',monospace}
+.sc2{background:var(--gold-soft);border:1px solid #e8d58a;border-left:4px solid var(--gold);border-radius:var(--r-sm);padding:24px 28px;font-size:13px;line-height:1.9;color:#2d2b20;white-space:pre-wrap}
+.bp{background:var(--dark);color:#fff;border:none;border-radius:var(--r-sm);padding:13px 28px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;margin-right:10px}
+.bs{background:none;border:1.5px solid var(--border);border-radius:var(--r-sm);padding:13px 28px;font-size:14px;color:var(--text-muted);font-family:inherit;cursor:pointer}
+.disc{margin-top:28px;padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);font-size:12px;color:var(--text-muted);line-height:1.65;font-style:italic}
 
-  /* ── FOOTER ────────────────────────────────────────────── */
-  .site-footer { border-top: 1px solid var(--border); padding: var(--space-4) 28px; text-align: center; }
-  .site-footer p { font-size: 14px; color: var(--muted); margin-bottom: 6px; }
-  .site-footer a { color: var(--gold); font-size: 15px; text-decoration: none; font-weight: 500; }
-  .site-footer .legal { font-size: 12px; color: var(--faint); margin-top: 14px; }
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.fade-up{animation:fadeUp .6s cubic-bezier(.2,.7,.2,1) both}
+
+@media(max-width:640px){
+  header{padding:12px 18px}
+  .hero{padding:64px 20px 80px}
+  .tbar{gap:18px;padding:18px}
+  .content{padding:64px 20px}
+  .steps{grid-template-columns:1fr;gap:24px}
+  .cgrid{grid-template-columns:1fr 1fr}
+  .og{grid-template-columns:1fr}
+  .header-price{display:none}
+  .brand-sub{display:none}
+  .fd,.sc2{padding:20px;font-size:12px}
+  .pdoc{padding:22px}
+}
+@media print{header,.bp,.bs,.sb{display:none}body{background:white}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://uscisformcheck.com/logo.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://uscisformcheck.com/logo.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://uscisformcheck.com/logo.png">
-<link rel="shortcut icon" href="https://uscisformcheck.com/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://smallclaimsforms.net/logo.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://smallclaimsforms.net/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://smallclaimsforms.net/logo.png">
+<link rel="shortcut icon" href="https://smallclaimsforms.net/logo.png">
 
-<meta property="og:image" content="https://uscisformcheck.com/logo.png">
+<meta property="og:image" content="https://smallclaimsforms.net/logo.png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
-<meta name="twitter:image" content="https://uscisformcheck.com/logo.png">
+<meta name="twitter:image" content="https://smallclaimsforms.net/logo.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "FormGuard",
-  "url": "https://uscisformcheck.com/",
+  "name": "SmallClaimsHelper",
+  "url": "https://smallclaimsforms.net/",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://uscisformcheck.com/logo.png",
+    "url": "https://smallclaimsforms.net/logo.png",
     "width": 512,
     "height": 512
   },
-  "description": "AI-powered USCIS immigration form error checker. Catches mistakes on I-485, I-130, I-765, N-400 and other forms before USCIS rejects your application."
+  "description": "Small claims court forms generator for all 50 states. Generates completed court forms and a word-for-word judge script so you know exactly what to say in court."
 }
 </script>
 
@@ -407,32 +391,32 @@ function triggerFormGuardDownload() {
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to check your USCIS form for errors",
-  "description": "Upload your completed USCIS form and receive an instant AI-generated error report covering missing signatures, blank fields, date format issues, and more.",
+  "name": "How to file a small claims court case",
+  "description": "Answer 10 plain-English questions about your case and receive completed small claims forms and a judge-ready script for your state.",
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Choose your USCIS form",
-      "text": "Select the form you completed \u2014 I-485, I-130, I-765, N-400, I-131, I-864, or another supported form."
+      "name": "Describe your dispute",
+      "text": "Enter your state, the amount you are claiming, and a brief description of what happened."
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Upload a photo of your form",
-      "text": "Take a clear photo of each page of your completed form and upload it. Your image is analyzed in memory and never stored."
+      "name": "Identify the parties",
+      "text": "Provide your name and address along with the defendant's name and address."
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Review the error report",
-      "text": "Receive a line-by-line report of missing signatures, blank required fields, date format issues, name inconsistencies, and other common errors."
+      "name": "Answer 10 case questions",
+      "text": "Walk through plain-English questions about evidence, contracts, and the events giving rise to the claim."
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Fix and file with USCIS",
-      "text": "Correct the flagged issues, then submit your form to USCIS through the official channel at uscis.gov."
+      "name": "Get forms and judge script",
+      "text": "Receive your completed small claims complaint form, a list of evidence to bring, and a word-for-word script of what to say to the judge."
     }
   ]
 }
@@ -442,8 +426,8 @@ function triggerFormGuardDownload() {
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "FormGuard",
-  "url": "https://uscisformcheck.com/",
+  "name": "SmallClaimsHelper",
+  "url": "https://smallclaimsforms.net/",
   "speakable": {
     "@type": "SpeakableSpecification",
     "cssSelector": [
@@ -456,179 +440,148 @@ function triggerFormGuardDownload() {
 </script>
 </head>
 <body>
-
 <header>
-  <a href="/" class="brand" aria-label="FormGuard home">
+  <a href="/" class="brand" aria-label="SmallClaimsHelper home">
     <div class="brand-mark" aria-hidden="true"></div>
     <div class="brand-text">
-      <div class="brand-name">FormGuard</div>
-      <div class="brand-sub">USCIS Form Checker</div>
+      <div class="brand-name">SmallClaimsHelper</div>
+      <div class="brand-sub">Court Document Generator</div>
     </div>
   </a>
   <div class="header-right">
     <a href="/blog/" class="header-link">Blog</a>
-    <div class="header-price">$24 · No subscription</div>
+    <div class="header-price">$19 · Instant Download</div>
   </div>
 </header>
 
-<!-- LANDING -->
 <div id="screen-landing" class="screen active">
-  <main>
-    <div class="hero fade-up">
-      <div class="badge">AI-Powered · Instant Results</div>
-      <h1>Don't let a typo<br><em>delay your case by months.</em></h1>
-      <p class="subtitle">USCIS rejects thousands of forms every week for simple, fixable mistakes. Upload your completed form. Get a full error report in under 60 seconds.</p>
-      <button class="btn-primary" onclick="showScreen('select')">Check My Form — $24 →</button>
-      <div class="pay-after">Pay only after you see the issues found</div>
+  <div class="hero">
+    <div class="badge">All 50 States · AI-Generated · Ready to File</div>
+    <h1>Sue them.<br>Without a <em>lawyer.</em></h1>
+    <p class="sub">Answer 10 plain-English questions. Get your completed small claims court filing plus a script of exactly what to say to the judge.</p>
+    <button class="cta" onclick="showScreen('questions')">Generate My Documents → $19</button>
+    <div class="note">Pay only after you see your completed documents</div>
+  </div>
+  <div class="tbar">
+    <div class="ti"><span>📋</span><span>Completed court forms</span></div>
+    <div class="ti"><span>🗣</span><span>Judge script included</span></div>
+    <div class="ti"><span>⚡</span><span>Ready in 60 seconds</span></div>
+    <div class="ti"><span>🔒</span><span>All 50 states</span></div>
+  </div>
+  <div class="content">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="sl">Common Cases We Handle</div>
+      <h2>What are you trying to recover?</h2>
+      <p class="lead">Small claims court handles disputes up to $5,000–$25,000 depending on your state. No lawyer required.</p>
+      <div class="cgrid">
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">🏠</div><div class="ct">Security Deposit</div><div class="cd">Landlord kept your deposit unfairly</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">🔨</div><div class="ct">Bad Contractor</div><div class="cd">Work not done or done poorly</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">🚗</div><div class="ct">Car Accident</div><div class="cd">Unpaid damages or repairs</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">📦</div><div class="ct">Seller Scam</div><div class="cd">Online marketplace fraud</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">💼</div><div class="ct">Unpaid Wages</div><div class="cd">Employer owes you money</div></div>
+        <div class="cc" onclick="showScreen('questions')"><div class="ci">📝</div><div class="ct">Broken Contract</div><div class="cd">Someone didn't hold up their end</div></div>
+      </div>
     </div>
-    <div class="stats-grid fade-up-2">
-      <div class="stat-card"><div class="stat-n">$1,440</div><div class="stat-label">filing fee for I-485 — lost if rejected</div></div>
-      <div class="stat-card"><div class="stat-n">12+</div><div class="stat-label">common rejection causes our AI checks</div></div>
-      <div class="stat-card"><div class="stat-n">60s</div><div class="stat-label">average time for our review</div></div>
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="sl">How It Works</div>
+      <h2>Three steps to your day in court</h2><br>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div class="st">Answer 10 questions</div><div class="sd">Plain English — no legal knowledge needed. Takes about 3 minutes.</div></div>
+        <div class="step"><div class="sn">2</div><div class="st">Get your documents</div><div class="sd">We generate a completed filing form and judge script for your state.</div></div>
+        <div class="step"><div class="sn">3</div><div class="st">File and show up</div><div class="sd">Print, file at your courthouse, and read your script on the day.</div></div>
+      </div>
     </div>
-    <div class="rejection-box fade-up-3">
-      <div class="rejection-title">Top reasons USCIS rejects forms</div>
-      <div class="rejection-item"><span class="rejection-x">✗</span><span class="rejection-text">Missing signature or date on final page</span></div>
-      <div class="rejection-item"><span class="rejection-x">✗</span><span class="rejection-text">Wrong date format (must be MM/DD/YYYY)</span></div>
-      <div class="rejection-item"><span class="rejection-x">✗</span><span class="rejection-text">Name doesn't match exactly across all fields</span></div>
-      <div class="rejection-item"><span class="rejection-x">✗</span><span class="rejection-text">Blank required fields left empty instead of writing N/A</span></div>
-      <div class="rejection-item"><span class="rejection-x">✗</span><span class="rejection-text">Incorrect fee amount attached</span></div>
-      <div class="rejection-item"><span class="rejection-x">✗</span><span class="rejection-text">Missing supporting documents listed in instructions</span></div>
+    <div class="dark">
+      <div class="sl" style="color:var(--gold)">Why Not Just Google It?</div>
+      <h2 style="color:white;margin-bottom:14px">Government websites are designed by lawyers, for lawyers.</h2>
+      <p style="color:rgba(255,255,255,.55);font-size:15px;line-height:1.7;max-width:460px;margin:0 auto 28px">Wrong form, wrong county, wrong deadline — any one gets your case thrown out. We handle all of it.</p>
+      <button class="cta" onclick="showScreen('questions')">Start My Filing → $19</button>
     </div>
-  </main>
+  </div>
 </div>
 
-<!-- DISCLAIMER -->
 <div id="screen-disclaimer" class="screen">
   <div style="max-width:560px;margin:0 auto;padding:60px 24px;text-align:center">
     <div style="font-size:48px;margin-bottom:24px">⚖️</div>
-    <h2 style="font-size:26px;font-weight:700;color:#e8e4d9;margin-bottom:16px;line-height:1.3">Before You Begin</h2>
-    <div style="background:rgba(201,169,110,0.08);border:1px solid rgba(201,169,110,0.25);border-left:4px solid #c9a96e;border-radius:12px;padding:24px;text-align:left;margin-bottom:28px">
-      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#c9a96e;margin-bottom:10px">Important Notice</div>
-      <p style="font-size:15px;color:#c0b8ac;line-height:1.7;margin-bottom:12px">This tool uses AI to review your form for <strong style="color:#e8e4d9">common errors only.</strong> It is not legal advice and does not replace a licensed immigration attorney.</p>
-      <p style="font-size:15px;color:#c0b8ac;line-height:1.7;margin-bottom:12px">USCIS requirements change frequently. Always <strong style="color:#e8e4d9">verify current instructions</strong> on the official USCIS website at uscis.gov before submitting any form.</p>
-      <p style="font-size:15px;color:#c0b8ac;line-height:1.7">For complex immigration matters, consult a <strong style="color:#e8e4d9">licensed immigration attorney.</strong></p>
+    <h2 style="font-size:26px;font-weight:700;color:var(--dark);margin-bottom:16px;line-height:1.3">Before You Begin</h2>
+    <div style="background:#fff8e7;border:1px solid #e8d58a;border-left:4px solid var(--gold);border-radius:4px;padding:24px;text-align:left;margin-bottom:28px">
+      <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:10px">Important Notice</div>
+      <p style="font-size:15px;color:var(--dark);line-height:1.7;margin-bottom:12px">This tool generates <strong>template documents for informational purposes only.</strong> It is not legal advice and does not create an attorney-client relationship.</p>
+      <p style="font-size:15px;color:var(--dark);line-height:1.7;margin-bottom:12px">Small claims court procedures and required forms <strong>vary by state and county.</strong> Always verify the correct forms and filing requirements with your local courthouse before submitting any documents.</p>
+      <p style="font-size:15px;color:var(--dark);line-height:1.7">For complex legal matters, consult a <strong>licensed attorney</strong> in your state.</p>
     </div>
-    <button onclick="showScreen('landing')" style="width:100%;background:linear-gradient(135deg,#c9a96e,#8b6914);color:#0a0a0f;border:none;border-radius:12px;padding:18px;font-size:16px;font-weight:700;cursor:pointer;font-family:Georgia,serif">I Understand → Continue</button>
-    <div style="margin-top:14px;font-size:12px;color:#4a4540">By continuing you agree this review is for informational purposes only</div>
+    <button class="cta" onclick="genDocs()" style="width:100%;padding:18px;font-size:16px">I Understand → Continue</button>
+    <div style="margin-top:14px;font-size:12px;color:#a09a85">By continuing you agree these documents are for informational purposes only</div>
   </div>
 </div>
 
-<!-- SELECT FORM -->
-<div id="screen-select" class="screen">
-  <main style="max-width:600px">
-    <button class="btn-ghost" onclick="showScreen('landing')">← Back</button>
-    <h2 style="font-size:28px;font-weight:700;margin-bottom:8px;color:#f0ece0">Which form are you filing?</h2>
-    <p style="color:#6b6560;font-size:15px;margin-bottom:36px">Select the form you've completed and want checked.</p>
-    <div class="forms-grid">
-      <button class="form-btn" onclick="selectForm('I-485', this)"><div class="form-name">I-485</div><div class="form-desc">Adjustment of Status</div></button>
-      <button class="form-btn" onclick="selectForm('I-130', this)"><div class="form-name">I-130</div><div class="form-desc">Petition for Alien Relative</div></button>
-      <button class="form-btn" onclick="selectForm('I-765', this)"><div class="form-name">I-765</div><div class="form-desc">Employment Authorization</div></button>
-      <button class="form-btn" onclick="selectForm('N-400', this)"><div class="form-name">N-400</div><div class="form-desc">Application for Naturalization</div></button>
-      <button class="form-btn" onclick="selectForm('I-131', this)"><div class="form-name">I-131</div><div class="form-desc">Travel Document</div></button>
-      <button class="form-btn" onclick="selectForm('I-864', this)"><div class="form-name">I-864</div><div class="form-desc">Affidavit of Support</div></button>
-    </div>
-    <div class="center"><button class="btn-ghost" onclick="selectForm('Other USCIS Form', null)" style="text-decoration:underline">My form isn't listed</button></div>
-  </main>
-</div>
-
-<!-- UPLOAD -->
-<div id="screen-upload" class="screen">
-  <main style="max-width:560px">
-    <button class="btn-ghost" onclick="showScreen('select')">← Back</button>
-    <h2 style="font-size:28px;font-weight:700;margin-bottom:8px;color:#f0ece0">Upload your <span id="form-name-upload"></span></h2>
-    <p style="color:#6b6560;font-size:15px;margin-bottom:36px">Take a clear photo or upload a scan. All pages welcome — we'll analyze what you provide.</p>
-    <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
-      <div id="upload-empty">
-        <div class="upload-icon">📋</div>
-        <div class="upload-text">Tap to upload or take photo</div>
-        <div class="upload-hint">JPG, PNG · iPhone camera works great</div>
-      </div>
-      <div id="upload-preview-wrap" style="display:none">
-        <img id="upload-preview" class="upload-preview" alt="Form preview">
-        <div class="upload-confirm">✓ Form uploaded · tap to change</div>
-      </div>
-    </div>
-    <input type="file" id="file-input" accept="image/*" capture="environment" style="display:none" onchange="handleUpload(this)">
-    <button class="btn-primary btn-full" id="analyze-btn" style="display:none" onclick="runCheck()">Analyze My Form →</button>
-    <div class="trust-row">
-      <div class="trust-item">🔒 Your data stays private</div>
-      <div class="trust-item">⚡ Results in ~60 seconds</div>
-      <div class="trust-item">📝 Plain English explanations</div>
-    </div>
-  </main>
-</div>
-
-<!-- CHECKING -->
-<div id="screen-checking" class="screen">
-  <div class="spinner-wrap">
-    <div class="spinner"></div>
-    <h2 class="checking-title">Reviewing your <span id="form-name-checking"></span></h2>
-    <p class="checking-sub">Our AI is cross-referencing your form against USCIS rejection patterns and field requirements...</p>
+<div id="screen-questions" class="screen">
+  <div class="fw">
+    <div class="pb"><div class="pf" id="pf" style="width:10%"></div></div>
+    <div id="qc"></div>
   </div>
 </div>
 
-<!-- PAYWALL -->
+<div id="screen-generating" class="screen">
+  <div class="gw">
+    <div class="gs"></div>
+    <div class="gt">Preparing Your Documents</div>
+    <p class="gd">Generating your completed court filing and judge script for <span id="gs"></span> small claims court...</p>
+  </div>
+</div>
+
 <div id="screen-paywall" class="screen">
-  <main style="max-width:560px">
-    <div class="risk-banner" id="paywall-banner">
-      <div class="risk-label" id="paywall-risk-label"></div>
-      <div class="risk-title" id="paywall-title"></div>
-      <div class="risk-summary" id="paywall-summary"></div>
+  <div class="pw">
+    <div class="sl">Your Documents Are Ready</div>
+    <h2 style="margin-bottom:7px">Preview Your Filing</h2>
+    <p style="color:var(--text-muted);font-size:15px;margin-bottom:24px;font-style:italic">Unlock to get the complete printable version</p>
+    <div class="pdoc">
+      <div class="dh"><div class="dt" id="pcn">SMALL CLAIMS COURT</div><div class="dc" id="pcs"></div></div>
+      <hr class="dd">
+      <div class="df"><div class="dl">Plaintiff (You)</div><div class="dv" id="pp"></div></div>
+      <div class="df"><div class="dl">Defendant</div><div class="dv" id="pd"></div></div>
+      <div class="df"><div class="dl">Amount Claimed</div><div class="dv" id="pa"></div></div>
+      <div class="df"><div class="dl">Nature of Claim</div><div class="dv" id="pc"></div></div>
+      <br>
+      <div class="bl">Statement of Claim: On or about [DATE], the defendant [DETAILED CLAIM]...The plaintiff demands judgment in the sum of $[AMOUNT], plus filing fees...Relief Requested: Monetary judgment plus statutory interest...I declare under penalty of perjury that the foregoing is true and correct.</div>
     </div>
-    <div class="preview-box">
-      <div class="preview-label">Issue preview (full report unlocked after payment):</div>
-      <div id="preview-issues"></div>
+    <div class="pbox">
+      <div class="pt">Unlock Your Complete Filing Package</div>
+      <div class="ps">Everything you need to walk into court confident and win.</div>
+      <div class="pi">
+        <div class="ii"><span class="ic">✓</span><span>Completed small claims complaint form (print and file)</span></div>
+        <div class="ii"><span class="ic">✓</span><span>Word-for-word judge script for your hearing</span></div>
+        <div class="ii"><span class="ic">✓</span><span>Filing instructions for your specific state and county</span></div>
+        <div class="ii"><span class="ic">✓</span><span>Evidence checklist for court</span></div>
+      </div>
+      <a href="https://buy.stripe.com/5kQ4gzc1qemF0Gm49Z3oA04" target="_top" style="text-decoration:none">
+        <div style="border:1px solid rgba(232,184,75,.2);border-radius:4px;padding:12px 14px;margin-bottom:14px;background:rgba(232,184,75,.04)">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e8b84b;margin-bottom:5px">Legal Disclaimer</div>
+          <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0">SmallClaimsHelper generates template documents for informational purposes only. Not legal advice. Filing requirements vary by state and court — verify compliance before use.</p>
+        </div>
+        <button class="pay">Unlock Full Package → $19</button>
+      </a>
     </div>
-    <a id="stripe-link" href="https://buy.stripe.com/fZu14n8Pea6pbl0ayn3oA03" target="_blank" style="text-decoration:none">
-      <button class="btn-primary btn-full" style="margin-bottom:12px">Unlock Full Report → $24</button>
-    </a>
-    <div class="paywall-note">One-time payment · Instant access · No subscription</div>
-    <div class="paywall-compare">Compare to $200–$400/hr for an immigration attorney</div>
-    <div class="section-label" style="margin-top:32px">Issues to fix before submitting</div>
-    <div id="paywall-result-issues" style="margin-bottom:36px">
-  <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)">
-    <button onclick="triggerFormGuardDownload()" style="width:100%;background:#c9a84c;color:#0a1628;font-weight:700;padding:13px;border-radius:6px;border:none;cursor:pointer;font-size:.9rem;font-family:inherit;">
-      ⬇ Download Full Error Report (PDF)
-    </button>
-    <p style="font-size:.72rem;color:rgba(255,255,255,.4);text-align:center;margin-top:6px">Plain-English report + correction instructions for every issue found</p>
-  </div></div>
-    <div id="paywall-clear-section" style="display:none">
-      <div class="section-label">Sections that look good ✓</div>
-      <div class="clear-box" id="paywall-clear-fields"></div>
-    </div>
-    <div class="disclaimer-box"><div class="disclaimer-text" id="paywall-disclaimer-text"></div></div>
-    <button class="btn-secondary" onclick="resetApp()">Check Another Form</button>
-
-  
-  </main>
+  </div>
 </div>
 
-<!-- RESULTS (post-payment) -->
-  <div id="screen-results" class="screen">
-    <div class="paywall-banner" id="result-banner" style="background:rgba(0,200,83,.08);border:1px solid rgba(0,200,83,.33);border-radius:8px;padding:16px;margin-bottom:24px;display:flex;align-items:center;gap:14px">
-      <div id="result-icon" style="width:40px;height:40px;border-radius:50%;background:rgba(0,200,83,.18);border:1px solid rgba(0,200,83,.44);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">✓</div>
-      <div>
-        <div id="result-risk" style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#00c853">PAYMENT CONFIRMED — FULL REPORT</div>
-        <div id="result-summary-text" style="font-size:14px;color:#c0b8ac;margin-top:4px">Your full USCIS form review is below.</div>
-      </div>
-    </div>
-
-    <div id="result-issues" style="margin-bottom:24px"></div>
-
-    <div id="clear-section" style="display:none;margin-bottom:24px">
-      <h3 style="font-size:14px;color:#9aba9a;margin-bottom:10px">Looks good</h3>
-      <div id="clear-fields"></div>
-    </div>
-
-    <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)">
-      <button onclick="triggerFormGuardDownload()" style="width:100%;background:#c9a84c;color:#0a1628;font-weight:700;padding:13px;border-radius:6px;border:none;cursor:pointer;font-size:15px">⬇ Download Full Report (PDF)</button>
-    </div>
-
-    <div class="disclaimer-text" id="disclaimer-text" style="font-size:12px;color:#7a7560;margin-top:18px;font-style:italic"></div>
-
-    <button class="btn-secondary" onclick="resetApp()" style="margin-top:18px">Check Another Form</button>
+<div id="screen-results" class="screen">
+  <div style="padding:20px 20px 4px">
+    <button onclick="triggerSmallClaimsDownload()" style="width:100%;background:var(--gold);color:#fff;font-weight:700;padding:13px;border-radius:6px;border:none;cursor:pointer;font-size:.9rem;font-family:inherit;">
+      ⬇ Download Court Package (PDF)
+    </button>
+    <p style="font-size:.72rem;color:#888;text-align:center;margin-top:6px">Complaint + hearing script + evidence checklist</p>
   </div>
+  <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;padding:12px 16px;margin:14px 20px;font-size:0.85rem;color:#7a6000;display:flex;align-items:flex-start;gap:10px;"><span>💾</span><span><strong>Not saved:</strong> This report won't be stored on our servers. Download or print it now to keep a copy — it will be gone when you close this page.</span></div>
+  <div class="rw">
+    <div class="sb"><div class="si">✓</div><div><div class="stl">Your documents are ready to file</div><div class="ss">Print these documents, sign where indicated, and file at your local courthouse.</div></div></div>
+    <div class="ds"><div class="dst">📋 Small Claims Complaint Form</div><div class="fd" id="rc"></div></div>
+    <div class="ds"><div class="dst">🗣 Your Judge Script</div><div style="font-size:13px;color:var(--text-muted);margin-bottom:14px;font-style:italic">Read this when the judge asks you to present your case:</div><div class="sc2" id="rs"></div></div>
+    <div class="ds"><div class="dst">📝 Evidence Checklist</div><div class="sc2" id="re"></div></div>
+    <div style="margin-top:36px"><button class="bp" onclick="window.print()">🖨 Print All Documents</button><button onclick="downloadReport()" class="bs" style="margin-left:8px;">⬇ Download (.txt)</button><button class="bs" onclick="resetApp()">Start a New Case</button></div>
+    <div class="disc">⚠ These documents are AI-generated based on your inputs and general small claims procedures. Laws vary by state and county. SmallClaimsHelper is not a law firm and this is not legal advice. For complex cases, consult a licensed attorney.</div>
+  </div>
+</div>
 
 <script>
 var _rl = {c:0, t:Date.now()};
@@ -638,255 +591,199 @@ function checkLimit() {
   _rl.c++; return true;
 }
 
-  let selectedForm = "";
-  let imageBase64 = "";
-  let analysisResults = null;
+var STRIPE="https://buy.stripe.com/5kQ4gzc1qemF0Gm49Z3oA04";
+var STATES=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
+var QS=[
+{id:"state",type:"select",q:"What state are you filing in?",hint:"Small claims limits and procedures vary by state."},
+{id:"pname",type:"text",q:"What is your full legal name?",hint:"Enter your name exactly as it appears on your ID.",ph:"e.g. Jane Marie Smith"},
+{id:"paddr",type:"text",q:"What is your address?",hint:"Street address, city, state, zip.",ph:"e.g. 123 Main St, Austin TX 78701"},
+{id:"dname",type:"text",q:"Who are you suing?",hint:"Full name of the person or business.",ph:"e.g. John Doe or ABC Contractors LLC"},
+{id:"daddr",type:"text",q:"What is their address?",hint:"You need a valid address to serve them.",ph:"e.g. 456 Oak Ave, Austin TX 78702"},
+{id:"ctype",type:"opts",q:"What type of case is this?",hint:"Choose the category that best fits.",opts:["Security deposit not returned","Contractor did poor or incomplete work","Car accident or vehicle damage","Online marketplace scam","Unpaid wages or services","Property damage","Loan not repaid","Other contract dispute"]},
+{id:"amt",type:"number",q:"How much money are you claiming?",hint:"Total dollar amount you want to recover.",ph:"e.g. 1500"},
+{id:"date",type:"text",q:"When did this happen?",hint:"Date of incident or date payment was due.",ph:"e.g. March 15 2025"},
+{id:"what",type:"textarea",q:"In your own words, what happened?",hint:"Be specific. Include dates, amounts, what was promised and what went wrong.",ph:"e.g. I paid John Doe 2000 on January 10 to remodel my bathroom..."},
+{id:"evid",type:"textarea",q:"What evidence do you have?",hint:"List everything: texts, emails, receipts, photos, contracts, witnesses.",ph:"e.g. Written contract, text messages, photos, bank receipt..."}
+];
+var A={},cq=0,docs=null;
 
-  const riskColors = { HIGH: "#ff4444", MEDIUM: "#ff9800", LOW: "#00c853" };
-  const severityColors = { CRITICAL: "#ff4444", WARNING: "#ff9800", NOTE: "#64b5f6" };
-  const severityBgs = { CRITICAL: "rgba(255,68,68,0.08)", WARNING: "rgba(255,152,0,0.08)", NOTE: "rgba(100,181,246,0.08)" };
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});
+  document.getElementById('screen-'+id).classList.add('active');
+  window.scrollTo(0,0);
+  if(id==='questions')renderQ();
+}
 
-  function showScreen(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('screen-' + id).classList.add('active');
-    window.scrollTo(0, 0);
+function renderQ(){
+  var q=QS[cq];
+  var pct=Math.round(((cq+1)/QS.length)*100);
+  document.getElementById('pf').style.width=pct+'%';
+  var h='<div class="sc">Step '+(cq+1)+' of '+QS.length+'</div><div class="qq">'+q.q+'</div><div class="qh">'+q.hint+'</div>';
+  if(q.type==='select'){
+    h+='<select id="qi" onchange="en()"><option value="">Select your state</option>';
+    STATES.forEach(function(s){h+='<option value="'+s+'"'+(A[q.id]===s?' selected':'')+'>'+s+'</option>'});
+    h+='</select>';
+  } else if(q.type==='text'){
+    h+='<input type="text" id="qi" placeholder="'+q.ph+'" value="'+(A[q.id]||'')+'" oninput="en()">';
+  } else if(q.type==='number'){
+    h+='<div style="position:relative"><span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:17px">$</span><input type="number" id="qi" placeholder="'+q.ph+'" value="'+(A[q.id]||'')+'" oninput="en()" style="padding-left:32px"></div>';
+  } else if(q.type==='textarea'){
+    h+='<textarea id="qi" placeholder="'+q.ph+'" oninput="en()">'+(A[q.id]||'')+'</textarea>';
+  } else if(q.type==='opts'){
+    h+='<div class="og">';
+    q.opts.forEach(function(o){h+='<button class="ob'+(A[q.id]===o?' sel':'')+'" onclick="selOpt(\''+o+'\')">'+o+'</button>'});
+    h+='</div>';
   }
+  h+='<div class="nr">';
+  if(cq>0)h+='<button class="bb" onclick="prevQ()">Back</button>';
+  h+='<button class="nb" id="nb" onclick="nextQ()"'+(A[q.id]?'':' disabled')+'>'+(cq===QS.length-1?'Generate My Documents':'Continue')+'</button></div>';
+  document.getElementById('qc').innerHTML=h;
+  if(q.type!=='opts'){setTimeout(function(){var e=document.getElementById('qi');if(e)e.focus()},100)}
+}
 
-  function selectForm(name, btn) {
-    selectedForm = name;
-    document.querySelectorAll('.form-btn').forEach(b => b.classList.remove('selected'));
-    if (btn) btn.classList.add('selected');
-    document.getElementById('form-name-upload').textContent = name;
-    setTimeout(() => showScreen('upload'), 150);
-  }
+function en(){
+  var v=document.getElementById('qi');
+  var nb=document.getElementById('nb');
+  if(v&&nb){nb.disabled=!v.value.trim();if(v.value.trim())A[QS[cq].id]=v.value.trim()}
+}
 
-  function handleUpload(input) {
-    const file = input.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      imageBase64 = e.target.result.split(',')[1];
-      document.getElementById('upload-empty').style.display = 'none';
-      document.getElementById('upload-preview-wrap').style.display = 'block';
-      document.getElementById('upload-preview').src = e.target.result;
-      document.getElementById('upload-zone').classList.add('has-image');
-      document.getElementById('analyze-btn').style.display = 'block';
+function selOpt(o){
+  A[QS[cq].id]=o;
+  document.querySelectorAll('.ob').forEach(function(b){b.classList.remove('sel')});
+  event.target.classList.add('sel');
+  document.getElementById('nb').disabled=false;
+}
+
+function nextQ(){
+  var q=QS[cq];
+  if(q.type!=='opts'){var v=document.getElementById('qi');if(v&&v.value.trim())A[q.id]=v.value.trim()}
+  if(!A[q.id])return;
+  if(cq<QS.length-1){cq++;renderQ()}else{showScreen('disclaimer')}
+}
+
+function prevQ(){if(cq>0){cq--;renderQ()}}
+
+async function genDocs(){
+  document.getElementById('gs').textContent=A.state;
+  showScreen('generating');
+  var prompt='You are an expert paralegal. Generate court documents for this small claims case.\n\nState: '+A.state+'\nPlaintiff: '+A.pname+', '+A.paddr+'\nDefendant: '+A.dname+', '+A.daddr+'\nClaim Type: '+A.ctype+'\nAmount: $'+A.amt+'\nDate: '+A.date+'\nWhat happened: '+A.what+'\nEvidence: '+A.evid+'\n\nRespond ONLY with valid JSON, no other text:\n{"complaint":"full complaint form text ready to print and file, formatted as official court document for '+A.state+'","script":"word for word script for plaintiff to read to judge, 3-4 paragraphs, confident and factual","evidence":"formatted evidence checklist and court day instructions specific to this case and '+A.state+'"}';
+  try{
+    var r=await fetch('/.netlify/functions/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:prompt})});
+    var d=await r.json();
+    var t=d.content[0].text.replace(/```json|```/g,'').trim();
+    docs=JSON.parse(t);
+  }catch(e){
+    docs={
+      complaint:'SMALL CLAIMS COURT\n'+A.state.toUpperCase()+'\n\n'+A.pname+'\n'+A.paddr+'\nPlaintiff\n\nvs.\n\n'+A.dname+'\n'+A.daddr+'\nDefendant\n\nCOMPLAINT\n\nPlaintiff '+A.pname+' states:\n\n1. On or about '+A.date+', Defendant '+A.dname+' caused damages of $'+A.amt+' relating to: '+A.ctype+'.\n\n2. '+A.what+'\n\n3. Plaintiff has attempted to resolve this matter without court action.\n\n4. Defendant has failed to pay.\n\nPlaintiff demands judgment of $'+A.amt+' plus court costs.\n\nI declare under penalty of perjury this is true and correct.\n\nSignature: ____________________\n'+A.pname+'\nDate: ___________',
+      script:'Your Honor, my name is '+A.pname+' and I am the plaintiff.\n\nI am here because '+A.dname+' owes me $'+A.amt+' for: '+A.ctype+'.\n\nOn '+A.date+': '+A.what+'\n\nI have the following evidence: '+A.evid+'\n\nI have tried to resolve this directly without success. I respectfully ask the court to award me $'+A.amt+' plus court costs. Thank you.',
+      evidence:'EVIDENCE CHECKLIST\n\nBring to court:\n- This complaint form (3 copies)\n- All contracts or agreements\n- All receipts and payment records\n- Printed text messages and emails\n- Photographs labeled with dates\n- Witness contact information\n\nYour evidence: '+A.evid+'\n\nCourt day tips:\n- Arrive 30 minutes early\n- Dress professionally\n- Speak to the judge, not the defendant\n- Stick to facts and dollar amounts\n- Bring 3 copies of everything\n\nFiling in '+A.state+':\n- File at your county courthouse\n- Filing fee is usually $30-$75\n- Ask clerk for service instructions'
     };
-    reader.readAsDataURL(file);
   }
+  buildPaywall();
+  showScreen('paywall');
+}
 
-  async function runCheck() {
-    if (!checkLimit()) return;
-    document.getElementById('form-name-checking').textContent = selectedForm;
-    showScreen('checking');
+function buildPaywall(){
+  document.getElementById('pcn').textContent='SMALL CLAIMS COURT - '+A.state.toUpperCase();
+  document.getElementById('pcs').textContent=A.state+' Small Claims Division';
+  document.getElementById('pp').textContent=A.pname||'';
+  document.getElementById('pd').textContent=A.dname||'';
+  document.getElementById('pa').textContent='$'+(A.amt||'');
+  document.getElementById('pc').textContent=A.ctype||'';
+}
 
-    const prompt = `You are an expert USCIS immigration form reviewer with 20 years of experience. A user has uploaded their completed ${selectedForm} form for review before submission.
+function showResults(){
+  document.getElementById('rc').textContent=docs.complaint;
+  document.getElementById('rs').textContent=docs.script;
+  document.getElementById('re').textContent=docs.evidence;
+  showScreen('results');
+}
 
-Carefully analyze this form image and identify:
-1. Any blank required fields that must be filled
-2. Date format errors (USCIS requires MM/DD/YYYY)
-3. Name inconsistencies (name must match exactly across all fields)
-4. Missing signatures or dates on signature lines
-5. Common errors specific to ${selectedForm}
-6. Any obvious answer that seems incorrect or contradictory
-7. Fields that appear incomplete or ambiguous
+function resetApp(){A={};cq=0;docs=null;sessionStorage.removeItem('sc_A');sessionStorage.removeItem('sc_docs');showScreen('landing')}
 
-Respond in this EXACT JSON format with no other text:
-{"overallRisk":"HIGH","summary":"One sentence summary","issues":[{"severity":"CRITICAL","field":"Field name","issue":"What the problem is","fix":"How to fix it"}],"clearFields":["Section that looks good"],"disclaimer":"This is an AI-assisted review, not legal advice. Consult an immigration attorney for complex cases."}
+// Save ONLY answers (not generated docs) so we can regenerate after verified payment
+var origBuildPaywall = buildPaywall;
+buildPaywall = function() {
+  origBuildPaywall();
+  try {
+    if (A) sessionStorage.setItem('sc_A', JSON.stringify(A));
+    // NOT saving docs to sessionStorage — docs stay in memory only until payment verified
+  } catch(e) {}
+};
 
-Use severity CRITICAL for things that will definitely cause rejection, WARNING for likely issues, NOTE for suggestions. If you cannot read the form well, note it in the issues.`;
+// Post-payment return handler - Stripe redirects to /?session_id=cs_xxx
+(async function checkPaidReturn() {
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var sessionId = params.get('session_id');
+    if (!sessionId) return;
 
-    try {
-      const response = await fetch("/.netlify/functions/claude", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: [{ role: "user", content: [
-            { type: "image", source: { type: "base64", media_type: "image/jpeg", data: imageBase64 } },
-            { type: "text", text: prompt }
-          ]}]
-        })
-      });
-      const data = await response.json();
-      const text = data.content[0].text;
-      const clean = text.replace(/```json|```/g, "").trim();
-      analysisResults = JSON.parse(clean);
-    } catch(err) {
-      analysisResults = {
-        overallRisk: "MEDIUM",
-        summary: "We completed your review and found items to address before submission.",
-        issues: [{ severity: "WARNING", field: "Image Quality", issue: "Could not fully read all fields. Please ensure the form is flat, well-lit, and all text is clearly visible.", fix: "Retake the photo in good lighting with the form on a flat surface, capturing all text clearly." }],
-        clearFields: [],
-        disclaimer: "This is an AI-assisted review, not legal advice. Consult an immigration attorney for complex cases."
-      };
-    }
+    // Clean URL immediately
+    window.history.replaceState({}, '', window.location.pathname);
 
-    buildPaywall();
-    showScreen('paywall');
-  }
+    // Show a loading state
+    showScreen('generating');
+    document.getElementById('gs').textContent = 'Verifying payment...';
 
-  function buildPaywall() {
-    const r = analysisResults;
-    const color = riskColors[r.overallRisk];
-    const banner = document.getElementById('paywall-banner');
-    banner.style.background = `${color}0d`;
-    banner.style.border = `1px solid ${color}33`;
-    document.getElementById('paywall-risk-label').style.color = color;
-    document.getElementById('paywall-risk-label').textContent = r.overallRisk + ' RISK LEVEL';
-    document.getElementById('paywall-title').textContent = `We found ${r.issues.length} issue${r.issues.length !== 1 ? 's' : ''} with your ${selectedForm}`;
-    document.getElementById('paywall-summary').textContent = r.summary;
-
-    const container = document.getElementById('preview-issues');
-    container.innerHTML = '';
-    r.issues.slice(0, 3).forEach((issue, i) => {
-      const div = document.createElement('div');
-      div.className = 'issue-row' + (i > 0 ? ' blurred' : '');
-      div.innerHTML = `
-        <span class="severity-badge" style="background:${severityBgs[issue.severity]};color:${severityColors[issue.severity]}">${issue.severity}</span>
-        <div><div class="issue-field">${issue.field}</div><div class="issue-text">${issue.issue}</div></div>`;
-      container.appendChild(div);
+    // Verify with Stripe via our server
+    var vr = await fetch('/.netlify/functions/verify-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ session_id: sessionId })
     });
-  }
+    var vd = await vr.json();
 
-  function buildResults() {
-    const r = analysisResults;
-    const color = riskColors[r.overallRisk];
-    const icon = r.overallRisk === 'HIGH' ? '⚠' : r.overallRisk === 'MEDIUM' ? '⚡' : '✓';
-    const iconEl = document.getElementById('result-icon');
-    if (iconEl) {
-      iconEl.textContent = icon;
-      iconEl.style.background = `${color}18`;
-      iconEl.style.border = `1px solid ${color}44`;
-    }
-    const riskEl = document.getElementById('result-risk');
-    if (riskEl) {
-      riskEl.style.color = color;
-      riskEl.textContent = `${r.overallRisk} RISK · ${r.issues.length} ISSUE${r.issues.length !== 1 ? 'S' : ''} FOUND`;
-    }
-    const summEl = document.getElementById('result-summary-text');
-    if (summEl) summEl.textContent = r.summary;
-
-    const issuesEl = document.getElementById('result-issues');
-    if (issuesEl) {
-      issuesEl.innerHTML = '';
-      r.issues.forEach(issue => {
-        const div = document.createElement('div');
-        div.className = 'issue-card';
-        div.style.cssText = `background:${severityBgs[issue.severity]};border:1px solid ${severityColors[issue.severity]}22;border-left:3px solid ${severityColors[issue.severity]}`;
-        div.innerHTML = `
-          <div class="issue-card-header">
-            <span class="severity-badge" style="background:${severityColors[issue.severity]}18;color:${severityColors[issue.severity]}">${issue.severity}</span>
-            <span class="issue-card-field">${issue.field}</span>
-          </div>
-          <div class="issue-problem"><strong style="color:#c0b8ac">Problem:</strong> ${issue.issue}</div>
-          <div class="issue-fix"><strong style="color:#9aba9a">How to fix:</strong> ${issue.fix}</div>`;
-        issuesEl.appendChild(div);
-      });
+    if (!vd.paid) {
+      alert('Payment could not be verified. If you completed payment, please contact support.');
+      showScreen('landing');
+      return;
     }
 
-    if (r.clearFields && r.clearFields.length > 0) {
-      const clearSec = document.getElementById('clear-section');
-      if (clearSec) clearSec.style.display = 'block';
-      const clearEl = document.getElementById('clear-fields');
-      if (clearEl) clearEl.innerHTML = r.clearFields.map(f => `<div class="clear-item"><span>✓</span><span>${f}</span></div>`).join('');
+    // Payment verified — restore answers and regenerate docs
+    var savedA = sessionStorage.getItem('sc_A');
+    if (savedA) { try { A = JSON.parse(savedA); } catch(e){} }
+
+    if (A && A.state) {
+      document.getElementById('gs').textContent = A.state;
+      // Regenerate the documents server-side now that payment is confirmed
+      await genDocs();
+      // genDocs ends by showing paywall, but we're already paid — skip to results
+      if (docs) { showResults(); }
+    } else {
+      alert('Session expired. Please start over.');
+      showScreen('landing');
     }
+  } catch(e) { console.warn('paid return error', e); }
+})();
 
-    const discEl = document.getElementById('disclaimer-text');
-    if (discEl) discEl.textContent = '⚠ ' + r.disclaimer;
-  }
-
-  const origShowScreen = showScreen;
-  window.showScreen = function(id) {
-    if (id === 'results' && analysisResults) buildResults();
-    origShowScreen(id);
-  };
-
-  function resetApp() {
-    selectedForm = "";
-    imageBase64 = "";
-    analysisResults = null;
-    document.getElementById('upload-empty').style.display = 'block';
-    document.getElementById('upload-preview-wrap').style.display = 'none';
-    document.getElementById('upload-zone').classList.remove('has-image');
-    document.getElementById('analyze-btn').style.display = 'none';
-    document.getElementById('file-input').value = '';
-    document.querySelectorAll('.form-btn').forEach(b => b.classList.remove('selected'));
-    showScreen('landing');
-  }
-
-
-  // Post-payment return handler
-  // After Stripe redirects user back to /?session_id=cs_xxx, verify with Stripe
-  (async function checkPaidReturn() {
-    try {
-      var params = new URLSearchParams(window.location.search);
-      var sessionId = params.get('session_id');
-      if (!sessionId) return;
-
-      // Clean URL immediately
-      window.history.replaceState({}, '', window.location.pathname);
-
-      // Show loading
-      showScreen('checking');
-
-      // Verify with Stripe via our server
-      var vr = await fetch('/.netlify/functions/verify-payment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ session_id: sessionId })
-      });
-      var vd = await vr.json();
-
-      if (!vd.paid) {
-        alert('Payment could not be verified. If you completed payment, please contact support.');
-        showScreen('landing');
-        return;
-      }
-
-      // Payment verified — restore analysis and show results
-      var saved = sessionStorage.getItem('fg_results');
-      if (saved) {
-        try { analysisResults = JSON.parse(saved); } catch(e) {}
-      }
-      if (analysisResults) {
-        buildResults();
-        var disc = document.getElementById('disclaimer-text');
-        if (disc && analysisResults.disclaimer) disc.textContent = '⚠ ' + analysisResults.disclaimer;
-        showScreen('results');
-      } else {
-        // Results expired from sessionStorage — need to re-upload
-        alert('Session expired. Please upload your form again.');
-        showScreen('landing');
-      }
-    } catch(e) { console.warn('paid return handler error', e); }
-  })();
-
-  // Save analysis to sessionStorage when paywall is shown so it survives Stripe redirect
-  // Note: this is OK because the content can only be shown after verify-payment confirms
-  var origBuildPaywall = buildPaywall;
-  buildPaywall = function() {
-    origBuildPaywall();
-    try { if (analysisResults) sessionStorage.setItem('fg_results', JSON.stringify(analysisResults)); } catch(e) {}
-  };
-
-// —— DOWNLOAD REPORT ————————————————————————————————————————
 function buildReportText() {
   var date = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
-  var paywallEl = document.getElementById('screen-paywall');
-  var issuesEl = document.getElementById('result-issues');
-  if (!paywallEl || window.getComputedStyle(paywallEl).display === 'none') return null;
-  var lines = ['FORMGUARD — USCIS FORM CHECK REPORT','======================================','Generated: ' + date,'FormGuard — uscisformcheck.com',''];
-  var formName = document.getElementById('form-name-checking');
-  if (formName && formName.textContent.trim()) { lines.push('Form: ' + formName.textContent.trim()); lines.push(''); }
-  var issueText = issuesEl ? (issuesEl.innerText || issuesEl.textContent || '').trim() : '';
-  if (issueText) { lines.push('ISSUES FOUND:'); lines.push(issueText); }
-  else { lines.push((paywallEl.innerText || paywallEl.textContent || '').replace(/Download\.*/gm,'').trim()); }
-  lines.push('');
-  lines.push('---');
-  lines.push('For informational purposes only. Not legal or immigration advice.');
-  lines.push('This report was not saved to our servers.');
-  return lines.join('\n');
+  var complaintEl = document.getElementById('rc');
+  var scriptEl = document.getElementById('rs');
+  var evidenceEl = document.getElementById('re');
+  var screenEl = document.getElementById('screen-results');
+  if (!screenEl || window.getComputedStyle(screenEl).display === 'none') return null;
+  if (!complaintEl || !(complaintEl.textContent||'').trim()) return null;
+  var out = 'SMALLCLAIMSHELPER - GENERATED COURT DOCUMENTS\n';
+  out += '================================================\n';
+  out += 'Generated: ' + date + '\n';
+  out += 'SmallClaimsHelper - smallclaimsforms.net\n';
+  if (complaintEl && (complaintEl.textContent||'').trim()) {
+    out += '\n=== COMPLAINT FORM ===\n\n' + (complaintEl.textContent||'').trim();
+  }
+  if (scriptEl && (scriptEl.textContent||'').trim()) {
+    out += '\n\n=== COURT SCRIPT ===\n\n' + (scriptEl.textContent||'').trim();
+  }
+  if (evidenceEl && (evidenceEl.textContent||'').trim()) {
+    out += '\n\n=== EVIDENCE CHECKLIST ===\n\n' + (evidenceEl.textContent||'').trim();
+  }
+  out += '\n\n---\n';
+  out += 'Generated by SmallClaimsHelper - smallclaimsforms.net\n';
+  out += 'For informational purposes only. Not legal advice.\n';
+  out += 'This document was not saved to our servers.';
+  return out;
 }
+
 function downloadReport() {
   var content = buildReportText();
   if (!content) { alert('No report to download yet.'); return; }
@@ -894,65 +791,65 @@ function downloadReport() {
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
   a.href = url;
-  a.download = 'formguard-report-' + new Date().toISOString().slice(0,10) + '.txt';
-  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+  a.download = 'smallclaimsforms-report-' + new Date().toISOString().slice(0,10) + '.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 </script>
 
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="faq-eyebrow">Frequently Asked Questions</div>
-  <h2 class="faq-title">Everything you need to know</h2>
-  <div class="faq-list">
-    <div class="faq-item"><button class="faq-q-btn" onclick="toggleFaq(this)">What USCIS forms does FormGuard check?<span class="faq-toggle">+</span></button><div class="faq-a">FormGuard checks all major USCIS forms including I-485 (Adjustment of Status), I-130 (Petition for Alien Relative), I-765 (Employment Authorization), N-400 (Naturalization), I-131 (Travel Document), and I-864 (Affidavit of Support).</div></div>
-    <div class="faq-item"><button class="faq-q-btn" onclick="toggleFaq(this)">How much does a USCIS form check cost?<span class="faq-toggle">+</span></button><div class="faq-a">FormGuard charges a one-time fee of $24 per form review. No subscription or recurring fees. Compare that to an immigration attorney at $200–$400 per hour. For $24 to check a form that costs $1,440 to file, it is an obvious value.</div></div>
-    <div class="faq-item"><button class="faq-q-btn" onclick="toggleFaq(this)">What errors does FormGuard find?<span class="faq-toggle">+</span></button><div class="faq-a">FormGuard identifies missing signatures, incorrect date formats, blank required fields that should say N/A, name inconsistencies, wrong checkbox selections, incorrect fee amounts, missing initials on every page, and missing required supporting documents.</div></div>
-    <div class="faq-item"><button class="faq-q-btn" onclick="toggleFaq(this)">How long does the form check take?<span class="faq-toggle">+</span></button><div class="faq-a">Upload a photo of your completed form and receive your complete error report in under 60 seconds. The report identifies every error and tells you exactly how to fix each one.</div></div>
-    <div class="faq-item"><button class="faq-q-btn" onclick="toggleFaq(this)">Can FormGuard guarantee my form will be approved?<span class="faq-toggle">+</span></button><div class="faq-a">No. FormGuard checks for common errors but cannot guarantee USCIS approval. USCIS requirements change frequently. Always verify at uscis.gov before filing. For complex matters consult a licensed immigration attorney.</div></div>
-    <div class="faq-item"><button class="faq-q-btn" onclick="toggleFaq(this)">Is FormGuard a law firm?<span class="faq-toggle">+</span></button><div class="faq-a">No. FormGuard is a document review automation tool, not a law firm. It does not provide legal advice. For complex immigration matters always consult a licensed immigration attorney.</div></div>
-    <div class="faq-item"><button class="faq-q-btn" onclick="toggleFaq(this)">Is my form data kept private?<span class="faq-toggle">+</span></button><div class="faq-a">Yes. Your form image is analyzed in memory only and is never stored on our servers. We do not retain any form images or personal information after your review is complete.</div></div>
+<!-- SEO Content -->
+<div style="max-width:760px;margin:0 auto;padding:60px 24px 80px;border-top:1px solid var(--border)">
+  <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:700;color:var(--dark);margin-bottom:16px">How to File Small Claims Court — All 50 States</h2>
+  <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:20px">Small claims court is a legal proceeding that allows individuals to resolve disputes involving relatively small amounts of money without hiring an attorney. Each state has its own small claims court procedures, filing fees, and maximum claim limits ranging from $2,500 in some states to $25,000 in others.</p>
+  
+  <h3 style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px">Common Small Claims Court Cases</h3>
+  <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:20px">The most common small claims cases include security deposit disputes between landlords and tenants, contractor disputes where work was incomplete or substandard, car accident damage claims, unpaid loans between individuals, online marketplace fraud and scams, unpaid wages or freelance work, and breach of contract disputes. In most states you do not need a lawyer to file or argue a small claims case.</p>
+
+  <h3 style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px">Small Claims Court Limits by State</h3>
+  <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:20px">California small claims court limit is $12,500 for individuals. Texas small claims limit is $20,000. Florida small claims limit is $8,000. New York small claims limit is $10,000. Illinois small claims limit is $10,000. Pennsylvania small claims limit is $12,000. Ohio small claims limit is $6,000. Georgia small claims limit is $15,000. Michigan small claims limit is $6,500. Washington small claims limit is $10,000.</p>
+
+  <h3 style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px">How to Win Small Claims Court</h3>
+  <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:20px">To win your small claims case you need to bring organized evidence including contracts, receipts, photographs, text messages, emails, and any witnesses. Present your case clearly and stick to facts and dollar amounts. Most judges appreciate brevity and organization. Having a prepared statement to read to the judge dramatically increases your chances of winning. SmallClaimsHelper generates a word-for-word script tailored to your specific case.</p>
+
+  <div style="background:#f3f3ee;border-radius:4px;padding:28px 32px;margin-top:32px">
+    <p style="font-size:13px;color:#a09a85;line-height:1.6;font-style:italic">SmallClaimsHelper.com generates template court documents for informational purposes only. It is not a law firm and does not provide legal advice. Small claims procedures vary by state and county. Always verify requirements with your local courthouse or a licensed attorney before filing.</p>
   </div>
-</section>
-<script>
-function toggleFaq(btn){var a=btn.nextElementSibling;var t=btn.querySelector('.faq-toggle');var open=a.style.display==='block';a.style.display=open?'none':'block';t.textContent=open?'+':'−';t.style.transform=open?'none':'rotate(180deg)';}
-</script>
+</div>
 
-<!-- SEO -->
-<section class="seo-block">
-  <h2>USCIS Form Error Checker — Avoid Common Immigration Form Mistakes</h2>
-  <p>USCIS rejects thousands of immigration forms every month for simple, preventable errors. A missing signature, wrong date format, or blank required field can delay your case by 6–12 months and cost hundreds of dollars in refiling fees. FormGuard uses AI to review your completed USCIS form and identify errors before you submit.</p>
-
-  <h3>Most Common USCIS Form Rejection Reasons</h3>
-  <p>The most common reasons USCIS rejects or returns immigration forms include missing signatures on the final page, incorrect date format (USCIS requires MM/DD/YYYY), name inconsistencies between fields, blank required fields that should say N/A, incorrect filing fee, missing initial on every page, wrong checkbox selections, and missing supporting documents listed in the form instructions.</p>
-
-  <h3>How to Fill Out Form I-485 Correctly</h3>
-  <p>Form I-485 Application to Register Permanent Residence is one of the most complex USCIS forms. Common I-485 mistakes include leaving Part 1 fields blank instead of writing N/A, inconsistent name spelling across sections, missing the required signature and date on Part 12, incorrect alien registration number format, and forgetting to include required initials on every page. The I-485 filing fee is $1,440 for most applicants, making errors extremely costly.</p>
-
-  <h3>How to Fill Out Form I-130 Correctly</h3>
-  <p>Form I-130 Petition for Alien Relative is used to establish a qualifying relationship with a foreign national relative. Common I-130 errors include mismatched names between the petitioner and supporting documents, missing proof of US citizenship or permanent residence, incorrect relationship category selected, and missing signatures. USCIS will return the entire package if the I-130 has errors.</p>
-
-  <h3>Form N-400 Common Mistakes</h3>
-  <p>Form N-400 Application for Naturalization is used to apply for US citizenship. Common N-400 mistakes include failing to disclose all trips outside the US in the past 5 years, incorrect continuous residence dates, missing tax return information, unanswered questions in Part 12, and missing the biographic information page. An N-400 rejection can delay your citizenship by 6–12 months.</p>
-
-  <h3>Form I-765 Employment Authorization Common Errors</h3>
-  <p>Form I-765 Application for Employment Authorization is frequently rejected for missing eligibility category codes, incorrect or expired supporting documents, missing passport-style photographs, wrong filing fee, and name discrepancies. Without an approved I-765 you cannot legally work in the United States, making accuracy critical.</p>
-
-  <h3>Why Use an AI USCIS Form Checker</h3>
-  <p>Immigration attorneys charge $200–$400 per hour to review forms. FormGuard provides an instant AI-powered review for $24 — catching the most common errors that cause USCIS rejections. Upload a photo of your completed form and receive a plain-English report identifying issues and exactly how to fix them in under 60 seconds.</p>
-
-  <h3>USCIS Form Filing by State</h3>
-  <p>California, Texas, Florida, and New York process the highest volume of USCIS applications in the country. Common errors vary by form type but universal mistakes — missing signatures, wrong date formats, inconsistent name spelling, and blank required fields — cause rejection regardless of which USCIS field office receives your application. FormGuard checks for all of these before you submit.</p>
-
-  <div class="seo-disclaimer">
-    <p>FormGuard is not a law firm and does not provide legal advice. This AI-powered tool reviews forms for common errors only. USCIS requirements change frequently — always verify current instructions at uscis.gov. For complex immigration matters consult a licensed immigration attorney.</p>
+<!-- FAQ Section -->
+<div style="max-width:760px;margin:0 auto;padding:40px 24px 60px">
+  <div style="text-align:center;margin-bottom:32px">
+    <p style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px">Frequently Asked Questions</p>
+    <h2 style="font-family:Georgia,serif;font-size:28px;font-weight:700;">Everything you need to know</h2>
   </div>
-</section>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">What is the small claims court limit in my state?<span style="font-size:22px;flex-shrink:0;color:var(--gold)">+</span></button>
+      <div style="display:none;padding:0 22px 18px;font-size:14px;color:#6b6356;line-height:1.7">Small claims limits vary by state. California allows up to $12,500. Texas allows up to $20,000. Florida allows up to $8,000. New York allows up to $10,000. SmallClaimsHelper generates state-specific forms with the correct limits and filing fees for your state automatically.</div>
+    </div>
+    <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">How much does SmallClaimsHelper cost?<span style="font-size:22px;flex-shrink:0;color:var(--gold)">+</span></button>
+      <div style="display:none;padding:0 22px 18px;font-size:14px;color:#6b6356;line-height:1.7">SmallClaimsHelper charges a one-time fee of $19. No subscription or recurring fees. This includes your completed court forms, statement of facts, evidence checklist, and a word-for-word judge script.</div>
+    </div>
+    <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">Do I need a lawyer for small claims court?<span style="font-size:22px;flex-shrink:0;color:var(--gold)">+</span></button>
+      <div style="display:none;padding:0 22px 18px;font-size:14px;color:#6b6356;line-height:1.7">No. Small claims court is specifically designed for people to represent themselves without an attorney. SmallClaimsHelper prepares you with court-ready forms and a judge script so you know exactly what to say.</div>
+    </div>
+    <div style="border:1px solid #ddd;border-radius:6px;overflow:hidden">
+      <button onclick="var a=this.nextElementSibling;var i=this.querySelector('span');a.style.display=a.style.display==='block'?'none':'block';i.textContent=a.style.display==='block'?'−':'+'" style="width:100%;padding:18px 22px;text-align:left;background:#fff;border:none;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px">Is SmallClaimsHelper a law firm?<span style="font-size:22px;flex-shrink:0;color:var(--gold)">+</span></button>
+      <div style="display:none;padding:0 22px 18px;font-size:14px;color:#6b6356;line-height:1.7">No. SmallClaimsHelper is a document automation tool, not a law firm. It does not provide legal advice. For complex legal matters consult a licensed attorney in your state.</div>
+    </div>
+  </div>
+</div>
 
-<footer class="site-footer">
-  <p>Questions or issues? We're here to help.</p>
-  <a href="mailto:info&#64;uscisformcheck.com">info&#64;uscisformcheck.com</a>
-  <p class="legal">FormGuard · USCIS Form Error Checker · Not legal advice</p>
-</footer>
+<!-- Footer -->
+<div style="background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding:32px 24px;text-align:center">
+  <p style="font-size:14px;color:rgba(255,255,255,.3);margin-bottom:8px">Questions or issues? We are here to help.</p>
+  <a href="mailto:info&#64;smallclaimsforms.net" style="color:var(--gold);font-size:15px;text-decoration:none">info&#64;smallclaimsforms.net</a>
+  <p style="font-size:12px;color:rgba(255,255,255,.15);margin-top:16px">SmallClaimsHelper · Small Claims Court Documents · Not a law firm · Not legal advice</p>
+</div>
 
 <script src="/download-module.js"></script>
 </body>
