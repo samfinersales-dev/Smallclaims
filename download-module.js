@@ -216,7 +216,7 @@ var DownloadModule = (function() {
         {heading:'Defendant',lines:[{label:'Name',value:claim.defendantName||'[Defendant]'},{label:'Address',value:claim.defendantAddress||'[Address]'}]},
         {heading:'Your Claim',lines:[{label:'Amount Claimed',value:'$'+(claim.amount||'0'),isBold:true},{label:'State',value:claim.state||'[State]'},{label:'Court',value:claim.court||'Your local small claims court'},{label:'Filing Fee',value:claim.filingFee||'Check with court'}]},
         {heading:'Statement of Claim',lines:(claim.statementLines||['[Describe what happened]']).map(function(l){return{label:l,isBody:true};})},
-        {heading:'Evidence Checklist',lines:(claim.evidence||['Contracts','Receipts','Photos','Texts/emails','Witnesses']).map(function(e){return{label:'☐ '+e};})},
+        {heading:'Evidence Checklist',lines:(claim.evidence||['Contracts','Receipts','Photos','Texts/emails','Witnesses']).map(function(e){return{label:'[ ] '+e};})},
         {heading:'Hearing Script',lines:[{label:'Opening:',isBold:true}].concat([{label:claim.openingStatement||'"Your Honor, I am '+(claim.plaintiffName||'[Name]')+'. I am here because...',isBody:true}]).concat((claim.keyPoints||['State facts clearly']).map(function(p){return{label:'• '+p};})) }
       ];
       makePDF({siteName:'SmallClaimsHelper',title:(claim.state||'State')+' Small Claims Package',subtitle:(claim.plaintiffName||'Plaintiff')+' v. '+(claim.defendantName||'Defendant')+' — $'+(claim.amount||'0'),primaryColor:'#1a1a2e',sections:secs,footer:'SmallClaimsHelper generates documents for informational purposes only. Not legal advice.'}).save('small-claims-'+(claim.state||'state').toLowerCase().replace(/\s+/g,'-')+'.pdf');
