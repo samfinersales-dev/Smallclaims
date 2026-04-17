@@ -26,8 +26,8 @@ var DownloadModule = (function() {
     y=34;
     if(cfg.subtitle){doc.setTextColor('#374151');doc.setFontSize(11);doc.setFont('helvetica','bold');doc.text(cfg.subtitle,M,y);y+=LH+2;}
     if(cfg.stats){
-      doc.setFillColor('#f9fafb');doc.roundedRect(M,y,CW,16,2,2,'F');
-      doc.setStrokeColor('#e5e7eb');doc.roundedRect(M,y,CW,16,2,2,'S');
+      doc.setFillColor('#f9fafb');doc.rect(M,y,CW,16,'F');
+      doc.setDrawColor('#e5e7eb');doc.rect(M,y,CW,16,'S');
       var SW=CW/cfg.stats.length;
       cfg.stats.forEach(function(s,i){
         var sx=M+SW*i+SW/2;
