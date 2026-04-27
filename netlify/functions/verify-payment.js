@@ -58,20 +58,47 @@ exports.handler = async function(event) {
     // Ask Stripe: is this a real, paid checkout session?
     const session = await stripe.checkout.sessions.retrieve(session_id);
 
-    if (session.payment_status === 'paid') {
-      return jsonResponse(200, {
-        paid: true,
-        customer_email: session.customer_details?.email || null,
-        amount: session.amount_total,
-        currency: session.currency,
-      });
-    } else {
+    if (session.payment_status !== 'paid') {
       return jsonResponse(403, {
         paid: false,
         error: 'Session exists but payment not completed',
         status: session.payment_status,
       });
     }
+
+    // ─── CROSS-PRODUCT SESSION GUARD ──────────────────────────────────────────
+    // This Stripe account is shared across multiple SaaS products. A paid
+    // session_id from ANY product (LeaseHelper, FormGuard, etc.) would otherwise
+    // unlock SmallClaims content here. Reject sessions whose payment_link isn't
+    // in SmallClaims' allowlist.
+    //
+    // STRIPE_PLINK_ALLOWLIST env var: comma-separated plink_xxx IDs (live + test
+    // for THIS app). If unset, we log a loud warning and accept everything —
+    // strictly less safe but doesn't break the flow if env var setup hasn't
+    // happened yet.
+    const allowlist = (process.env.STRIPE_PLINK_ALLOWLIST || '')
+      .split(',').map(s => s.trim()).filter(Boolean);
+    const incomingPlink = session.payment_link || null;
+
+    if (allowlist.length === 0) {
+      console.warn('[smallclaims-verify-payment] STRIPE_PLINK_ALLOWLIST not set — accepting all paid sessions (UNSAFE)');
+    } else if (!incomingPlink || !allowlist.includes(incomingPlink)) {
+      console.log(
+        `[smallclaims-verify-payment] rejected — payment_link ${incomingPlink || '(none)'} not in allowlist; ` +
+        `session=${session_id.slice(0,20)} email=${session.customer_details?.email || '(none)'}`
+      );
+      return jsonResponse(403, {
+        paid: false,
+        error: 'Session does not belong to this product',
+      });
+    }
+
+    return jsonResponse(200, {
+      paid: true,
+      customer_email: session.customer_details?.email || null,
+      amount: session.amount_total,
+      currency: session.currency,
+    });
   } catch (err) {
     // Stripe throws if session_id doesn't exist at all
     if (err.type === 'StripeInvalidRequestError') {
