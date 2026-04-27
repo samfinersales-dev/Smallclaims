@@ -2,7 +2,8 @@ name: Auto Blog Post Generator
 
 on:
   schedule:
-    - cron: '0 8 * * 1,4'  # Every Monday and Thursday at 8am UTC
+    # DISABLED for cleanup
+    # - cron: '0 8 * * 1,4'  # Every Monday and Thursday at 8am UTC
   workflow_dispatch:       # Manual trigger from GitHub Actions tab
 
 jobs:
