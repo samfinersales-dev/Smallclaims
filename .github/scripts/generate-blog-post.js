@@ -142,36 +142,50 @@ function listExistingPosts() {
     });
 }
 
-// ─── State-tier weighted picker ──────────────────────────────────────────────
+// ─── State-tier weighted picker (tier-first, then state×topic within tier) ───
 function pickStateAndTopic(config, existingPosts) {
-  const allStates = []
-    .concat(config.stateTiers.tier1.map(s => ({ name: s, tier: 1, w: config.tierWeights.tier1 })))
-    .concat(config.stateTiers.tier2.map(s => ({ name: s, tier: 2, w: config.tierWeights.tier2 })))
-    .concat(config.stateTiers.tier3.map(s => ({ name: s, tier: 3, w: config.tierWeights.tier3 })));
-
-  // Build candidate (state, topic) pairs, exclude already-covered
   const existingSlugs = new Set(existingPosts.map(p => p.slug));
-  const candidates = [];
 
-  for (const stateInfo of allStates) {
-    for (const angle of config.topicAngles) {
-      const slug = slugify(`${angle}-${stateInfo.name}`);
-      // Variant slug formats Claude might generate — be liberal in what we consider "covered"
-      const stateSlug = slugify(stateInfo.name);
-      const angleSlug = slugify(angle);
-      const looselyCovered = [...existingSlugs].some(es => {
-        return es.includes(stateSlug) && angleSlug.split('-').slice(0, 2).every(t => es.includes(t));
-      });
-      if (looselyCovered) continue;
-      // Build weighted candidate
-      for (let i = 0; i < stateInfo.w; i++) {
-        candidates.push({ state: stateInfo.name, tier: stateInfo.tier, angle, slug });
+  // Helper: build candidate (state, topic) pairs for a tier, exclude already-covered
+  function candidatesForTier(states) {
+    const out = [];
+    for (const stateName of states) {
+      const stateSlug = slugify(stateName);
+      for (const angle of config.topicAngles) {
+        const angleSlug = slugify(angle);
+        const slug = slugify(`${angle}-${stateName}`);
+        const looselyCovered = [...existingSlugs].some(es => {
+          return es.includes(stateSlug) && angleSlug.split('-').slice(0, 2).every(t => es.includes(t));
+        });
+        if (!looselyCovered) out.push({ state: stateName, angle, slug });
       }
     }
+    return out;
   }
 
-  if (candidates.length === 0) return null;
-  return candidates[Math.floor(Math.random() * candidates.length)];
+  // Build per-tier candidate lists
+  const tier1Cand = candidatesForTier(config.stateTiers.tier1);
+  const tier2Cand = candidatesForTier(config.stateTiers.tier2);
+  const tier3Cand = candidatesForTier(config.stateTiers.tier3);
+
+  // Build weighted tier roulette — tiers with NO candidates get 0 weight
+  const tierRoulette = [];
+  if (tier1Cand.length > 0) {
+    for (let i = 0; i < config.tierWeights.tier1; i++) tierRoulette.push({ tier: 1, list: tier1Cand });
+  }
+  if (tier2Cand.length > 0) {
+    for (let i = 0; i < config.tierWeights.tier2; i++) tierRoulette.push({ tier: 2, list: tier2Cand });
+  }
+  if (tier3Cand.length > 0) {
+    for (let i = 0; i < config.tierWeights.tier3; i++) tierRoulette.push({ tier: 3, list: tier3Cand });
+  }
+
+  if (tierRoulette.length === 0) return null;
+
+  // Pick a tier first (weighted), then pick uniformly within that tier
+  const tierChoice = tierRoulette[Math.floor(Math.random() * tierRoulette.length)];
+  const pick = tierChoice.list[Math.floor(Math.random() * tierChoice.list.length)];
+  return { ...pick, tier: tierChoice.tier };
 }
 
 // ─── Form-rotation picker (for FormGuard) ────────────────────────────────────
