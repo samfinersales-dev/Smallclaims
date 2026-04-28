@@ -1,0 +1,77 @@
+{
+  "siteName": "SmallClaims",
+  "domain": "smallclaimsforms.net",
+  "topicArea": "small claims court procedures, filing fees, evidence rules, judgment collection, monetary limits",
+  "audience": "consumers filing small claims without a lawyer (suing or being sued)",
+  "audienceLevel": "non-lawyer consumer",
+
+  "stateAware": true,
+  "stateTiers": {
+    "tier1": ["California", "Texas", "Florida", "New York", "Illinois"],
+    "tier2": [
+      "Pennsylvania", "Ohio", "Georgia", "North Carolina", "Michigan",
+      "Virginia", "Washington", "Arizona", "Massachusetts", "New Jersey",
+      "Colorado", "Maryland", "Tennessee", "Indiana", "Missouri",
+      "Wisconsin", "Minnesota"
+    ],
+    "tier3": [
+      "South Carolina", "Alabama", "Louisiana", "Kentucky", "Oregon",
+      "Oklahoma", "Connecticut", "Utah", "Nevada", "Iowa", "Arkansas",
+      "Mississippi", "Kansas", "New Mexico", "Nebraska", "West Virginia",
+      "Idaho", "Hawaii", "New Hampshire", "Maine", "Montana", "Rhode Island",
+      "Delaware", "South Dakota", "North Dakota", "Alaska", "Vermont", "Wyoming"
+    ]
+  },
+  "tierWeights": { "tier1": 5, "tier2": 2, "tier3": 1 },
+
+  "topicAngles": [
+    "filing fees and how to file a small claims case",
+    "monetary limits and what cases qualify",
+    "statute of limitations for small claims",
+    "how to serve papers (service of process)",
+    "evidence rules and what to bring to court",
+    "how to collect on a small claims judgment",
+    "appeal rules and procedures",
+    "common case types (security deposits, unpaid wages, contractor disputes)",
+    "how to defend yourself if sued in small claims",
+    "court forms, filing locations, and deadlines"
+  ],
+
+  "originalSignalOptions": [
+    "Specific state Code of Civil Procedure citation or court rule number",
+    "Comparison table of state-by-state small claims rules for this topic",
+    "Decision tree (e.g., 'Should I file in small claims or civil court?')",
+    "Common winning vs. losing case patterns documented from publicly available court records",
+    "Glossary distinguishing commonly confused legal terms"
+  ],
+
+  "allowedStatSources": [
+    "National Center for State Courts",
+    "State court annual reports",
+    "Pew Charitable Trusts",
+    "Federal Reserve Survey of Consumer Finances",
+    "Consumer Financial Protection Bureau",
+    "Bureau of Justice Statistics",
+    "Pew Research"
+  ],
+
+  "bannedPhrases": [
+    "going to court can be intimidating",
+    "navigating the legal system",
+    "in this article we will explore",
+    "it's important to note",
+    "ultimately",
+    "at the end of the day",
+    "in today's fast-paced world"
+  ],
+
+  "byline": "By the SmallClaims editorial team",
+  "aboutFooter": "About SmallClaims: We build small claims court forms and filing guides for consumers handling their own cases. We publish state-specific guides on filing, evidence, and judgment collection, updated as court rules change.",
+  "authorOrgName": "SmallClaims Editorial Team",
+
+  "ctaText": "Get your small claims forms in minutes",
+  "ctaUrl": "https://smallclaimsforms.net",
+  "primaryColor": "#1a1c24",
+  "accentColor": "#b8860b",
+  "bgColor": "#faf8f3"
+}

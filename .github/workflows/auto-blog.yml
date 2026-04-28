@@ -1,9 +1,8 @@
-name: Auto Blog Post Generator
+name: Auto Blog Post Generator (v3)
 
 on:
   schedule:
-    # DISABLED for cleanup
-    # - cron: '0 8 * * 1,4'  # Every Monday and Thursday at 8am UTC
+    - cron: '0 8 * * 1,4'  # Every Monday and Thursday at 8am UTC
   workflow_dispatch:       # Manual trigger from GitHub Actions tab
 
 jobs:
@@ -22,25 +21,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
 
-      - name: Copy blog generator script
+      - name: Verify blog-config.json exists
         run: |
-          # Script is stored in .github/scripts/ within this repo
-          cp .github/scripts/generate-blog-post.js ./generate-blog-post.js
+          if [ ! -f blog-config.json ]; then
+            echo "::error::blog-config.json not found in repo root. Cannot generate blog post."
+            exit 1
+          fi
+          echo "Config found:"
+          cat blog-config.json | head -20
+
+      - name: Copy blog generator to repo root
+        run: cp .github/scripts/generate-blog-post.js ./generate-blog-post.js
 
       - name: Run blog generator
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          NETLIFY_HOOK:       ${{ secrets.NETLIFY_HOOK }}
-          SITE_DOMAIN:        ${{ vars.SITE_DOMAIN }}
-          SITE_NAME:          ${{ vars.SITE_NAME }}
-          TOPIC_AREA:         ${{ vars.TOPIC_AREA }}
-          TARGET_AUDIENCE:    ${{ vars.TARGET_AUDIENCE }}
-          PRODUCT_DESC:       ${{ vars.PRODUCT_DESC }}
-          CTA_TEXT:           ${{ vars.CTA_TEXT }}
-          PRIMARY_COLOR:      ${{ vars.PRIMARY_COLOR }}
-          ACCENT_COLOR:       ${{ vars.ACCENT_COLOR }}
+          NETLIFY_HOOK:      ${{ secrets.NETLIFY_HOOK }}
         run: node generate-blog-post.js
 
       - name: Cleanup

@@ -1,2 +1,4 @@
 # Local Netlify folder
 .netlify
+.blog-state.json
+.blog-debug-failed.txt
