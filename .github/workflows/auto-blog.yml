@@ -2,7 +2,7 @@ name: Auto Blog Post Generator (v3)
 
 on:
   schedule:
-    - cron: '0 8 * * 2,4'  # Every Monday and Thursday at 8am UTC
+    - cron: '0 8 * * 2,4'  # Every Tuesday and Thursday at 8am UTC
   workflow_dispatch:       # Manual trigger from GitHub Actions tab
 
 jobs:
