@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /.netlify/
+Disallow: /admin
+Disallow: /dashboard
+
+Sitemap: https://smallclaimsforms.net/sitemap.xml
