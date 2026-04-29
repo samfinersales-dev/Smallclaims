@@ -1,141 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="index,follow">
-<title>Privacy Policy | SmallClaimsHelper</title>
-<meta name="description" content="SmallClaimsHelper privacy policy: how we handle case information, payment data, and account details.">
-<link rel="canonical" href="https://smallclaimsforms.net/privacy">
-<link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--gold:#c9a14a;--dark:#1a1a1a;--text:#333;--text-muted:#6b6b6b;--rule:#e8e4de;--bg:#fafaf7;--cream:#fff8e7}
-body{font-family:'Inter',sans-serif;color:var(--text);background:#fff;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
-a{color:var(--gold)}
-.nav{background:#fff;border-bottom:1px solid var(--rule);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-logo{font-family:Georgia,serif;font-size:1.2rem;color:var(--dark);text-decoration:none;font-weight:700}
-.nav-back{color:var(--gold);font-size:.85rem;text-decoration:none;font-weight:500}
-.layout{max-width:760px;margin:0 auto;padding:48px 32px 80px}
-h1{font-family:Georgia,serif;font-size:2.2rem;line-height:1.2;color:var(--dark);margin-bottom:8px}
-.updated{color:var(--text-muted);font-size:.85rem;margin-bottom:32px}
-h2{font-family:Georgia,serif;font-size:1.3rem;color:var(--dark);margin:32px 0 12px;padding-left:14px;position:relative}
-h2::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;background:var(--gold);border-radius:2px}
-h3{font-size:1.05rem;font-weight:600;color:var(--dark);margin:20px 0 8px}
-p{margin-bottom:14px;color:var(--text)}
-ul{padding-left:24px;margin-bottom:14px}
-li{margin-bottom:6px}
-strong{color:var(--dark)}
-.lead{background:var(--cream);border-left:3px solid var(--gold);padding:18px 22px;border-radius:4px;font-size:1.02rem;margin-bottom:32px}
-.ftr{background:#f5f5f0;padding:24px 32px;text-align:center;font-size:.82rem;color:var(--text-muted);border-top:1px solid var(--rule)}
-.ftr a{color:var(--gold);text-decoration:none;margin:0 10px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Privacy Policy | SmallClaimsHelper</title>
+  <meta name="description" content="How SmallClaimsHelper collects, uses, and protects your data. We don't use tracking cookies or analytics.">
+  <link rel="canonical" href="https://smallclaimsforms.net/privacy.html">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --bg: #fafaf7;
+      --card: #ffffff;
+      --border: #e8e4de;
+      --accent: #c9a14a;
+      --accent-hover: #a98432;
+      --muted: #6b6b6b;
+      --content-width: 720px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .site-header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+    }
+    .site-header-inner {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .site-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .site-nav { display: flex; gap: 20px; font-size: 14px; }
+    .site-nav a { color: var(--muted); text-decoration: none; }
+    .site-nav a:hover { color: var(--accent); }
+    main {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+    h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+    h2 { font-size: 20px; margin: 36px 0 10px; color: var(--accent); }
+    h3 { font-size: 16px; margin: 22px 0 6px; }
+    .effective-date { color: var(--muted); font-size: 14px; margin: 0 0 28px; }
+    p, ul, ol { margin: 0 0 14px; }
+    ul, ol { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-hover); }
+    .callout {
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 0 6px 6px 0;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+    .warning-box {
+      background: var(--card);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 15px;
+    }
+    footer.site-footer {
+      border-top: 1px solid var(--border);
+      max-width: var(--content-width);
+      margin: 40px auto 0;
+      padding: 24px 24px 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer.site-footer a { color: var(--muted); margin: 0 6px; }
 </style>
 </head>
 <body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-name">SmallClaimsHelper</a>
+    <nav class="site-nav">
+      <a href="/privacy.html" style="color:var(--accent);font-weight:600">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/refund.html">Refund</a>
+    </nav>
+  </div>
+</header>
+<main>
+<h1>Privacy Policy</h1>
+<p class="effective-date">Effective date: April 30, 2026 · Last updated: April 30, 2026</p>
 
-<nav class="nav">
-  <a href="/" class="nav-logo">SmallClaimsHelper</a>
-  <a href="/" class="nav-back">← Back to home</a>
-</nav>
+<p>This Privacy Policy explains what information SmallClaimsHelper collects, how we use it, and the choices you have. SmallClaimsHelper (the "Service") is operated by Simcha Fuchs ("we," "us," "our"), an individual operating a sole proprietorship doing business as SmallClaimsHelper.</p>
 
-<div class="layout">
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: April 29, 2026</p>
-
-  <p class="lead">
-    SmallClaimsHelper helps people generate court documents for small claims cases. This policy explains what information we collect, how we use it, and the choices you have. We do not sell your data. We collect only what we need to deliver the service.
-  </p>
-
-  <h2>1. What this policy covers</h2>
-  <p>
-    This Privacy Policy applies to <a href="https://smallclaimsforms.net">smallclaimsforms.net</a> and the SmallClaimsHelper service ("we," "us," "SmallClaimsHelper"). It describes how we handle information from visitors and customers ("you").
-  </p>
-
-  <h2>2. Information we collect</h2>
-
-  <h3>Information you provide</h3>
-  <ul>
-    <li><strong>Case information.</strong> When you use the document generator, you provide your name and address (as plaintiff), the defendant's name and address, the dispute type, dollar amount, dates, narrative description, and evidence list. This information is used to generate your court documents.</li>
-    <li><strong>Payment information.</strong> Payments are processed by Stripe. We do not see, receive, or store your full credit card number. We receive only a customer ID, the amount paid, your email, and the plan you bought.</li>
-    <li><strong>Communications.</strong> If you email us for support, we receive your email address and the contents of your message.</li>
-  </ul>
-
-  <h3>Information collected automatically</h3>
-  <ul>
-    <li><strong>Basic request data.</strong> Our servers receive your IP address, browser user-agent, and the pages you visit. This is used for security and to fix bugs.</li>
-    <li><strong>Cookies.</strong> We use a small number of strictly necessary cookies for the payment processor. We do not use third-party advertising trackers.</li>
-  </ul>
-
-  <h2>3. How we use your information</h2>
-  <ul>
-    <li>To generate your small claims documents from the answers you provide.</li>
-    <li>To process payments and send receipts.</li>
-    <li>To prevent abuse and protect the service (such as rate limits and fraud detection).</li>
-    <li>To respond to your support requests.</li>
-    <li>To comply with legal obligations.</li>
-  </ul>
-
-  <h2>4. Who we share information with</h2>
-  <p>
-    We share data only with service providers we use to run SmallClaimsHelper. We do not sell your information.
-  </p>
-  <ul>
-    <li><strong>Anthropic</strong> — operator of the AI model that drafts your documents. The case information you enter is sent to Anthropic's API to generate the documents. Anthropic does not use your data to train its models when accessed through the API.</li>
-    <li><strong>Stripe</strong> — our payment processor.</li>
-    <li><strong>Netlify</strong> — our hosting provider.</li>
-    <li><strong>Legal compliance.</strong> We may disclose information if required by law, valid court order, or to protect the rights and safety of users or the public.</li>
-  </ul>
-
-  <h2>5. About defendant information</h2>
-  <p>
-    To draft a complaint, the document generator asks you for the defendant's name and address. We process that information solely to produce the documents. We do not retain a separate record of defendants. The completed documents are not stored on our servers — they are returned to your browser and we do not keep a copy linked to your identity.
-  </p>
-
-  <h2>6. How long we keep your data</h2>
-  <ul>
-    <li>Your case answers and generated documents are not retained on our servers after your session ends.</li>
-    <li>Payment records are retained as required by tax and accounting law.</li>
-    <li>If you contact support, we retain support correspondence for up to 2 years to handle follow-ups.</li>
-  </ul>
-
-  <h2>7. Security</h2>
-  <p>
-    We use industry-standard practices: HTTPS for all traffic, role-restricted access to service providers, and encrypted storage at our payment processor. No system is perfectly secure, but we work to keep your information safe.
-  </p>
-
-  <h2>8. Your rights and choices</h2>
-  <ul>
-    <li><strong>Access and deletion.</strong> Email <a href="mailto:support@smallclaimsforms.net">support@smallclaimsforms.net</a> to request a copy of your data or to request deletion.</li>
-    <li><strong>California (CCPA/CPRA), EU/UK (GDPR), and similar laws.</strong> Depending on where you live, you may have additional rights to access, correct, delete, or limit processing of your personal information. Contact us to exercise these rights. We do not sell personal information.</li>
-  </ul>
-
-  <h2>9. Not legal advice</h2>
-  <p>
-    SmallClaimsHelper generates template court documents based on your inputs. We are not a law firm. The documents we generate are not legal advice. Small claims procedures vary by state and county. Always verify the correct forms and filing requirements with your local courthouse. For complex matters, consult a licensed attorney in your state.
-  </p>
-
-  <h2>10. Children</h2>
-  <p>
-    SmallClaimsHelper is not directed at children under 13 and we do not knowingly collect data from them.
-  </p>
-
-  <h2>11. Changes to this policy</h2>
-  <p>
-    We may update this policy. The "last updated" date at the top reflects the most recent version.
-  </p>
-
-  <h2>12. Contact</h2>
-  <p>
-    Questions about this policy? Email <a href="mailto:support@smallclaimsforms.net">support@smallclaimsforms.net</a>.
-  </p>
+<div class="callout">
+<strong>Quick summary:</strong> We collect what you submit to use the Service, plus your email address. We do not use tracking cookies or analytics services. We share data only with the processors required to run the Service. You can request deletion at any time by emailing <a href="mailto:support@smallclaimsforms.net">support@smallclaimsforms.net</a>.
 </div>
 
-<div class="ftr">
-  <a href="/">Home</a> ·
-  <a href="/privacy">Privacy</a> ·
-  <a href="/terms">Terms</a>
-  <p style="margin-top:12px">© 2026 SmallClaimsHelper. Generated documents are templates for informational purposes only and not legal advice.</p>
-</div>
+<h2>1. Information we collect</h2>
 
+<h3>Information you provide</h3>
+<p>When you use the Service, you voluntarily provide:</p>
+<ul>
+  <li>Your email address (required for delivery and account access)</li>
+  <li>The case details you enter (state, parties, claim type, amount, narrative, evidence list) and the resulting draft documents</li>
+</ul>
+<p>You choose what to enter. You may use generic or fictional values in any field except your email, which is required to deliver and grant access to your purchase.</p>
+
+<h3>Payment information</h3>
+<p>When you purchase, payment details (card number, billing address) are collected and processed directly by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>. We never see or store your full card number. We receive only: your name, email, country, and the amount paid.</p>
+
+<h3>Server logs</h3>
+<p>Our hosting provider (Netlify) automatically logs basic request information (IP address, user agent, timestamp, requested URL) for security and abuse prevention. These logs are retained by Netlify per their <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">privacy policy</a>.</p>
+
+<h2>2. Information we do not collect</h2>
+<p>The Service does not use any of the following:</p>
+<ul>
+  <li>Google Analytics, Fathom, Plausible, or any other web analytics</li>
+  <li>Tracking cookies or cross-site tracking pixels</li>
+  <li>Social media tracking (Facebook Pixel, LinkedIn Insight, etc.)</li>
+  <li>Session replay or heatmap tools (Hotjar, FullStory, Clarity, etc.)</li>
+  <li>Advertising networks or retargeting</li>
+</ul>
+<p>Stripe may set its own cookies on its hosted checkout pages; that processing is governed by Stripe's Privacy Policy linked above.</p>
+
+<h2>3. How we use your information</h2>
+<ul>
+  <li><strong>To generate your small claims court document drafts.</strong> Your inputs are passed to Anthropic's Claude API to produce the output.</li>
+  <li><strong>To deliver your small claims court document drafts.</strong> We render the output to you in the browser and may email you a confirmation receipt.</li>
+  <li><strong>To process payment.</strong> We pass payment instructions to Stripe; Stripe handles the transaction.</li>
+  <li><strong>To prevent abuse.</strong> We may review server logs to detect fraud, spam, or technical issues.</li>
+  <li><strong>To respond to your support requests.</strong> If you email us, we use that information to help you.</li>
+</ul>
+
+<h2>4. Third-party processors</h2>
+<p>The Service relies on the processors below. Your data is shared with them only as necessary to provide the Service:</p>
+<ul>
+  <li><strong>Anthropic</strong> (<a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">privacy policy</a>) — receives your inputs via the Claude API to generate the output. Per Anthropic's commercial terms, inputs submitted via the API are not used to train their models.</li>
+  <li><strong>Stripe</strong> (<a href="https://stripe.com/privacy" target="_blank" rel="noopener">privacy policy</a>) — processes payments. Stripe is a PCI-DSS Level 1 certified payment processor.</li>
+  <li><strong>Netlify</strong> (<a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">privacy policy</a>) — hosts the website and stores temporary session data.</li>
+</ul>
+<p>We do not sell your data, share it with advertisers, or use it for marketing purposes outside of the Service.</p>
+
+<h2>5. Data retention</h2>
+<ul>
+  <li><strong>Unpaid form sessions:</strong> your inputs are stored for up to 24 hours while you complete checkout, then automatically deleted.</li>
+  <li><strong>Payment records:</strong> retained by Stripe per their retention policy, which we cannot override.</li>
+  <li><strong>Server logs:</strong> retained by Netlify per their retention policy (typically 30 to 90 days).</li>
+</ul>
+
+<h2>6. Your rights</h2>
+
+<h3>All users</h3>
+<p>You can request at any time, by emailing <a href="mailto:support@smallclaimsforms.net">support@smallclaimsforms.net</a>:</p>
+<ul>
+  <li>A copy of the data we hold about you (access)</li>
+  <li>Correction of any inaccurate data</li>
+  <li>Deletion of your data (subject to any records we are legally required to keep)</li>
+  <li>Opt-out from any marketing emails</li>
+</ul>
+<p>We respond to all requests within 30 days.</p>
+
+<h3>California residents (CCPA / CPRA)</h3>
+<p>If you are a California resident, you have the rights listed above plus the right to know what categories of personal information we collect, sell, or share. <strong>We do not sell or share personal information for cross-context behavioral advertising.</strong> California residents can contact us at the email above to exercise these rights.</p>
+
+<h3>European Union / UK residents (GDPR / UK GDPR)</h3>
+<p>If you are in the EU or UK, you have the rights listed above plus:</p>
+<ul>
+  <li>The right to data portability (receive your data in machine-readable form)</li>
+  <li>The right to object to processing based on legitimate interest</li>
+  <li>The right to lodge a complaint with your local data protection authority</li>
+</ul>
+<p>Our legal basis for processing is (a) performance of a contract (delivering your purchase), and (b) legitimate interest (fraud prevention, which you may opt out of by not using the Service).</p>
+
+<h2>7. Security</h2>
+<p>Data in transit is protected by HTTPS/TLS. Data at rest is encrypted by Netlify and Stripe using industry-standard encryption. Despite reasonable precautions, no internet transmission or storage is 100% secure; we cannot guarantee absolute security.</p>
+
+<h2>8. Children</h2>
+<p>The Service is intended for adults. It is not directed to people under 18 years of age. We do not knowingly collect personal information from children. If you believe a child has provided data, contact us and we will delete it.</p>
+
+<h2>9. International data transfers</h2>
+<p>Our processors are located in the United States and European Union. If you use the Service from outside these regions, your data will be transferred to and processed in those jurisdictions. By using the Service, you consent to this transfer.</p>
+
+<h2>10. Changes to this policy</h2>
+<p>We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last updated" date at the top of this page. Continued use of the Service after an update constitutes acceptance.</p>
+
+<h2>11. Contact</h2>
+<p>For any privacy question, concern, or request:</p>
+<p><strong>Email:</strong> <a href="mailto:support@smallclaimsforms.net">support@smallclaimsforms.net</a><br>
+<strong>Response time:</strong> typically within 2 business days.</p>
+</main>
+<footer class="site-footer">
+  <a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/refund.html">Refund</a>
+  <p style="margin-top:12px">© 2026 SmallClaimsHelper · operated by Simcha Fuchs · documents generated by the Service are templates and do not constitute legal advice.</p>
+</footer>
 </body>
 </html>
