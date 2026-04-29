@@ -741,8 +741,23 @@ async function generateDocsWithSession(sessionId){
     throw new Error((errBody.error || ('HTTP ' + r.status)) + debugStr);
   }
   var d = await r.json();
-  var t = d.content[0].text.replace(/```json|```/g,'').trim();
-  return JSON.parse(t);
+  var t = d.content[0].text;
+
+  // Anthropic sometimes wraps JSON in markdown fences or adds preamble.
+  // Strip ```json ... ``` fences and find the first { ... last }.
+  t = t.replace(/```json/gi, '').replace(/```/g, '').trim();
+  var firstBrace = t.indexOf('{');
+  var lastBrace = t.lastIndexOf('}');
+  if (firstBrace === -1 || lastBrace === -1 || lastBrace <= firstBrace) {
+    throw new Error('AI response did not contain a JSON object: ' + t.slice(0, 100));
+  }
+  var jsonStr = t.substring(firstBrace, lastBrace + 1);
+  try {
+    return JSON.parse(jsonStr);
+  } catch (parseErr) {
+    // If JSON is malformed (e.g. truncated), surface a helpful error
+    throw new Error('AI returned malformed JSON (' + parseErr.message + '). Length: ' + jsonStr.length);
+  }
 }
 
 function buildPaywall(){
