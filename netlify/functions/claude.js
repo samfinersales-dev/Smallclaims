@@ -94,26 +94,34 @@ exports.handler = async function (event) {
     return { statusCode: 500, headers, body: JSON.stringify({ error: 'Server configuration error' }) };
   }
 
+  // Abort the upstream call if it takes >22s, so we have time to send a clean
+  // error response before Netlify's hard 26s function timeout kicks in.
+  const upstreamCtrl = new AbortController();
+  const upstreamTimer = setTimeout(() => upstreamCtrl.abort(), 22000);
+
+  const startMs = Date.now();
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
+      signal: upstreamCtrl.signal,
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': process.env.ANTHROPIC_API_KEY,
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 2000,
+        model: 'claude-haiku-4-5',
+        max_tokens: 1500,
         messages: [{ role: 'user', content: prompt }],
       }),
     });
+    clearTimeout(upstreamTimer);
 
+    const elapsedMs = Date.now() - startMs;
     const data = await response.json();
 
     if (!response.ok) {
-      console.error('[smallclaims-claude] Anthropic error:', response.status, JSON.stringify(data).slice(0, 500));
-      // Surface the actual Anthropic error type/message so we can debug
+      console.error('[smallclaims-claude] Anthropic error:', response.status, JSON.stringify(data).slice(0, 500), `elapsed=${elapsedMs}ms`);
       const errType = data?.error?.type || 'unknown';
       const errMsg = data?.error?.message || 'unknown error';
       return {
@@ -121,14 +129,35 @@ exports.handler = async function (event) {
         headers,
         body: JSON.stringify({
           error: 'Generation service temporarily unavailable. Please try again.',
-          debug: { upstream_status: response.status, type: errType, message: errMsg.slice(0, 200) },
+          debug: { upstream_status: response.status, type: errType, message: errMsg.slice(0, 200), elapsed_ms: elapsedMs },
         }),
       };
     }
 
+    console.log(`[smallclaims-claude] success elapsed=${elapsedMs}ms`);
     return { statusCode: 200, headers, body: JSON.stringify({ content: data.content }) };
   } catch (err) {
-    console.error('[smallclaims-claude] error:', err.message);
-    return { statusCode: 500, headers, body: JSON.stringify({ error: 'Server error' }) };
+    clearTimeout(upstreamTimer);
+    const elapsedMs = Date.now() - startMs;
+    if (err.name === 'AbortError') {
+      console.error('[smallclaims-claude] upstream timeout after', elapsedMs, 'ms');
+      return {
+        statusCode: 504,
+        headers,
+        body: JSON.stringify({
+          error: 'Generation took too long. Please try again.',
+          debug: { type: 'upstream_timeout', elapsed_ms: elapsedMs },
+        }),
+      };
+    }
+    console.error('[smallclaims-claude] error:', err.message, `elapsed=${elapsedMs}ms`);
+    return {
+      statusCode: 500,
+      headers,
+      body: JSON.stringify({
+        error: 'Server error',
+        debug: { type: err.name || 'unknown', message: (err.message || '').slice(0, 200), elapsed_ms: elapsedMs },
+      }),
+    };
   }
 };
