@@ -103,8 +103,8 @@ exports.handler = async function (event) {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
-        max_tokens: 1500,
+        model: 'claude-sonnet-4-6',
+        max_tokens: 2000,
         messages: [{ role: 'user', content: prompt }],
       }),
     });
@@ -112,8 +112,18 @@ exports.handler = async function (event) {
     const data = await response.json();
 
     if (!response.ok) {
-      console.error('[smallclaims-claude] Anthropic error:', response.status, JSON.stringify(data).slice(0, 200));
-      return { statusCode: 502, headers, body: JSON.stringify({ error: 'Generation service temporarily unavailable. Please try again.' }) };
+      console.error('[smallclaims-claude] Anthropic error:', response.status, JSON.stringify(data).slice(0, 500));
+      // Surface the actual Anthropic error type/message so we can debug
+      const errType = data?.error?.type || 'unknown';
+      const errMsg = data?.error?.message || 'unknown error';
+      return {
+        statusCode: 502,
+        headers,
+        body: JSON.stringify({
+          error: 'Generation service temporarily unavailable. Please try again.',
+          debug: { upstream_status: response.status, type: errType, message: errMsg.slice(0, 200) },
+        }),
+      };
     }
 
     return { statusCode: 200, headers, body: JSON.stringify({ content: data.content }) };

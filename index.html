@@ -737,7 +737,8 @@ async function generateDocsWithSession(sessionId){
   if (!r.ok) {
     var errBody = {};
     try { errBody = await r.json(); } catch(e) {}
-    throw new Error(errBody.error || ('HTTP ' + r.status));
+    var debugStr = errBody.debug ? ' [' + JSON.stringify(errBody.debug) + ']' : '';
+    throw new Error((errBody.error || ('HTTP ' + r.status)) + debugStr);
   }
   var d = await r.json();
   var t = d.content[0].text.replace(/```json|```/g,'').trim();
@@ -817,7 +818,7 @@ buildPaywall = function() {
       docs = await generateDocsWithSession(sessionId);
     } catch (genErr) {
       console.error('Document generation failed after payment:', genErr);
-      alert('Payment was verified, but document generation failed. Please contact support@smallclaimsforms.net with your Stripe receipt and we will deliver your documents manually within 24 hours.');
+      alert('Payment was verified, but document generation failed.\n\nError: ' + (genErr && genErr.message ? genErr.message : String(genErr)) + '\n\nContact support@smallclaimsforms.net with your Stripe receipt and we will deliver your documents manually within 24 hours.');
       showScreen('landing');
       return;
     }
