@@ -695,24 +695,37 @@ function nextQ(){
 
 function prevQ(){if(cq>0){cq--;renderQ()}}
 
-async function genDocs(){
-  document.getElementById('gs').textContent=A.state;
-  showScreen('generating');
-  var prompt='You are an expert paralegal. Generate court documents for this small claims case.\n\nState: '+A.state+'\nPlaintiff: '+A.pname+', '+A.paddr+'\nDefendant: '+A.dname+', '+A.daddr+'\nClaim Type: '+A.ctype+'\nAmount: $'+A.amt+'\nDate: '+A.date+'\nWhat happened: '+A.what+'\nEvidence: '+A.evid+'\n\nRespond ONLY with valid JSON, no other text:\n{"complaint":"full complaint form text ready to print and file, formatted as official court document for '+A.state+'","script":"word for word script for plaintiff to read to judge, 3-4 paragraphs, confident and factual","evidence":"formatted evidence checklist and court day instructions specific to this case and '+A.state+'"}';
-  try{
-    var r=await fetch('/.netlify/functions/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:prompt})});
-    var d=await r.json();
-    var t=d.content[0].text.replace(/```json|```/g,'').trim();
-    docs=JSON.parse(t);
-  }catch(e){
-    docs={
-      complaint:'SMALL CLAIMS COURT\n'+A.state.toUpperCase()+'\n\n'+A.pname+'\n'+A.paddr+'\nPlaintiff\n\nvs.\n\n'+A.dname+'\n'+A.daddr+'\nDefendant\n\nCOMPLAINT\n\nPlaintiff '+A.pname+' states:\n\n1. On or about '+A.date+', Defendant '+A.dname+' caused damages of $'+A.amt+' relating to: '+A.ctype+'.\n\n2. '+A.what+'\n\n3. Plaintiff has attempted to resolve this matter without court action.\n\n4. Defendant has failed to pay.\n\nPlaintiff demands judgment of $'+A.amt+' plus court costs.\n\nI declare under penalty of perjury this is true and correct.\n\nSignature: ____________________\n'+A.pname+'\nDate: ___________',
-      script:'Your Honor, my name is '+A.pname+' and I am the plaintiff.\n\nI am here because '+A.dname+' owes me $'+A.amt+' for: '+A.ctype+'.\n\nOn '+A.date+': '+A.what+'\n\nI have the following evidence: '+A.evid+'\n\nI have tried to resolve this directly without success. I respectfully ask the court to award me $'+A.amt+' plus court costs. Thank you.',
-      evidence:'EVIDENCE CHECKLIST\n\nBring to court:\n- This complaint form (3 copies)\n- All contracts or agreements\n- All receipts and payment records\n- Printed text messages and emails\n- Photographs labeled with dates\n- Witness contact information\n\nYour evidence: '+A.evid+'\n\nCourt day tips:\n- Arrive 30 minutes early\n- Dress professionally\n- Speak to the judge, not the defendant\n- Stick to facts and dollar amounts\n- Bring 3 copies of everything\n\nFiling in '+A.state+':\n- File at your county courthouse\n- Filing fee is usually $30-$75\n- Ask clerk for service instructions'
-    };
-  }
+// Build the prompt used for AI generation. Used both pre-payment (so the
+// preview screen can display the case info) and post-payment (real call).
+function buildPrompt(){
+  return 'You are an expert paralegal. Generate court documents for this small claims case.\n\nState: '+A.state+'\nPlaintiff: '+A.pname+', '+A.paddr+'\nDefendant: '+A.dname+', '+A.daddr+'\nClaim Type: '+A.ctype+'\nAmount: $'+A.amt+'\nDate: '+A.date+'\nWhat happened: '+A.what+'\nEvidence: '+A.evid+'\n\nRespond ONLY with valid JSON, no other text:\n{"complaint":"full complaint form text ready to print and file, formatted as official court document for '+A.state+'","script":"word for word script for plaintiff to read to judge, 3-4 paragraphs, confident and factual","evidence":"formatted evidence checklist and court day instructions specific to this case and '+A.state+'"}';
+}
+
+// Pre-payment: do NOT call the AI. Stash answers in sessionStorage and show
+// the paywall preview screen. The actual AI generation happens only after
+// payment is verified (see checkPaidReturn below).
+function genDocs(){
+  try { sessionStorage.setItem('sc_A', JSON.stringify(A)); } catch(e) {}
   buildPaywall();
   showScreen('paywall');
+}
+
+// Post-payment: call the AI with a paid sessionId to actually generate docs.
+async function generateDocsWithSession(sessionId){
+  var prompt = buildPrompt();
+  var r = await fetch('/.netlify/functions/claude', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ prompt: prompt, sessionId: sessionId })
+  });
+  if (!r.ok) {
+    var errBody = {};
+    try { errBody = await r.json(); } catch(e) {}
+    throw new Error(errBody.error || ('HTTP ' + r.status));
+  }
+  var d = await r.json();
+  var t = d.content[0].text.replace(/```json|```/g,'').trim();
+  return JSON.parse(t);
 }
 
 function buildPaywall(){
@@ -750,12 +763,13 @@ buildPaywall = function() {
     var sessionId = params.get('session_id');
     if (!sessionId) return;
 
-    // Clean URL immediately
+    // Clean URL immediately so a refresh doesn't re-run this
     window.history.replaceState({}, '', window.location.pathname);
 
     // Show a loading state
     showScreen('generating');
-    document.getElementById('gs').textContent = 'Verifying payment...';
+    var gsEl = document.getElementById('gs');
+    if (gsEl) gsEl.textContent = 'Verifying payment...';
 
     // Verify with Stripe via our server
     var vr = await fetch('/.netlify/functions/verify-payment', {
@@ -766,23 +780,36 @@ buildPaywall = function() {
     var vd = await vr.json();
 
     if (!vd.paid) {
-      alert('Payment could not be verified. If you completed payment, please contact support.');
+      alert('Payment could not be verified. If you completed payment, contact support@smallclaimsforms.net with your Stripe receipt.');
       showScreen('landing');
       return;
     }
 
-    // Payment verified — restore answers and regenerate docs
+    // Restore answers from sessionStorage
     var savedA = sessionStorage.getItem('sc_A');
     if (savedA) { try { A = JSON.parse(savedA); } catch(e){} }
 
-    if (A && A.state) {
-      document.getElementById('gs').textContent = A.state;
-      // Regenerate the documents server-side now that payment is confirmed
-      await genDocs();
-      // genDocs ends by showing paywall, but we're already paid — skip to results
-      if (docs) { showResults(); }
+    if (!A || !A.state) {
+      alert('Your case answers expired. Please start over and your payment can be re-applied — contact support@smallclaimsforms.net with your Stripe receipt.');
+      showScreen('landing');
+      return;
+    }
+
+    // Generate the documents server-side with the verified paid session
+    if (gsEl) gsEl.textContent = A.state;
+    try {
+      docs = await generateDocsWithSession(sessionId);
+    } catch (genErr) {
+      console.error('Document generation failed after payment:', genErr);
+      alert('Payment was verified, but document generation failed. Please contact support@smallclaimsforms.net with your Stripe receipt and we will deliver your documents manually within 24 hours.');
+      showScreen('landing');
+      return;
+    }
+
+    if (docs) {
+      showResults();
     } else {
-      alert('Session expired. Please start over.');
+      alert('Document generation returned no result. Contact support@smallclaimsforms.net with your Stripe receipt.');
       showScreen('landing');
     }
   } catch(e) { console.warn('paid return error', e); }
@@ -881,6 +908,7 @@ function downloadReport() {
   <p style="font-size:14px;color:rgba(255,255,255,.3);margin-bottom:8px">Questions or issues? We are here to help.</p>
   <a href="mailto:info&#64;smallclaimsforms.net" style="color:var(--gold);font-size:15px;text-decoration:none">info&#64;smallclaimsforms.net</a>
   <p style="font-size:12px;color:rgba(255,255,255,.15);margin-top:16px">SmallClaimsHelper · Small Claims Court Documents · Not a law firm · Not legal advice</p>
+  <p style="font-size:12px;color:rgba(255,255,255,.25);margin-top:14px"><a href="/privacy" style="color:rgba(255,255,255,.5);text-decoration:none;margin:0 8px">Privacy Policy</a>·<a href="/terms" style="color:rgba(255,255,255,.5);text-decoration:none;margin:0 8px">Terms of Service</a></p>
 </div>
 
 <script src="/download-module.js"></script>

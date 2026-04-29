@@ -2,9 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://smallclaimsforms.net/</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://smallclaimsforms.net/privacy</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://smallclaimsforms.net/terms</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://smallclaimsforms.net/blog/small-claims-court-florida</loc>
@@ -12,40 +24,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://smallclaimsforms.net/blog/small-claims-court-vermont</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://smallclaimsforms.net/blog/small-claims-court-pennsylvania</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://smallclaimsforms.net/blog/how-to-defend-yourself-if-sued-in-small-claims-missouri</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://smallclaimsforms.net/blog/court-forms-filing-locations-and-deadlines-texas</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://smallclaimsforms.net/blog/how-to-collect-on-a-small-claims-judgment-minnesota</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
 </urlset>

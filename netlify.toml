@@ -1,9 +1,19 @@
 [build]
   functions = "netlify/functions"
 
+# Claude generation can take 10-20s for larger cases — give it room
+[functions."claude"]
+  timeout = 26
+
+# Stripe verify call should be fast
+[functions."verify-payment"]
+  timeout = 10
+
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
